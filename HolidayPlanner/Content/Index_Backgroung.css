@@ -1,11 +1,16 @@
 ﻿.BackgroundTest   
 {   
     background-image: url('../Images/cocoa-island-resort.jpg');
-    background-repeat:no-repeat;  
-    background-size:100% 100%;
-    font-size: .75em;
+    background-repeat:no-repeat; 
+    position:fixed; 
+    width:200%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-2;
     font-family: Verdana, Helvetica, Sans-Serif;
+    color:aqua;
     margin: 0;
     padding: 0;
-    color: #696969;  
+    
 }   
