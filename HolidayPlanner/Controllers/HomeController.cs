@@ -7,9 +7,10 @@ using System.Web.Mvc;
 
 namespace HolidayPlanner.Controllers
 {
+    [CustomAuthorize(Roles = "Client")]
     public class HomeController : Controller
     {
-        [CustomAuthorize(Roles = "Client")]
+        
         public ActionResult Index()
         {
             return View();
