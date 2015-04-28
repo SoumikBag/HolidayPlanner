@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HolidayPlanner.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace HolidayPlanner.Controllers
 {
     public class HomeController : Controller
     {
+        [CustomAuthorize(Roles = "Client")]
         public ActionResult Index()
         {
             return View();
