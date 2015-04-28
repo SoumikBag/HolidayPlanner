@@ -52,7 +52,7 @@ namespace HolidayPlanner.Controllers
                     }
                     else if (roles.Contains("Client"))
                     {
-                        return RedirectToAction("Index", "Client");
+                        return RedirectToAction("Index", "Home");
                     }
                     else
                     {
