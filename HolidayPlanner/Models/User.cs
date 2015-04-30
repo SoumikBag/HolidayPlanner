@@ -9,11 +9,8 @@ namespace HolidayPlanner.Models
     [Table("User")]
     public partial class User
     {
-        public User()
-        {
-            Roles = new HashSet<Role>();
-        }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserId { get; set; }
 
         [StringLength(50)]
@@ -29,5 +26,6 @@ namespace HolidayPlanner.Models
         public string Password { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
+
     }
 }
