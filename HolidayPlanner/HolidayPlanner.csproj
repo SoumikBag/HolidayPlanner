@@ -138,7 +138,6 @@
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Index_Backgroung.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\swipebox.css" />
     <Content Include="favicon.ico" />
@@ -149,7 +148,6 @@
     <Content Include="Images\arrow.png" />
     <Content Include="Images\banner.jpg" />
     <Content Include="Images\bed.png" />
-    <Content Include="Images\cocoa-island-resort.jpg" />
     <Content Include="Images\download.jpg" />
     <Content Include="Images\drop.png" />
     <Content Include="Images\e1.jpg" />
@@ -168,6 +166,7 @@
     <Content Include="Images\l3.jpg" />
     <Content Include="Images\login.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\logo1.jpg" />
     <Content Include="Images\m1.jpg" />
     <Content Include="Images\m2.jpg" />
     <Content Include="Images\mail.png" />
@@ -219,7 +218,7 @@
     <Content Include="Views\Home\contact.html" />
     <Content Include="Views\Home\education.html" />
     <Content Include="Views\Home\entertain.html" />
-    <Content Include="Views\Home\index.html" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
