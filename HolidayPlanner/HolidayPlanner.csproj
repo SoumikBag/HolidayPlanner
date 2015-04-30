@@ -216,7 +216,6 @@
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Home\404.html" />
-    <Content Include="Views\Home\contact.html" />
     <Content Include="Views\Home\education.html" />
     <Content Include="Views\Home\entertain.html" />
     <Content Include="Views\Home\Index.cshtml" />
