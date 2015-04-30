@@ -35,8 +35,7 @@ namespace HolidayPlanner
                       "~/Content/bootstrap.css",
                       "~/Content/animate.css",
                       "~/Content/style.css",
-                      "~/Content/swipebox.css",
-                      "~/Content/site.css"));
+                      "~/Content/swipebox.css"));
         }
     }
 }

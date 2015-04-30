@@ -4022,7 +4022,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse {
   background-color: #fff;
-  border-color: #080808;
+  border-color: #fff;
 }
 .navbar-inverse .navbar-brand {
   color: #999;
