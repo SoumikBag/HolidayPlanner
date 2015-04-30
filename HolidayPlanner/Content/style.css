@@ -1636,7 +1636,7 @@ ul.service_grid li.desc1 p{
 }
 /*--footer--*/
 .footer{
-	background: url(../img/footer.jpg) no-repeat center top;
+	background: url(../Images/footer.jpg) no-repeat center top;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -1693,7 +1693,7 @@ label.btn1.btn2.btn-2.btn-2g {
 }
 .footer-grid {
 	float: left;
-	width: 17.7%;
+	width: 70%;
 	margin-right: 23%;
 }
 .last_grid {
@@ -1719,7 +1719,7 @@ ul.list1 li a{
 	font-size: 1.1em;
 	font-weight: 500;
 	margin-bottom: 1em;
-	border-bottom: 1px solid #5b5953;
+	
 	width: 50%;
 }
 ul.footer_social{
