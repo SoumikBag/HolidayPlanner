@@ -204,7 +204,7 @@ body a{
 	cursor: pointer;
 }
 .sb-search-submit {
-	background: #333 url('../images/h_search.png') no-repeat 21px 22px;
+	background: #333 url('../img/h_search.png') no-repeat 21px 22px;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
     filter: alpha(opacity=0); /* IE 5-7 */
    	color: transparent;
@@ -215,7 +215,7 @@ body a{
 }
 .sb-icon-search {
 	color: #FFF;
-	background:#e2dee0 url('../images/h_search.png') no-repeat 21px 22px;
+	background:#e2dee0 url('../img/h_search.png') no-repeat 21px 22px;
 	z-index: 90;
 }
 /* Open state */
@@ -363,19 +363,169 @@ a#loginButton img {
 	vertical-align: bottom;
 }
 .banner{
-	background: url(../images/banner.jpg) no-repeat center top;
+	background: no-repeat center;
+    background-image:url('../images/A Sunset on a Texas Farm.jpg'),url(../images/2.jpg),url(../images/1.jpg),url('../images/A Sunset on a Texas Farm.jpg') ;
 	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	min-height:410px;
+    
+
+	-webkit-animation: banner 20s infinite;
+  -moz-animation: banner 20s infinite;
+  -ms-animation: banner 20s infinite;
+  -o-animation: banner 20s infinite;
+  animation: banner 20s infinite;
+ 
+  -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+
+
+	min-height:600px;
 	text-align:center;
 	padding-top:3em;
 }
-.container_wrap{
-	margin:0 auto;
-	width:70%;
+
+@keyframes banner {
+ 0% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 23% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 33% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 56% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 66% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 90% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 100% {
+    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+ }
+ 
 }
+ 
+@-moz-keyframes banner {
+ 0% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 23% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 33% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 56% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 66% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 90% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 100% {
+    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+ }
+}
+ 
+@-webkit-keyframes banner {
+  0% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 23% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 33% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 56% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 66% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 90% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 100% {
+    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+ }
+}
+ 
+@-ms-keyframes banner {
+ 0% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 23% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 33% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 56% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 66% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 90% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 100% {
+    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+ }
+}
+ 
+@-o-keyframes banner {
+ 0% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 23% {
+    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+ }
+ 33% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 56% {
+    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+ }
+ 66% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 90% {
+    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+ }
+ 100% {
+    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+ }
+ 
+}
+
+
+.container_wrap{
+    background:transparent;
+    color: transparent;
+	margin:0 auto;
+	width:50%;
+    
+
+    -webkit-transition: color 0.5s ease, background-color 0.5s ease;
+  -moz-transition: color 0.5s ease, background-color 0.5s ease;
+  -o-transition: color 0.5s ease, background-color 0.5s ease;
+  -ms-transition: color 0.5s ease, background-color 0.5s ease;
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.container_wrap:hover {
+  background: #000; /*for old browsers*/
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+}
+
 .dropdown-buttons{
 	margin-bottom: 1em;
 }
@@ -1486,7 +1636,7 @@ ul.service_grid li.desc1 p{
 }
 /*--footer--*/
 .footer{
-	background: url(../images/footer.jpg) no-repeat center top;
+	background: url(../img/footer.jpg) no-repeat center top;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -2170,7 +2320,7 @@ span.four {
 	min-width:55px;
 }
 .sb-icon-search {
-	background: #e2dee0 url('../images/h_search.png') no-repeat 14px 22px;
+	background: #e2dee0 url('../img/h_search.png') no-repeat 14px 22px;
 }
 span.one, span.two, span.three, span.four{
 	display:none;
@@ -2222,7 +2372,7 @@ span.one, span.two, span.three, span.four{
 	width: 100%;
 }
 .flat .selected::after {
-	background: url(../images/img-sprite.png) no-repeat -7px 14px;
+	background: url(../img/img-sprite.png) no-repeat -7px 14px;
 }
 .banner input[type="text"] {
 	font-size: 0.85em;
