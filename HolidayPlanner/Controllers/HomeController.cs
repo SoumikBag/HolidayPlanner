@@ -29,5 +29,13 @@ namespace HolidayPlanner.Controllers
 
             return View();
         }
+
+        public ActionResult Living()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
     }
 }

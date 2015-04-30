@@ -21,10 +21,21 @@ namespace HolidayPlanner
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/classie.js",
+                      "~/Scripts/jquery.easydropdown.js",
+                      "~/Scripts/jquery.swipebox.js",
+                      "~/Scripts/login.js",
+                      "~/Scripts/responsive-nav.js",
+                      "~/Scripts/uisearch.js",
+                      "~/Scripts/wow.min.js"                    
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/animate.css",
+                      "~/Content/style.css",
+                      "~/Content/swipebox.css",
                       "~/Content/site.css"));
         }
     }
