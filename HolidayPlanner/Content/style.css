@@ -363,7 +363,7 @@ a#loginButton img {
 	vertical-align: bottom;
 }
 .banner{
-	background: no-repeat center;
+	background: no-repeat center top;
     background-image:url('../images/A Sunset on a Texas Farm.jpg'),url(../images/2.jpg),url(../images/1.jpg),url('../images/A Sunset on a Texas Farm.jpg') ;
 	background-size:cover;
     
@@ -380,127 +380,127 @@ a#loginButton img {
 
 	min-height:600px;
 	text-align:center;
-	padding-top:3em;
+	padding-top:10em;
 }
 
 @keyframes banner {
  0% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  23% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  33% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  56% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  66% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  90% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  100% {
-    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
  }
  
 }
  
 @-moz-keyframes banner {
  0% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  23% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  33% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  56% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  66% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  90% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  100% {
-    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
  }
 }
  
 @-webkit-keyframes banner {
   0% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  23% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  33% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  56% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  66% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  90% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  100% {
-    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
  }
 }
  
 @-ms-keyframes banner {
- 0% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+  0% {
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  23% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  33% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  56% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  66% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  90% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  100% {
-    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
  }
 }
  
 @-o-keyframes banner {
- 0% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+  0% {
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  23% {
-    background-position: 0px 0px, 1250px 0px, 2500px 0px, 5000px 0;
+    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
  }
  33% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  56% {
-    background-position: -1250px 0px, 0px 0px, 1250px 0px, 2500px 0;
+    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
  }
  66% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  90% {
-    background-position: -2500px 0px, -1250px 0px, 0px 0px, 1250px 0;
+    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
  }
  100% {
-    background-position: -5000px 0px, -2500px 0px, -1250px 0px, 0px 0;
+    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
  }
  
 }

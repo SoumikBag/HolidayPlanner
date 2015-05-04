@@ -83,7 +83,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div id="loginContainer">
                     @if (Request.IsAuthenticated)
                     {
-                        using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logoutForm"}))
                         {
                             @Html.AntiForgeryToken()
                             <a href="#" id="loginButton"><img src="~/Images/login.png"><span> @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span></a>
