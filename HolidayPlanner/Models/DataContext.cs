@@ -17,10 +17,10 @@ namespace HolidayPlanner.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-                modelBuilder.Entity<Role>()
-                .HasMany(e => e.Users)
-                .WithMany(e => e.Roles)
-                .Map(m => m.ToTable("UserInRole").MapLeftKey("RoleId").MapRightKey("UserId"));
+            modelBuilder.Entity<Role>()
+            .HasMany(e => e.Users)
+            .WithMany(e => e.Roles)
+            .Map(m => m.ToTable("UserInRole").MapLeftKey("RoleId").MapRightKey("UserId"));
         }
     }
 }

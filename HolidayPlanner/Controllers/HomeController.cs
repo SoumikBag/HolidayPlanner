@@ -39,6 +39,15 @@ namespace HolidayPlanner.Controllers
         }
 
 
+
+
+        public int GetLastInsertedId()
+        {
+           
+
+        }
+
+
         [HttpGet]
         public ActionResult Register()
         {
@@ -51,11 +60,11 @@ namespace HolidayPlanner.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var db = new HolidayPlanner.Models.Register())
+                using (var db = new HolidayPlanner.Models.Register1())
                 {
                     
                     var newUser = db.Users.Create();
-                    //newUser.UserId = user.UserId;
+                    newUser.UserId = user.UserId;
                     newUser.UserName = user.UserName;
                     newUser.EmailId = user.EmailId;
                     newUser.ContactNo = user.ContactNo;

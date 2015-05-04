@@ -9,8 +9,8 @@ namespace HolidayPlanner.Models
     [Table("User")]
     public partial class User
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserId { get; set; }
 
         [StringLength(50)]

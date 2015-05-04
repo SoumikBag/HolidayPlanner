@@ -130,6 +130,7 @@
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\Register1.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -249,6 +250,9 @@
     <Content Include="Views\Error\AccessDenied.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\LogOut.cshtml" />
+    <Content Include="Views\Home\Register.cshtml">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
