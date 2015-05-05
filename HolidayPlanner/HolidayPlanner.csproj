@@ -238,6 +238,7 @@
     <Content Include="Views\Home\education.html" />
     <Content Include="Views\Home\entertain.html" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\First.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

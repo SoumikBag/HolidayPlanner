@@ -86,6 +86,13 @@ namespace HolidayPlanner.Controllers
             ViewBag.Message = "Please register yourself";
             return View();
         }
-         
+
+        [HttpGet]
+        public ActionResult First()
+        {
+            return View();
+        }
+
+    
     }
 }
