@@ -38,6 +38,7 @@ namespace HolidayPlanner
                       "~/Content/style.css",
                       "~/Content/swipebox.css",
                       "~/Content/nivo-slider.css",
+                      "~/Content/main1.css",
                       "~/Content/default.css"));
         }
     }
