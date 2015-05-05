@@ -362,8 +362,8 @@ input:focus {
 a#loginButton img {
 	vertical-align: bottom;
 }
-.banner{
-	background: no-repeat center top;
+/*.banner{*/
+	/*background: no-repeat center top;
     background-image:url('../images/A Sunset on a Texas Farm.jpg'),url(../images/2.jpg),url(../images/1.jpg),url('../images/A Sunset on a Texas Farm.jpg') ;
 	background-size:cover;
     
@@ -377,141 +377,28 @@ a#loginButton img {
   -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
   box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 
-
+  
 	min-height:600px;
 	text-align:center;
 	padding-top:10em;
-}
+}*/
 
-@keyframes banner {
- 0% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 23% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 33% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 56% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 66% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 90% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 100% {
-    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
- }
- 
+#wrapper{
+    min-height:600px;
+    text-align:center;
+    padding-top:3em;
 }
- 
-@-moz-keyframes banner {
- 0% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 23% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 33% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 56% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 66% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 90% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 100% {
-    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
- }
-}
- 
-@-webkit-keyframes banner {
-  0% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 23% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 33% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 56% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 66% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 90% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 100% {
-    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
- }
-}
- 
-@-ms-keyframes banner {
-  0% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 23% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 33% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 56% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 66% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 90% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 100% {
-    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
- }
-}
- 
-@-o-keyframes banner {
-  0% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 23% {
-    background-position: 0px 0px, 1263px 0px, 2526px 0px, 5052px 0;
- }
- 33% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 56% {
-    background-position: -1263px 0px, 0px 0px, 1263px, 0px, 2526px 0;
- }
- 66% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 90% {
-    background-position: -2526px 0px, -1263px 0px, 0px 0px, 1263px 0;
- }
- 100% {
-    background-position: -5052px 0px, -2526px 0px, -1263px 0px, 0px 0;
- }
- 
-}
-
 
 .container_wrap{
     background:transparent;
     color: transparent;
 	margin:0 auto;
 	width:50%;
-    
+    padding-top:inherit;
+    z-index:100!important;
+  margin-top:150px!important;
+   position:relative;
+   text-align:center;
 
     -webkit-transition: color 0.5s ease, background-color 0.5s ease;
   -moz-transition: color 0.5s ease, background-color 0.5s ease;
@@ -521,7 +408,7 @@ a#loginButton img {
 }
 
 .container_wrap:hover {
-  background: #000; /*for old browsers*/
+  background: #000; 
   background: rgba(0,0,0,0.8);
   color: #fff;
 }
