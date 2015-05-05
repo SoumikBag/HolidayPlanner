@@ -139,6 +139,8 @@
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\main1.css" />
+    <Content Include="Content\default.css" />
+    <Content Include="Content\nivo-slider.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\swipebox.css" />
     <Content Include="favicon.ico" />
@@ -150,10 +152,12 @@
     <Content Include="Images\adventure.jpg" />
     <Content Include="Images\area.png" />
     <Content Include="Images\arrow.png" />
+    <Content Include="Images\arrows.png" />
     <Content Include="Images\banner.jpg" />
     <Content Include="Images\beach-facing.jpg" />
     <Content Include="Images\beach-stay.jpg" />
     <Content Include="Images\bed.png" />
+    <Content Include="Images\bullets.png" />
     <Content Include="Images\download.jpg" />
     <Content Include="Images\drop.png" />
     <Content Include="Images\e1.jpg" />
@@ -172,6 +176,7 @@
     <Content Include="Images\l1.jpg" />
     <Content Include="Images\l2.jpg" />
     <Content Include="Images\l3.jpg" />
+    <Content Include="Images\loading.gif" />
     <Content Include="Images\login.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo1.jpg" />
@@ -215,6 +220,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery.easydropdown.js" />
+    <Content Include="Scripts\jquery.nivo.slider.pack.js" />
     <Content Include="Scripts\jquery.swipebox.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />

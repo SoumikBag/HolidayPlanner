@@ -86,6 +86,6 @@ namespace HolidayPlanner.Controllers
             ViewBag.Message = "Please register yourself";
             return View();
         }
-         public void 
+         
     }
 }

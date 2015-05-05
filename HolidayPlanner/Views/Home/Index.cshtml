@@ -2,47 +2,38 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
-    <div class="banner">
-        <div class="container_wrap">
-            <h1>What are you looking for?</h1>
-            <div class="dropdown-buttons">
-                <div class="dropdown-button">
-                    <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-                        <option value="0">Dubai</option>
-                        <option value="1">Australia</option>
-                        <option value="2">Sri Lanka</option>
-                        <option value="3">Newziland</option>
-                        <option value="4">Pakistan</option>
-                        <option value="5">United Kingdom</option>
-                        <option value="6">United states</option>
-                        <option value="7">Russia</option>
-                        <option value="8">Mirum</option>
-                    </select>
-                </div>
-                <div class="dropdown-button">
-                    <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-                        <option value="0">Education</option>
-                        <option value="1">tempor</option>
-                        <option value="2">congue</option>
-                        <option value="3">mazim </option>
-                        <option value="4">mutationem</option>
-                        <option value="5">hendrerit </option>
-                        <option value="5"></option>
-                        <option value="5"></option>
-                    </select>
-                </div>
+}
+<script>
+    $(window).load(function () {
+        $('#slider').nivoSlider({
+            directionNavHide: false,
+            captionOpacity: 1,
+            prevText: '<',
+            nextText: '>'
+
+        });
+    });
+</script>
+
+    <div id="wrapper">
+        
+        <div class="slider-wrapper theme-default">
+
+            <div id="slider" class="nivoSlider">
+                <img src="~/Images/1.jpg" />
+
+                <img src="~/Images/2.jpg" />
+
+                <img src="~/Images/A Sunset on a Texas Farm.jpg" />
+
+                
             </div>
-            <form>
-                <input type="text" value="Keyword, name, date, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">
-                <div class="contact_btn">
-                    <label class="btn1 btn-2 btn-2g"><input name="submit" type="submit" id="submit" value="Search"></label>
-                </div>
-            </form>
-            <div class="clearfix"></div>
+
+            
         </div>
-    </div>
+</div>
+               
     <div class="content_top">
         <div class="container">
             <div style="font-family: 'PT Sans Narrow', 'Open Sans Condensed', Arial, sans-serif;text-shadow:0 0 2px rgba(0, 0, 0, 0.6);font-weight: bold;font-size:3em;word-spacing:0.192em;padding:0.25em 0 0.5em 0;text-align:center;color:#333;line-height: 1em;display:block;">
