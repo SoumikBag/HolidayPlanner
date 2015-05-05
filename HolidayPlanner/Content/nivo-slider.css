@@ -13,6 +13,7 @@
 	width:100%;
 	height:600px;
 	overflow: hidden;
+    z-index:100!important;
 }
 .nivoSlider img {
 	position:absolute;
@@ -24,6 +25,7 @@
 	display: block !important;
 	position: relative !important; 
 	width: 100% !important;
+    z-index: 100!important;
 }
 
 /* If an image is wrapped in a link */

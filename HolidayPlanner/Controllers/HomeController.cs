@@ -41,11 +41,11 @@ namespace HolidayPlanner.Controllers
 
 
 
-        public int GetLastInsertedId()
-        {
+        //public int GetLastInsertedId()
+        //{
            
 
-        }
+        //}
 
 
         [HttpGet]
