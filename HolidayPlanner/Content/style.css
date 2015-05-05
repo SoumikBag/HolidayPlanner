@@ -392,11 +392,13 @@ a#loginButton img {
 .container_wrap{
     background:transparent;
     color: transparent;
-	margin-top:200px auto;
+	margin:0 auto;
 	width:50%;
     padding-top:inherit;
-    text-align:center;
-    float:inherit;
+    z-index:100!important;
+  margin-top:150px!important;
+   position:relative;
+   text-align:center;
 
     -webkit-transition: color 0.5s ease, background-color 0.5s ease;
   -moz-transition: color 0.5s ease, background-color 0.5s ease;
@@ -406,7 +408,7 @@ a#loginButton img {
 }
 
 .container_wrap:hover {
-  background: #000; /*for old browsers*/
+  background: #000; 
   background: rgba(0,0,0,0.8);
   color: #fff;
 }

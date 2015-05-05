@@ -43,10 +43,9 @@ namespace HolidayPlanner.Controllers
 
         //public int GetLastInsertedId()
         //{
-           
-
+        //    return Context.
         //}
-
+           
 
         [HttpGet]
         public ActionResult Register()
@@ -58,13 +57,19 @@ namespace HolidayPlanner.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
+
+
+
             if (ModelState.IsValid)
             {
                 using (var db = new HolidayPlanner.Models.Register1())
                 {
                     
                     var newUser = db.Users.Create();
+                    int lastUserId = db.Users.Max(item => item.UserId); //added by Sandy for ID Auto-Increment 
+                    user.UserId = lastUserId + 1; 
                     newUser.UserId = user.UserId;
+                    
                     newUser.UserName = user.UserName;
                     newUser.EmailId = user.EmailId;
                     newUser.ContactNo = user.ContactNo;
@@ -74,6 +79,7 @@ namespace HolidayPlanner.Controllers
 
                     db.Users.Add(newUser);
                     db.SaveChanges();
+                  
                   
                     ViewBag.Message = "Registration Successfully Done ";
                     return RedirectToAction("Index", "Home");
@@ -87,12 +93,14 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult First()
+        public ActionResult Info()
         {
+
+
+
             return View();
         }
 
-    
+
     }
 }

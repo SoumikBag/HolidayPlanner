@@ -13,16 +13,25 @@ namespace HolidayPlanner.Models
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserId { get; set; }
 
+
+        [Required]
         [StringLength(50)]
         public string UserName { get; set; }
 
+
+        [Required]
         [StringLength(50)]
         public string EmailId { get; set; }
 
+
+        [Required]
         [StringLength(50)]
         public string ContactNo { get; set; }
 
+
+        [Required]
         [StringLength(50)]
+        
         public string Password { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
