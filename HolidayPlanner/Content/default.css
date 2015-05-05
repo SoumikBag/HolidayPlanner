@@ -11,9 +11,11 @@ Supports Thumbs: true
 
 .theme-default .wrapper{
    
-    min-height:600px;
+    height:600px;
     text-align:center;
     padding-top:3em;
+    
+    position:relative;
 }
 
 
@@ -24,11 +26,10 @@ Supports Thumbs: true
     color: transparent;
 	margin:0 auto;
 	width:50%;
+    
     padding-top:inherit;
     z-index:2!important;
-  margin-top:150px!important;
-  margin-bottom:250px;
-
+  margin-top:50px;
    position:relative;
    text-align:center;
 
@@ -56,9 +57,11 @@ Supports Thumbs: true
     -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
     box-shadow: 0px 1px 5px 0px #4a4a4a;
 }
+
+
 .theme-default .nivoSlider img {
 	position:absolute;
-    
+    z-index:1;
 	top:0px;
 	left:0px;
 	display:none;
@@ -69,6 +72,7 @@ Supports Thumbs: true
 }
 
 .theme-default .nivo-controlNav {
+    position:relative;
 	text-align: center;
 	padding: 20px 0;
 }
@@ -80,6 +84,7 @@ Supports Thumbs: true
 	text-indent:-9999px;
 	border:0;
 	margin: 0 2px;
+    z-index:3;
 }
 .theme-default .nivo-controlNav a.active {
 	background-position:0 -22px;
