@@ -138,6 +138,7 @@
   <ItemGroup>
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\main1.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\swipebox.css" />
     <Content Include="favicon.ico" />

@@ -41,11 +41,11 @@ namespace HolidayPlanner.Controllers
 
 
 
-        public int GetLastInsertedId()
-        {
+        //public int GetLastInsertedId()
+        //{
            
 
-        }
+        //}
 
 
         [HttpGet]
@@ -86,6 +86,6 @@ namespace HolidayPlanner.Controllers
             ViewBag.Message = "Please register yourself";
             return View();
         }
-
+         public void 
     }
 }
