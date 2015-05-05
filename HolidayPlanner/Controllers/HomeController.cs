@@ -38,16 +38,7 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-
-
-
-        public int GetLastInsertedId()
-        {
-           
-
-        }
-
-
+        
         [HttpGet]
         public ActionResult Register()
         {
@@ -58,6 +49,9 @@ namespace HolidayPlanner.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
+
+
+
             if (ModelState.IsValid)
             {
                 using (var db = new HolidayPlanner.Models.Register1())
@@ -86,6 +80,15 @@ namespace HolidayPlanner.Controllers
             ViewBag.Message = "Please register yourself";
             return View();
         }
+
+        public ActionResult Info()
+        {
+
+
+
+            return View();
+        }
+
 
     }
 }
