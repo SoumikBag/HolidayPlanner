@@ -176,6 +176,7 @@
     <Content Include="Images\l1.jpg" />
     <Content Include="Images\l2.jpg" />
     <Content Include="Images\l3.jpg" />
+    <Content Include="Images\list.png" />
     <Content Include="Images\loading.gif" />
     <Content Include="Images\login.png" />
     <Content Include="Images\logo.png" />

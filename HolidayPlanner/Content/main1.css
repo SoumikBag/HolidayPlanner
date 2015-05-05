@@ -2641,7 +2641,7 @@ body > #superoutercontainer {
           float: right;
           top: 7px; }
     .menu_flexible li .drop {
-      background: url("img/drop.png") no-repeat right 8px; }
+      background: url("../Images/drop.png") no-repeat right 8px; }
     .menu_flexible li:hover {
       /* Background color and gradients */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -2858,7 +2858,7 @@ body > #superoutercontainer {
 
 .icon-filter {
   display: inline-block;
-  background-image: url(images/all-sprites.png);
+  background-image: url(../Images/list.png);
   background-position: 0px -124px;
   height: 16px;
   width: 16px;
