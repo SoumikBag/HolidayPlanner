@@ -96,8 +96,6 @@ namespace HolidayPlanner.Controllers
         public ActionResult Info()
         {
 
-
-
             return View();
         }
 
