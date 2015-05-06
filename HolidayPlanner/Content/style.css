@@ -11,7 +11,7 @@ p {margin: 0;}
 html, body{
    font-family: 'Montserrat', sans-serif;
    font-size: 100%;
-   background:#fff; 
+   background-color: #faf9f0;
 }
 body a{
 	transition:0.5s all;
@@ -387,6 +387,8 @@ a#loginButton img {
     min-height:600px;
     text-align:center;
     padding-top:3em;
+    min-width:90%;
+    position:relative;
 }
 
 .container_wrap{
@@ -395,8 +397,8 @@ a#loginButton img {
 	margin:0 auto;
 	width:50%;
     padding-top:inherit;
-    z-index:100!important;
-  margin-top:150px!important;
+    z-index:2!important;
+  
    position:relative;
    text-align:center;
 
@@ -705,6 +707,7 @@ a#loginButton img {
 }
 /*--content--*/
 .content_top{
+    
 	background:#fff;
 	padding:13px 0 5px;
 	border-bottom: 1px solid #E6E5E5;
