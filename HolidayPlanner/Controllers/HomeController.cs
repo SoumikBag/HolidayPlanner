@@ -95,10 +95,18 @@ namespace HolidayPlanner.Controllers
 
         public ActionResult Info()
         {
+                    
+            //var db = new HolidayPlanner.Models.InfoData();
+                       
+            //var hotelinfo = db.Hotels.Where(h=>h.HotelId==11);
 
-
+            //var model = (from p in db.Hotels
+            //             where p.HotelId == 11
+            //             select p).ToList();
 
             return View();
+
+            
         }
 
 
