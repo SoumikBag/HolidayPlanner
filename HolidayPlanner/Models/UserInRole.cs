@@ -1,4 +1,4 @@
-﻿namespace HolidayPlanner.Models
+namespace HolidayPlanner.Models
 {
     using System;
     using System.Collections.Generic;
@@ -14,19 +14,9 @@
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserId { get; set; }
 
-
-        //[ForeignKey("RoleId")]
-        //[Column(Order = 1)]
+        [Key]
+        [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        //public int MyProperty { get; set; }
-        //public int RoleId { get; set; }
-
-
-        //Foreign key for Standard
         public int RoleId { get; set; }
-
-        //[ForeignKey("RoleId")]
-        //public Role Role { get; set; }
-        //public virtual ICollection<User> Users { get; set; }
     }
 }
