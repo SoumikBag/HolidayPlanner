@@ -151,7 +151,8 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        public ActionResult Info()
+        [HttpGet]
+        public ActionResult First()
         {
 
             //var db = new HolidayPlanner.Models.InfoData();
