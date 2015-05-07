@@ -2513,7 +2513,7 @@ body > #superoutercontainer {
     #filterpanelmask #infscr-loading a.close {
       background: #C94A00;
       color: white;
-      padding: 0.5em;
+      padding: 0.5em;displaybar
       -moz-border-radius-topleft: 2px;
       border-top-left-radius: 2px;
       -webkit-border-topleft-radius: 2px;
@@ -3292,7 +3292,7 @@ body > #superoutercontainer {
   background: #131216; }
 
 #resultbar {
-  width: 80em;
+  width: 65em;
   margin: 0 auto 0 auto;
   color: white; }
   #resultbar #leftpanel {
@@ -3300,10 +3300,10 @@ body > #superoutercontainer {
     height: 8em;
     float: left; }
   #resultbar #rightpanel {
-    width: 80em;
+    width: 65em;
     float: right; }
     #resultbar #rightpanel #resulthotelwrapper {
-      width: 80em;
+      width: 65em;
       height: 8em;
       padding: 0.75em 0 0 0;
       position: relative; }
@@ -3320,12 +3320,12 @@ body > #superoutercontainer {
         background: url(images/bigimagegalleryarrows.png) no-repeat scroll 0 0 !important;
         left: -5em !important; }
       #resultbar #rightpanel #resulthotelwrapper #listofplanshotelwrapper {
-        width: 80em;
+        width: 65em;
         height: 8em; }
         #resultbar #rightpanel #resulthotelwrapper #listofplanshotelwrapper #listofhotelplans {
           height: 8em; }
           #resultbar #rightpanel #resulthotelwrapper #listofplanshotelwrapper #listofhotelplans .item {
-            width: 80em; }
+            width: 65em; }
           #resultbar #rightpanel #resulthotelwrapper #listofplanshotelwrapper #listofhotelplans .plan {
             height: 7em;
             width: 9.25em;
@@ -3387,11 +3387,11 @@ body > #superoutercontainer {
       color: #efb100; }
 
 #resultdetailbackground {
-  width: 80em;
+  width: 65em;
   z-index: -2; }
 
 #resultdetail {
-  width: 80em;
+  width: 65em;
   margin: 0.5em auto 0 auto;
   z-index: 10; }
 
