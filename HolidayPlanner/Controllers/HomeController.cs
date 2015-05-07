@@ -71,14 +71,14 @@ namespace HolidayPlanner.Controllers
                     db.Users.Add(newUser);
                     db.SaveChanges();
         
-                  
+
 
                     using (var db2 = new HolidayPlanner.Models.UserInRoleContext())
                     {
                         var userrole = db2.UserInRoles.Create();
-                                                  
-                        {
-                            
+
+                    {
+
                             userrole.UserId = test;
                             userrole.RoleId = 1;
                             db2.UserInRoles.Add(userrole);
