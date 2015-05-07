@@ -21,20 +21,25 @@ namespace HolidayPlanner.Models
 
         [Required]
         [StringLength(50)]
+        [EmailAddress(ErrorMessage = "Please enter a valid Email address")]
         public string EmailId { get; set; }
 
 
         [Required]
         [StringLength(50)]
+        [RegularExpression(@"^[0-9]{8,11}$", ErrorMessage = "Please enter a valid Contact number ")] 
         public string ContactNo { get; set; }
 
 
         [Required]
         [StringLength(50)]
-        
+        [DataType(DataType.Password)]
         public string Password { get; set; }
+
 
         public virtual ICollection<Role> Roles { get; set; }
 
+
+        public Role Role { get; set; }
     }
 }
