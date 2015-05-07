@@ -53,8 +53,6 @@ namespace HolidayPlanner.Controllers
 
             if (ModelState.IsValid)
             {
-
-                //using (var db = new HolidayPlanner.Models.Register1())
                 using (var db = new HolidayPlanner.Models.Register())
 
                 {
@@ -83,6 +81,15 @@ namespace HolidayPlanner.Controllers
                         var userrole = db2.UserInRoles.Create();
                     
                     {
+                        var userrole = db2.UserInRoles.Create();
+                        //var role = db1.Roles.Create();
+                        {
+                            //var newUser1 = db.Users.Create();
+                            //int lastUserID = db.Users.Max(item => item.UserId); //added by Sandy for ID Auto-Increment 
+                            //user.UserId = lastUserID + 1;
+                            //newUser1.UserId = user.UserId;
+
+
 
                             userrole.UserId = test;
 
@@ -123,7 +130,7 @@ namespace HolidayPlanner.Controllers
             
         }
 
-       
+
 
     }
 }
