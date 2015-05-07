@@ -157,6 +157,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
+    <Content Include="Images\10433_t.jpeg" />
+    <Content Include="Images\18211_t.jpeg" />
+    <Content Include="Images\18918_t.jpeg" />
+    <Content Include="Images\18980_t.jpeg" />
+    <Content Include="Images\19011_t.jpeg" />
+    <Content Include="Images\19295_t.jpeg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\A Sunset on a Texas Farm.jpg" />
     <Content Include="Images\adventure.jpg" />
