@@ -9,7 +9,9 @@ namespace HolidayPlanner
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
+                        //"~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.js",
+                        "~/Scripts/jquery-ui.min.js",
                         "~/Scripts/jquery.nivo.slider.pack.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -39,6 +41,7 @@ namespace HolidayPlanner
                       "~/Content/swipebox.css",
                       "~/Content/nivo-slider.css",
                       "~/Content/main1.css",
+                      "~/Content/jquery-ui.css",
                       "~/Content/default.css"));
         }
     }
