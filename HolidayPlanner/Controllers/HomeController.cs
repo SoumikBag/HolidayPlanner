@@ -90,19 +90,19 @@ namespace HolidayPlanner.Controllers
                     //}
 
 
-                    
+
                     using (var db2 = new HolidayPlanner.Models.UserInRoleContext())
                     {
                         var userrole = db2.UserInRoles.Create();
-                        
-                        {
-                            
+                    
+                    {
+
                             userrole.UserId = test;
 
                             userrole.RoleId = 1;
                             db2.UserInRoles.Add(userrole);
                             db2.SaveChanges();
-                            
+
                         }
                     }
 
@@ -119,7 +119,8 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        public ActionResult Info()
+        [HttpGet]
+        public ActionResult First()
         {
 
             //var db = new HolidayPlanner.Models.InfoData();

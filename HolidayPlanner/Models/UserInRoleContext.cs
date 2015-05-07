@@ -13,7 +13,7 @@ namespace HolidayPlanner.Models
         }
 
         public virtual DbSet<UserInRole> UserInRoles { get; set; }
-
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
