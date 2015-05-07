@@ -25,13 +25,13 @@ namespace HolidayPlanner.Models
             .WithMany(e => e.Roles)
             .Map(m => m.ToTable("UserInRole").MapLeftKey("RoleId").MapRightKey("UserId"));
 
-            modelBuilder.Entity<User>()
-            .HasMany(g => g.UserInRoles)
-            .WithRequired(gm => gm.User);
+            //modelBuilder.Entity<User>()
+            //.HasMany(g => g.UserInRoles)
+            //.WithRequired(gm => gm.User);
 
-            modelBuilder.Entity<Role>()
-                .HasMany(u => u.UserInRoles)
-                .WithRequired(gm => gm.Role);
+            //modelBuilder.Entity<Role>()
+            //    .HasMany(u => u.UserInRoles)
+            //    .WithRequired(gm => gm.Role);
 
             
         }

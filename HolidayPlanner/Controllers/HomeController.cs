@@ -110,30 +110,30 @@ namespace HolidayPlanner.Controllers
 
 
 
-                            var user1 = new User { UserId = test, roles = new List<Role>()};
-                            var role = new Role { RoleId = 1 };
+                            //var user1 = new User { UserId = test, roles = new List<Role>()};
+                            //var role = new Role { RoleId = 1 };
 
-                            db2.Users.Attach(user);
-                            db2.Roles.Attach(role);
+                            //db2.Users.Attach(user);
+                            //db2.Roles.Attach(role);
 
-                            user..Add(role);
+                            //user..Add(role);
 
-                            db2.SaveChanges();
-
-
+                            //db2.SaveChanges();
 
 
 
-                            userrole.UserId = test;
 
-                            userrole.RoleId = 1;
-                            db2.UserInRoles.Add(userrole);
-                            db2.SaveChanges();
-                            role.RoleId = 1;
-                            role.RoleName = "Client";
-                            db1.Roles.Add(role);
 
-                            db1.SaveChanges();
+                            //userrole.UserId = test;
+
+                            //userrole.RoleId = 1;
+                            //db2.UserInRoles.Add(userrole);
+                            //db2.SaveChanges();
+                            //role.RoleId = 1;
+                            //role.RoleName = "Client";
+                            //db1.Roles.Add(role);
+
+                            //db1.SaveChanges();
 
                         }
                     }
