@@ -11,7 +11,7 @@ p {margin: 0;}
 html, body{
    font-family: 'Montserrat', sans-serif;
    font-size: 100%;
-   background:#fff; 
+   background-color: #faf9f0;
 }
 body a{
 	transition:0.5s all;
@@ -387,16 +387,20 @@ a#loginButton img {
     min-height:600px;
     text-align:center;
     padding-top:3em;
+    min-width:90%;
+    position:relative;
 }
 
 .container_wrap{
     background:transparent;
     color: transparent;
-	margin-top:200px auto;
+	margin:0 auto;
 	width:50%;
     padding-top:inherit;
-    text-align:center;
-    float:inherit;
+    z-index:2!important;
+  
+   position:relative;
+   text-align:center;
 
     -webkit-transition: color 0.5s ease, background-color 0.5s ease;
   -moz-transition: color 0.5s ease, background-color 0.5s ease;
@@ -406,7 +410,7 @@ a#loginButton img {
 }
 
 .container_wrap:hover {
-  background: #000; /*for old browsers*/
+  background: #000; 
   background: rgba(0,0,0,0.8);
   color: #fff;
 }
@@ -703,6 +707,7 @@ a#loginButton img {
 }
 /*--content--*/
 .content_top{
+    
 	background:#fff;
 	padding:13px 0 5px;
 	border-bottom: 1px solid #E6E5E5;

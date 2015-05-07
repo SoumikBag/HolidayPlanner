@@ -1,0 +1,92 @@
+﻿@model HolidayPlanner.Models.Hotel
+@*@model HolidayPlanner.Models.Facility*@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Info</title>
+</head>
+<body>
+    <div>
+        <h4>Hotel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+              
+                @Html.DisplayNameFor(model => model.Facility.FacilitiesType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Facility.FacilitiesType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HotelType.HotelType1)x
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HotelType.HotelType1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Room.RoomType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Room.RoomType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HotelName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HotelName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CityId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CityId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HotelPolices)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HotelPolices)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FoodDetails)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FoodDetails)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.HotelId }) |*@
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -41,6 +41,12 @@ namespace HolidayPlanner.Controllers
 
 
 
+        //public int GetLastInsertedId()
+        //{
+        //    return Context.
+        //}
+
+
         [HttpGet]
         public ActionResult Register()
         {
@@ -51,6 +57,9 @@ namespace HolidayPlanner.Controllers
         [HttpPost]
         public ActionResult Register(User user, UserInRole userinrole)
         {
+
+
+
             if (ModelState.IsValid)
             {
 
@@ -60,22 +69,22 @@ namespace HolidayPlanner.Controllers
                 using (var db = new HolidayPlanner.Models.DataContext())
 
                 {
-
+                    
                     var newUser = db.Users.Create();
                     int lastUserId = db.Users.Max(item => item.UserId); //added by Sandy for ID Auto-Increment 
-                    user.UserId = lastUserId + 1;
+                    user.UserId = lastUserId + 1; 
                     newUser.UserId = user.UserId;
                     var test = (newUser.UserId);
                     newUser.UserName = user.UserName;
                     newUser.EmailId = user.EmailId;
                     newUser.ContactNo = user.ContactNo;
-
+                   
                     newUser.Password = user.Password;
-
+                   
 
                     db.Users.Add(newUser);
                     db.SaveChanges();
-
+        
                     //using (var db1 = new HolidayPlanner.Models.RoleContext())
                     //{
                     //    var role = db1.Roles.Create();
@@ -94,7 +103,7 @@ namespace HolidayPlanner.Controllers
                     {
                         var userrole = db2.UserInRoles.Create();
                         //var role = db1.Roles.Create();
-
+                  
                         {
                             //var newUser1 = db.Users.Create();
                             //int lastUserID = db.Users.Max(item => item.UserId); //added by Sandy for ID Auto-Increment 
@@ -134,12 +143,28 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
+        public ActionResult Info()
+        {
+
+            //var db = new HolidayPlanner.Models.InfoData();
+                       
+            //var hotelinfo = db.Hotels.Where(h=>h.HotelId==11);
+
+            //var model = (from p in db.Hotels
+            //             where p.HotelId == 11
+            //             select p).ToList();
+
+            return View();
+
+            
+        }
+
         [HttpGet]
         public ActionResult First()
         {
             return View();
         }
 
-    
+
     }
 }

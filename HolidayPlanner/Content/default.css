@@ -7,23 +7,42 @@ Author: Gilbert Pellegrom
 Author URI: http://dev7studios.com
 Supports Thumbs: true
 */
+
+
+.theme-default .wrapper{
+   
+    height:600px;
+    text-align:center;
+    padding-top:3em;
+    
+    position:relative;
+}
+
+
+
 .theme-default .container-wrap{
-    width: 400px;
-  height: 600px;
-  background:transparent;
-  color: transparent;
-  
-  overflow: hidden;
-  
- 
-  -webkit-transition: color 0.5s ease, background-color 0.5s ease;
+
+    background:transparent;
+    color: transparent;
+	margin:0 auto;
+	width:50%;
+    
+    padding-top:inherit;
+    z-index:2!important;
+  margin-top:150px;
+  margin-left:300px;
+
+   position:absolute;
+   text-align:center;
+
+    -webkit-transition: color 0.5s ease, background-color 0.5s ease;
   -moz-transition: color 0.5s ease, background-color 0.5s ease;
   -o-transition: color 0.5s ease, background-color 0.5s ease;
   -ms-transition: color 0.5s ease, background-color 0.5s ease;
   transition: color 0.5s ease, background-color 0.5s ease;
 }
 
-.theme-default .container_wrap:hover {
+.theme-default .container-wrap:hover {
   background: #000; /*for old browsers*/
   background: rgba(0,0,0,0.8);
   color: #fff;
@@ -34,12 +53,17 @@ Supports Thumbs: true
 	position:relative;
 	background:transparent;
     margin-bottom:10px;
+    z-index:1;
+
     -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
     -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
     box-shadow: 0px 1px 5px 0px #4a4a4a;
 }
+
+
 .theme-default .nivoSlider img {
-	position:absolute;
+	position:relative;
+    z-index:1;
 	top:0px;
 	left:0px;
 	display:none;
@@ -50,6 +74,7 @@ Supports Thumbs: true
 }
 
 .theme-default .nivo-controlNav {
+    position:relative;
 	text-align: center;
 	padding: 20px 0;
 }
@@ -61,6 +86,7 @@ Supports Thumbs: true
 	text-indent:-9999px;
 	border:0;
 	margin: 0 2px;
+    z-index:1;
 }
 .theme-default .nivo-controlNav a.active {
 	background-position:0 -22px;
