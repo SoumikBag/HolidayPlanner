@@ -93,11 +93,9 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        public ActionResult Info()
+        [HttpGet]
+        public ActionResult First()
         {
-
-
-
             return View();
         }
 
