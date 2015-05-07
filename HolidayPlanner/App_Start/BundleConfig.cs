@@ -12,6 +12,7 @@ namespace HolidayPlanner
                         //"~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery.js",
                         "~/Scripts/jquery-ui.min.js",
+                        "~/Scripts/jquery.simplyscroll.js",
                         "~/Scripts/jquery.nivo.slider.pack.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -42,6 +43,7 @@ namespace HolidayPlanner
                       "~/Content/nivo-slider.css",
                       "~/Content/main1.css",
                       "~/Content/jquery-ui.css",
+                      "~/Content/jquery.simplyscroll.css",
                       "~/Content/default.css"));
         }
     }
