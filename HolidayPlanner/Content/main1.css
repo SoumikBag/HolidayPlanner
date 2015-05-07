@@ -3309,7 +3309,7 @@ body > #superoutercontainer {
       padding: 0.75em 0 0 0;
       position: relative; }
       #resultbar #rightpanel #resulthotelwrapper a.right {
-        background: url(images/bigimagegalleryarrows.png) no-repeat scroll -45px 0 !important;
+        background: url(../Images/arrows.png) no-repeat scroll -30px 0 !important;
         right: -5em !important; }
       #resultbar #rightpanel #resulthotelwrapper a.browse {
         margin-top: -35px !important;
@@ -3318,7 +3318,7 @@ body > #superoutercontainer {
         border-style: none !important;
         box-shadow: none !important; }
       #resultbar #rightpanel #resulthotelwrapper a.left {
-        background: url(images/bigimagegalleryarrows.png) no-repeat scroll 0 0 !important;
+        background: url(../Images/arrows.png) no-repeat scroll 15px 0 !important;
         left: -5em !important; }
       #resultbar #rightpanel #resulthotelwrapper #listofplanshotelwrapper {
         width: 80em;
