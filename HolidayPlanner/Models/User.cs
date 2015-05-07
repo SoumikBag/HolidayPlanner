@@ -9,32 +9,22 @@ namespace HolidayPlanner.Models
     [Table("User")]
     public partial class User
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserId { get; set; }
 
-
-        [Required]
         [StringLength(50)]
         public string UserName { get; set; }
 
-
-        [Required]
         [StringLength(50)]
         public string EmailId { get; set; }
 
-
-        [Required]
         [StringLength(50)]
         public string ContactNo { get; set; }
 
-
-        [Required]
         [StringLength(50)]
-        
         public string Password { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
-
+        public virtual ICollection<UserInRole> UserInRoles { get; set; }
     }
 }
