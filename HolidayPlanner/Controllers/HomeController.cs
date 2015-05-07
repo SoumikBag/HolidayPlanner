@@ -39,10 +39,6 @@ namespace HolidayPlanner.Controllers
         }
 
 
-        //public int GetLastInsertedId()
-        //{
-        //    return Context.
-        //}
 
 
         [HttpGet]
@@ -78,16 +74,7 @@ namespace HolidayPlanner.Controllers
                     db.Users.Add(newUser);
                     db.SaveChanges();
         
-                    //using (var db1 = new HolidayPlanner.Models.RoleContext())
-                    //{
-                    //    var role = db1.Roles.Create();
-                    //    {
-                    //        role.RoleId = 1;
-                    //        role.RoleName = "Client";
-                    //        //db1.Roles.Add(role);
-                    //        //db1.SaveChanges();
-                    //    }
-                    //}
+                   
 
 
 
