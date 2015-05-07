@@ -58,12 +58,8 @@ namespace HolidayPlanner.Controllers
         public ActionResult Register(User user)
         {
 
-
-
             if (ModelState.IsValid)
             {
-
-                //using (var db = new HolidayPlanner.Models.Register1())
                 using (var db = new HolidayPlanner.Models.Register())
 
                 {
@@ -99,7 +95,7 @@ namespace HolidayPlanner.Controllers
                     
                     using (var db2 = new HolidayPlanner.Models.UserRolecontext())
                     {
-                        //var userrole = db2.UserInRoles.Create();
+                        var userrole = db2.UserInRoles.Create();
                         //var role = db1.Roles.Create();
                         {
                             //var newUser1 = db.Users.Create();
@@ -168,12 +164,7 @@ namespace HolidayPlanner.Controllers
             
         }
 
-        [HttpGet]
-        public ActionResult First()
-        {
-            return View();
-        }
-
+       
 
     }
 }

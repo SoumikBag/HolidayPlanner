@@ -20,22 +20,22 @@ namespace HolidayPlanner.Models
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Role>()
-            .HasMany(e => e.Users)
-            .WithMany(e => e.Roles)
-            .Map(m => m.ToTable("UserInRole").MapLeftKey("RoleId").MapRightKey("UserId"));
-
-            //modelBuilder.Entity<User>()
-            //.HasMany(g => g.UserInRoles)
-            //.WithRequired(gm => gm.User);
-
             //modelBuilder.Entity<Role>()
-            //    .HasMany(u => u.UserInRoles)
-            //    .WithRequired(gm => gm.Role);
+            //.HasMany(e => e.Users)
+            //.WithMany(e => e.Roles)
+            //.Map(m => m.ToTable("UserInRole").MapLeftKey("RoleId").MapRightKey("UserId"));
+
+            modelBuilder.Entity<User>()
+            .HasMany(g => g.UserInRoles)
+            .WithRequired(gm => gm.User);
+
+            modelBuilder.Entity<Role>()
+                .HasMany(u => u.UserInRoles)
+                .WithRequired(gm => gm.Role);
 
             
         }
 
-       // public virtual ICollection<Role> Roles { get; set; }
+      
     }
 }
