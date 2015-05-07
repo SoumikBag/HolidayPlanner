@@ -66,7 +66,7 @@ namespace HolidayPlanner.Controllers
                 
 
                 //using (var db = new HolidayPlanner.Models.Register1())
-                using (var db = new HolidayPlanner.Models.DataContext())
+                using (var db = new HolidayPlanner.Models.Register1())
 
                 {
                     
