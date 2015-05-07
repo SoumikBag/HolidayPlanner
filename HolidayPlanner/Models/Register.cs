@@ -8,7 +8,7 @@ namespace HolidayPlanner.Models
     public partial class Register : DbContext
     {
         public Register()
-            : base("name=Register")
+            : base("name=RegisterCon")
         {
         }
 

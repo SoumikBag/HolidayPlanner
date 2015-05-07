@@ -135,18 +135,20 @@
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
-    <Compile Include="Models\Register1.cs" />
+    <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserInRole.cs" />
+    <Compile Include="Models\UserRolecontext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\main1.css" />
     <Content Include="Content\default.css" />
+    <Content Include="Content\main1.css" />
     <Content Include="Content\nivo-slider.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\swipebox.css" />
@@ -247,6 +249,7 @@
     <Content Include="Views\Home\entertain.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\First.cshtml" />
+    <Content Include="Views\Home\Info.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
