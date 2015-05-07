@@ -72,27 +72,15 @@ namespace HolidayPlanner.Controllers
                     db.Users.Add(newUser);
                     db.SaveChanges();
         
-                   
-
-
+                  
 
                     using (var db2 = new HolidayPlanner.Models.UserInRoleContext())
                     {
                         var userrole = db2.UserInRoles.Create();
-                    
-                    {
-                        var userrole = db2.UserInRoles.Create();
-                        //var role = db1.Roles.Create();
+                                                  
                         {
-                            //var newUser1 = db.Users.Create();
-                            //int lastUserID = db.Users.Max(item => item.UserId); //added by Sandy for ID Auto-Increment 
-                            //user.UserId = lastUserID + 1;
-                            //newUser1.UserId = user.UserId;
-
-
-
+                            
                             userrole.UserId = test;
-
                             userrole.RoleId = 1;
                             db2.UserInRoles.Add(userrole);
                             db2.SaveChanges();
