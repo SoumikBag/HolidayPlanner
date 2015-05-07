@@ -14,7 +14,7 @@ namespace HolidayPlanner.Models
             : base("name=UserRolecontext")
         {
         }
-
+        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserInRole> UserInRoles { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         
@@ -25,13 +25,15 @@ namespace HolidayPlanner.Models
             .WithMany(e => e.Roles)
             .Map(m => m.ToTable("UserInRole").MapLeftKey("RoleId").MapRightKey("UserId"));
 
-            //modelBuilder.Entity<User>()
-            //.HasMany(g => g.Roles)
-            //.WithRequired(gm => gm.User);
+            modelBuilder.Entity<User>()
+            .HasMany(g => g.UserInRoles)
+            .WithRequired(gm => gm.User);
 
-            //modelBuilder.Entity<Role>()
-            //    .HasMany(u => u.Users)
-            //    .WithRequired(gm => gm.Role);
+            modelBuilder.Entity<Role>()
+                .HasMany(u => u.UserInRoles)
+                .WithRequired(gm => gm.Role);
+
+            
         }
 
        // public virtual ICollection<Role> Roles { get; set; }

@@ -17,5 +17,6 @@ namespace HolidayPlanner.Models
         public string RoleName { get; set; }
 
         public virtual ICollection<User> Users { get; set; }
+        //public virtual ICollection<UserInRole> UserInRoles { get; set; }
     }
 }

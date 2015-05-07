@@ -55,7 +55,7 @@ namespace HolidayPlanner.Controllers
 
 
         [HttpPost]
-        public ActionResult Register(User user, UserInRole userinrole)
+        public ActionResult Register(User user)
         {
 
 
@@ -63,10 +63,8 @@ namespace HolidayPlanner.Controllers
             if (ModelState.IsValid)
             {
 
-                
-
                 //using (var db = new HolidayPlanner.Models.Register1())
-                using (var db = new HolidayPlanner.Models.Register1())
+                using (var db = new HolidayPlanner.Models.Register())
 
                 {
                     
@@ -98,39 +96,49 @@ namespace HolidayPlanner.Controllers
 
 
 
-                    //using (var db1 = new HolidayPlanner.Models.RoleContext())
+                    
                     using (var db2 = new HolidayPlanner.Models.UserRolecontext())
                     {
-                        var userrole = db2.UserInRoles.Create();
+                        //var userrole = db2.UserInRoles.Create();
                         //var role = db1.Roles.Create();
-                  
                         {
                             //var newUser1 = db.Users.Create();
                             //int lastUserID = db.Users.Max(item => item.UserId); //added by Sandy for ID Auto-Increment 
                             //user.UserId = lastUserID + 1;
                             //newUser1.UserId = user.UserId;
 
-                            userrole.UserId = test;
-                            
-                            userrole.RoleId = 1 ;
-                            db2.UserInRoles.Add(userinrole);
+
+
+
+                            var user1 = new User { UserId = test, roles = new List<Role>()};
+                            var role = new Role { RoleId = 1 };
+
+                            db2.Users.Attach(user);
+                            db2.Roles.Attach(role);
+
+                            user..Add(role);
+
                             db2.SaveChanges();
-                            //role.RoleId = 1;
-                            //role.RoleName = "Client";
-                            //db1.Roles.Add(role);
-                            
-                            //db1.SaveChanges();
-                            
+
+
+
+
+
+                            userrole.UserId = test;
+
+                            userrole.RoleId = 1;
+                            db2.UserInRoles.Add(userrole);
+                            db2.SaveChanges();
+                            role.RoleId = 1;
+                            role.RoleName = "Client";
+                            db1.Roles.Add(role);
+
+                            db1.SaveChanges();
+
                         }
                     }
 
-                    
-
-                    db.SaveChanges();
-
-
-
-
+                   
                     ViewBag.Message = "Registration Successfully Done ";
                     return RedirectToAction("Index", "Home");
                 }

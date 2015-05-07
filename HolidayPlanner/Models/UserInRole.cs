@@ -27,6 +27,6 @@
 
         //[ForeignKey("RoleId")]
         //public Role Role { get; set; }
-
+        //public virtual ICollection<User> Users { get; set; }
     }
 }
