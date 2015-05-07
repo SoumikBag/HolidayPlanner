@@ -120,5 +120,13 @@ namespace HolidayPlanner.Controllers
 
 
 
+        public ActionResult Search()    //Is being written by SANDY
+        {
+            return View("First");
+        }
+
+
+
+
     }
 }

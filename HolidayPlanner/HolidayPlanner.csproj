@@ -127,6 +127,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
