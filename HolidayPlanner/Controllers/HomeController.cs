@@ -39,8 +39,6 @@ namespace HolidayPlanner.Controllers
         }
 
 
-
-
         //public int GetLastInsertedId()
         //{
         //    return Context.
@@ -52,7 +50,6 @@ namespace HolidayPlanner.Controllers
         {
             return View();
         }
-
 
         [HttpPost]
         public ActionResult Register(User user)
@@ -92,8 +89,10 @@ namespace HolidayPlanner.Controllers
 
 
 
+                    using (var db2 = new HolidayPlanner.Models.UserInRoleContext())
+                    {
+                        var userrole = db2.UserInRoles.Create();
                     
-                    using (var db2 = new HolidayPlanner.Models.UserRolecontext())
                     {
                         var userrole = db2.UserInRoles.Create();
                         //var role = db1.Roles.Create();
@@ -105,31 +104,11 @@ namespace HolidayPlanner.Controllers
 
 
 
+                            userrole.UserId = test;
 
-                            //var user1 = new User { UserId = test, roles = new List<Role>()};
-                            //var role = new Role { RoleId = 1 };
-
-                            //db2.Users.Attach(user);
-                            //db2.Roles.Attach(role);
-
-                            //user..Add(role);
-
-                            //db2.SaveChanges();
-
-
-
-
-
-                            //userrole.UserId = test;
-
-                            //userrole.RoleId = 1;
-                            //db2.UserInRoles.Add(userrole);
-                            //db2.SaveChanges();
-                            //role.RoleId = 1;
-                            //role.RoleName = "Client";
-                            //db1.Roles.Add(role);
-
-                            //db1.SaveChanges();
+                            userrole.RoleId = 1;
+                            db2.UserInRoles.Add(userrole);
+                            db2.SaveChanges();
 
                         }
                     }
@@ -164,7 +143,7 @@ namespace HolidayPlanner.Controllers
             
         }
 
-       
+
 
     }
 }
