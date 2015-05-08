@@ -21,39 +21,46 @@
 
     <div class="container-wrap theme-default">
 
-        <h1>What are you looking for?</h1>
+        <h1>Which place are you looking for Holidays?</h1>
 
-        <div class="dropdown-buttons">
-            <div class="dropdown-button">
-                <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-                    <option value="0">Dubai</option>
-                    <option value="1">Australia</option>
-                    <option value="2">Sri Lanka</option>
-                    <option value="3">Newziland</option>
-                    <option value="4">Pakistan</option>
-                    <option value="5">United Kingdom</option>
-                    <option value="6">United states</option>
-                    <option value="7">Russia</option>
-                    <option value="8">Mirum</option>
-                </select>
+        <center>
+            <div class="dropdown-buttons">
+
+                <div class="dropdown-button">
+                    @*<select class="dropdown" tabindex="20" data-settings='{"wrapperClass":"flat"}'>
+                        <option value="0">Dubai</option>
+                        <option value="1">Australia</option>
+                        <option value="2">Sri Lanka</option>
+                        <option value="3">Newziland</option>
+                        <option value="4">Pakistan</option>
+                        <option value="5">United Kingdom</option>
+                        <option value="6">United states</option>
+                        <option value="7">Russia</option>
+                        <option value="8">Mirum</option>
+                    </select>*@
+                    
+                </div>
+
+                @*<div class="dropdown-button">
+                    <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                        <option value="0">Education</option>
+                        <option value="1">tempor</option>
+                        <option value="2">congue</option>
+                        <option value="3">mazim </option>
+                        <option value="4">mutationem</option>
+                        <option value="5">hendrerit </option>
+                        <option value="5"></option>
+                        <option value="5"></option>
+                    </select>
+                </div>*@
             </div>
-            <div class="dropdown-button">
-                <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-                    <option value="0">Education</option>
-                    <option value="1">tempor</option>
-                    <option value="2">congue</option>
-                    <option value="3">mazim </option>
-                    <option value="4">mutationem</option>
-                    <option value="5">hendrerit </option>
-                    <option value="5"></option>
-                    <option value="5"></option>
-                </select>
-            </div>
-        </div>
+        </center>
         <form>
-            <input type="text" value="Keyword, name, date, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">
+            @*<input type="text" value="Keyword, name, date, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">*@
+            <br/><br/>
             <div class="contact_btn">
-                <label class="btn1 btn-2 btn-2g"><input name="submit" type="submit" id="submit" value="Search"></label>
+                <h1><label class=""><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home")'"/></label></h1>
+               
             </div>
         </form>
         <div class="clearfix"></div>
@@ -87,7 +94,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img"><a href="@Url.Action("First", "Home")"><img src="@Url.Content("~/Images/luxury.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img"><a href="@Url.Action("First", "Home")"/><img src="@Url.Content("~/Images/luxury.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -109,7 +116,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img1"><img src="@Url.Content("~/Images/beach-facing.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img1"><a href="@Url.Action("BeachFacing", "Home")" /><img src="@Url.Content("~/Images/beach-facing.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -131,7 +138,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img2"><img src="@Url.Content("~/Images/romantic.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img2"><a href="@Url.Action("Romantic", "Home")" /><img src="@Url.Content("~/Images/romantic.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -153,7 +160,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img"><img src="@Url.Content("~/Images/valley-view.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img"><a href="@Url.Action("ValleyView", "Home")" /><img src="@Url.Content("~/Images/valley-view.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -178,7 +185,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img"><img src="@Url.Content("~/Images/adventure.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img"><a href="@Url.Action("Adventure", "Home")" /><img src="@Url.Content("~/Images/adventure.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -200,7 +207,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img1"><img src="@Url.Content("~/Images/riverside.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img1"><a href="@Url.Action("RiverSide", "Home")" /><img src="@Url.Content("~/Images/riverside.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -222,7 +229,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img2"><img src="@Url.Content("~/Images/pure-veg.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img2"><a href="@Url.Action("PureVeg", "Home")" /><img src="@Url.Content("~/Images/pure-veg.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -244,7 +251,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img"><img src="@Url.Content("~/Images/pet-friendly.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img"><a href="@Url.Action("PetFriendly", "Home")" /><img src="@Url.Content("~/Images/pet-friendly.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -269,7 +276,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img"><img src="@Url.Content("~/Images/beach-stay.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img"><a href="@Url.Action("Beaches", "Home")" /><img src="@Url.Content("~/Images/beach-stay.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -291,7 +298,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img1"><img src="@Url.Content("~/Images/beach-facing.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img1"><a href="@Url.Action("HillStations", "Home")" /><img src="@Url.Content("~/Images/beach-facing.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -313,7 +320,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img2"><img src="@Url.Content("~/Images/farms.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img2"><a href="@Url.Action("Farms", "Home")" /><img src="@Url.Content("~/Images/farms.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -335,7 +342,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img"><img src="@Url.Content("~/Images/tents.jpg")" class="img-responsive" alt="" /></div>
+                                <div class="index_img"><a href="@Url.Action("Tents", "Home")" /><img src="@Url.Content("~/Images/tents.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
