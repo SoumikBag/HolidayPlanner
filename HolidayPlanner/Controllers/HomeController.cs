@@ -101,30 +101,84 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult First()
+        
+        
+        
+        public ActionResult Info()
         {
 
-            //var db = new HolidayPlanner.Models.InfoData();
+            var db = new HolidayPlanner.Models.InfoData();
+
+            var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
+
+            var roominfo = (from r in db.Rooms
+                            join h in db.Hotels
+                                on r.RoomId equals h.RoomId
+                            select new { r.Rate, r.RoomDetails, r.RoomCapacity });
+
+            var model = (from p in db.Hotels
+                         where p.HotelId == 11
+                         select p).ToList();
                        
-            //var hotelinfo = db.Hotels.Where(h=>h.HotelId==11);
-
-            //var model = (from p in db.Hotels
-            //             where p.HotelId == 11
-            //             select p).ToList();
-
-            return View();
+            return View(hotelinfo);
 
             
         }
 
-
-
-        public ActionResult Search()    //Is being written by SANDY
+        public ActionResult First()
         {
-            return View("First");
+            return View();
         }
 
+        public ActionResult BeachFacing()
+        {
+            return View();
+        }
+                       
+        public ActionResult Romantic()
+        {
+            return View();
+        }
+
+        public ActionResult ValleyView()
+        {
+            return View();
+        }
+
+        public ActionResult Adventure()
+        {
+            return View();
+        }
+
+        public ActionResult RiverSide()
+        {
+            return View();
+        }
+            
+        public ActionResult PureVeg()
+        {
+            return View();
+        }
+
+        public ActionResult PetFriendly()
+        {
+            return View();
+        }
+
+        public ActionResult Beaches()
+        {
+            return View();
+        }
+
+        public ActionResult HillStations()
+        {
+            return View();
+        }
+
+        public ActionResult Farms()
+        {
+            return View();
+        }
 
         CountryContext Ccon = new CountryContext();
         public ActionResult DropDown()
@@ -136,6 +190,10 @@ namespace HolidayPlanner.Controllers
             
         }
 
+        public ActionResult Tents()
+        {
+            return View();
+        }
 
 
     }

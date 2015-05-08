@@ -263,7 +263,12 @@
     <Content Include="Views\Home\entertain.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\First.cshtml" />
-    <Content Include="Views\Home\DropDown.cshtml" />
+    <Content Include="Views\Home\BeachFacing.cshtml" />
+    <Content Include="Views\Home\Adventure.cshtml" />
+    <Content Include="Views\Home\Beaches.cshtml" />
+    <Content Include="Views\Home\HillStations.cshtml" />
+    <Content Include="Views\Home\Farms.cshtml" />
+    <Content Include="Views\Home\Info.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -286,6 +291,12 @@
     <Content Include="Views\Home\Register.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Home\Romantic.cshtml" />
+    <Content Include="Views\Home\ValleyView.cshtml" />
+    <Content Include="Views\Home\RiverSide.cshtml" />
+    <Content Include="Views\Home\PureVeg.cshtml" />
+    <Content Include="Views\Home\PetFriendly.cshtml" />
+    <Content Include="Views\Home\Tents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
