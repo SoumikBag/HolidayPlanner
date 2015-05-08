@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 
 
+
 namespace HolidayPlanner.Controllers
 {
     [CustomAuthorize(Roles = "Client")]
@@ -133,7 +134,7 @@ namespace HolidayPlanner.Controllers
         {
             return View();
         }
-
+                       
         public ActionResult Romantic()
         {
             return View();
@@ -153,7 +154,7 @@ namespace HolidayPlanner.Controllers
         {
             return View();
         }
-
+            
         public ActionResult PureVeg()
         {
             return View();
@@ -168,7 +169,7 @@ namespace HolidayPlanner.Controllers
         {
             return View();
         }
-            
+
         public ActionResult HillStations()
         {
             return View();
@@ -177,6 +178,16 @@ namespace HolidayPlanner.Controllers
         public ActionResult Farms()
         {
             return View();
+        }
+
+        CountryContext Ccon = new CountryContext();
+        public ActionResult DropDown()
+        {
+            Country c = new Country();
+            c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
+
+            return View("Index",c);
+            
         }
 
         public ActionResult Tents()
