@@ -103,7 +103,6 @@ namespace HolidayPlanner.Controllers
         [HttpGet]
         public ActionResult First()
         {
-
             //var db = new HolidayPlanner.Models.InfoData();
                        
             //var hotelinfo = db.Hotels.Where(h=>h.HotelId==11);
@@ -113,11 +112,62 @@ namespace HolidayPlanner.Controllers
             //             select p).ToList();
 
             return View();
-
-            
         }
 
+        public ActionResult BeachFacing()
+        {
+            return View();
+        }
 
+        public ActionResult Romantic()
+        {
+            return View();
+        }
+
+        public ActionResult ValleyView()
+        {
+            return View();
+        }
+
+        public ActionResult Adventure()
+        {
+            return View();
+        }
+
+        public ActionResult RiverSide()
+        {
+            return View();
+        }
+
+        public ActionResult PureVeg()
+        {
+            return View();
+        }
+
+        public ActionResult PetFriendly()
+        {
+            return View();
+        }
+
+        public ActionResult Beaches()
+        {
+            return View();
+        }
+
+        public ActionResult HillStations()
+        {
+            return View();
+        }
+
+        public ActionResult Farms()
+        {
+            return View();
+        }
+
+        public ActionResult Tents()
+        {
+            return View();
+        }
 
     }
 }
