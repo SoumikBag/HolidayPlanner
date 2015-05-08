@@ -1,4 +1,4 @@
-﻿
+﻿@model HolidayPlanner.Models.Country
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -38,6 +38,9 @@
                         <option value="7">Russia</option>
                         <option value="8">Mirum</option>
                     </select>*@
+
+
+                    @Html.DropDownList("CountryDropDown", Model.CountryList, "Select Country")
                     
                 </div>
 
