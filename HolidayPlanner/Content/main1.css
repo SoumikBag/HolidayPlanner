@@ -3289,7 +3289,10 @@ body > #superoutercontainer {
 
 #resultbarcontainer {
   width: 100%;
-  background: rgba(245, 245, 187, 0.38); }
+  background: rgba(245, 245, 187, 0.38);
+  padding-top:20px;
+}
+
 
 #resultbar {
   width: 65em;
