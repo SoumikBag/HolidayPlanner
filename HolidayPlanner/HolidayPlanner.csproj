@@ -131,8 +131,9 @@
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
-    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Facility.cs" />
+    <Compile Include="Models\InfoViewModel.cs" />
+    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
@@ -231,6 +232,7 @@
     <Content Include="Images\zoom.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -260,6 +262,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\First.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\FacilityInfo.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -282,6 +285,7 @@
     <Content Include="Views\Home\Register.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Home\RoomInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

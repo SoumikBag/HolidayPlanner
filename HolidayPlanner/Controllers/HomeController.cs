@@ -103,24 +103,34 @@ namespace HolidayPlanner.Controllers
         
         
         
-        public ActionResult Info()
+        public ActionResult Info(string clickinfo)
         {
 
             var db = new HolidayPlanner.Models.InfoData();
 
-            var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
+            //var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
+                        
+            //var model = (from p in db.Hotels
+            //             where p.HotelId == 11
+            //             select p).ToList();
+                        
+            if(clickinfo == "room")
+            {
+            var roominfo = from r in db.Rooms join h in db.Hotels
+                                     on r.RoomId equals h.RoomId
+                                     select new InfoViewModel {  Rate=r.Rate,  RoomDetails=r.RoomDetails,  RoomCapacity=r.RoomCapacity } ;
+                        
+            return View("RoomInfo", roominfo);
+            }
 
-            var roominfo = (from r in db.Rooms
-                            join h in db.Hotels
-                                on r.RoomId equals h.RoomId
-                            select new { r.Rate, r.RoomDetails, r.RoomCapacity });
+            else
+            {
+            var facilityinfo = from f in db.Facilities join h in db.Hotels
+                               on f.FId equals h.FId
+                               select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
 
-            var model = (from p in db.Hotels
-                         where p.HotelId == 11
-                         select p).ToList();
-
-            return View(hotelinfo);
-
+            return View("FacilityInfo", facilityinfo);
+            }
             
         }
 

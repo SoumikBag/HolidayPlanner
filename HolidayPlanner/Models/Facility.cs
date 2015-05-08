@@ -8,17 +8,17 @@ namespace HolidayPlanner.Models
 
     public partial class Facility
     {
-        public Facility()
-        {
-            Hotels = new HashSet<Hotel>();
-        }
-
         [Key]
         public int FId { get; set; }
 
         [StringLength(50)]
         public string FacilitiesType { get; set; }
 
+        [StringLength(50)]
+        public string FacilitiesDetails { get; set; }
+
         public virtual ICollection<Hotel> Hotels { get; set; }
+
+
     }
 }
