@@ -150,6 +150,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\default.css" />
     <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery.simplyscroll.css" />
     <Content Include="Content\main1.css" />
     <Content Include="Content\nivo-slider.css" />
     <Content Include="Content\style.css" />
@@ -241,6 +242,7 @@
     <Content Include="Scripts\jquery.easydropdown.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.nivo.slider.pack.js" />
+    <Content Include="Scripts\jquery.simplyscroll.js" />
     <Content Include="Scripts\jquery.swipebox.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />

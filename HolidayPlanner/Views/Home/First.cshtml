@@ -611,208 +611,150 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    (function ($) {
+        $(function () {
+            $("#scroller").simplyScroll({
+                auto: false,
+                manualMode: 'loop',
+                speed: 10
+            });
+        });
+    })(jQuery);
+</script>
+<style type="text/css">
+    .caption:hover {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        bottom: 0px;
+        left: 0px;
+        color: #000000;
+        background: #fbeedb;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0.7;
+        z-index: 2;
+        
+    }
+
+    .caption {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        bottom: 0px;
+        left: 0px;
+        color: #000000;
+        background: #fbeedb;
+        text-align: center;
+        
+        font-weight: initial;
+        opacity: 0.7;
+        z-index: 2;
+        font-size: smaller;
+        
+    }
+</style>
+
+
+
+
 
     <div id="resultbarcontainer">
 
         <div id="resultbar">
             <div id="rightpanel">
+                <div class="item" id="trippage1">
+                    <ul id="scroller" class="simply-scroll-list" style="width: 2900px;">
+                                    <li>
+                                        <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="http://www.abreakplease.com/varca-the-zuri-white-sands">
 
-                <div id="resulthotelwrapper" class="scrollablecontainer">
-                    <a class="prev browse left " title="previous suggestions"></a><a class="next browse right " title="next suggestions"></a>
-                    <div id="listofplanshotelwrapper" class="scrollable">
+                                            <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100"/>
+                                            <div class="caption">The Zuri White Sands in Varca</div>
+                                            
+                                            <div class="nub"></div>
 
-                        <div id="listofhotelplans" class="items">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="plan rplan" rel="tripoption-mulshi-malhar-machi-resort" href="http://www.abreakplease.com/mulshi-malhar-machi-resort">
 
+                                            
+                                            <img src="~/Images/10433_t.jpeg" border="0" width="140" height="100" />
+                                            <div class="caption">Malhar Machi Resort in Mulshi</div>
+                                            
+                                            <div class="nub"></div>
 
-                            <div class="item" id="trippage1">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="plan rplan" rel="tripoption-candolim-lemon-tree-amarante-beach-resort" href="http://www.abreakplease.com/candolim-lemon-tree-amarante-beach-resort">
 
-                                <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="http://www.abreakplease.com/varca-the-zuri-white-sands">
+                                            
+                                            <img src="~/Images/18211_t.jpeg" border="0" width="140" height="100" />
+                                            <div class="caption">Lemon Tree Amarante Beach Resort in Candolim</div>
+                                          
+                                            <div class="nub"></div>
 
-                                    <div class="imagetoload">
-                                        <img src="~/Images/19011_t.jpeg" border="0" ></img>
-                                    </div>
-                                    <p>
-                                        <span>
-                                            The Zuri White Sands
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="plan rplan" rel="tripoption-cavelossim-dona-sylvia-beach-resort" href="http://www.abreakplease.com/cavelossim-dona-sylvia-beach-resort">
 
-                                            in Varca
-                                        </span>
-                                    </p>
-                                    <div class="nub"></div>
+                                            
+                                            <img src="~/Images/18918_t.jpeg" border="0" width="140" height="100" />
+                                            <div class="caption">Dona Sylvia Beach Resort in Cavelossim</div>
 
-                                </a>
-                                <a class="plan rplan" rel="tripoption-mulshi-malhar-machi-resort" href="http://www.abreakplease.com/mulshi-malhar-machi-resort">
+                                            <div class="nub"></div>
 
-                                    <div class="imagetoload" >
-                                        <img src="~/Images/10433_t.jpeg" border="0"></img>
-                                    </div>
-                                    <p>
-                                        <span>
-                                            Malhar Machi Resort
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="plan rplan" rel="tripoption-betul-mayfair-hideaway-spa-resort" href="http://www.abreakplease.com/betul-mayfair-hideaway-spa-resort">
 
-                                            in Mulshi
-                                        </span>
-                                    </p>
-                                    <div class="nub"></div>
+                                           
+                                            <img src="~/Images/18980_t.jpeg" border="0" width="140" height="100" />
+                                            <div class="caption">Mayfair Hideaway Spa Resort in Betul</div>
+                                            
+                                            <div class="nub"></div>
 
-                                </a>
-                                <a class="plan rplan" rel="tripoption-candolim-lemon-tree-amarante-beach-resort" href="http://www.abreakplease.com/candolim-lemon-tree-amarante-beach-resort">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="plan rplan" rel="tripoption-benaulim-joecons-beach-resort" href="http://www.abreakplease.com/benaulim-joecons-beach-resort">
 
-                                    <div class="imagetoload">
-                                        <img src="~/Images/18211_t.jpeg" border="0"></img>
-                                    </div>
-                                    <p>
-                                        <span>
-                                            Lemon Tree Amarante Beach Resort
+                                            
+                                                <img src="~/Images/19295_t.jpeg" border="0" width="140" height="100" />
+                                                <div class="caption">Joecons Beach Resort in Benaulim</div>
+                                            
+                                            <div class="nub"></div>
 
-                                            in Candolim
-                                        </span>
-                                    </p>
-                                    <div class="nub"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="plan rplan" rel="tripoption-cavelossim-radisson-blu-resort" href="http://www.abreakplease.com/cavelossim-radisson-blu-resort">
 
-                                </a>
-                                <a class="plan rplan" rel="tripoption-cavelossim-dona-sylvia-beach-resort" href="http://www.abreakplease.com/cavelossim-dona-sylvia-beach-resort">
+                                            <img src="~/Images/19295_t.jpeg" border="0" width="140" height="100" />
+                                            <div class="caption">Radisson Blu Resort in Cavelossim</div>
+                                            
+                                            <div class="nub"></div>
 
-                                    <div class="imagetoload">
-                                        <img src="~/Images/18918_t.jpeg" border="0"></img>
-                                    </div>
-                                    <p>
-                                        <span>
-                                            Dona Sylvia Beach Resort
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a style=margin-right:0 class="plan rplan" rel="tripoption-cavelossim-haathi-mahal-resort" href="http://www.abreakplease.com/cavelossim-haathi-mahal-resort">
 
-                                            in Cavelossim
-                                        </span>
-                                    </p>
-                                    <div class="nub"></div>
+                                            <img src="~/Images/19295_t.jpeg" border="0" width="140" height="100" />
+                                            <div class="caption">Haathi Mahal Resort in Cavelossim</div>
+                                            
+                                            <div class="nub"></div>
 
-                                </a>
-                                <a class="plan rplan" rel="tripoption-betul-mayfair-hideaway-spa-resort" href="http://www.abreakplease.com/betul-mayfair-hideaway-spa-resort">
-
-                                    <div class="imagetoload">
-                                        <img src="~/Images/18980_t.jpeg" border="0"></img>
-                                    </div>
-                                    <p>
-                                        <span>
-                                            Mayfair Hideaway Spa Resort
-
-                                            in Betul
-                                        </span>
-                                    </p>
-                                    <div class="nub"></div>
-
-                                </a>
-                                <a class="plan rplan" rel="tripoption-benaulim-joecons-beach-resort" href="http://www.abreakplease.com/benaulim-joecons-beach-resort">
-
-                                    <div class="imagetoload">
-                                        <img src="~/Images/19295_t.jpeg" border="0"></img>
-                                    </div>
-                                    <p>
-                                        <span>
-                                            Joecons Beach Resort
-
-                                            in Benaulim
-                                        </span>
-                                    </p>
-                                    <div class="nub"></div>
-
-                                </a>
-                                <a class="plan rplan" rel="tripoption-cavelossim-radisson-blu-resort" href="http://www.abreakplease.com/cavelossim-radisson-blu-resort">
-
-                                    <div class="imagetoload" style="display:none;" url="http://static.abreakplease.com/Content/Photos/19901_t.jpeg">
-                                    </div>
-                                    <p>
-                                        <span>
-                                            Radisson Blu Resort
-
-                                            in Cavelossim
-                                        </span>
-                                    </p>
-                                    <div class="nub"></div>
-
-                                </a>
-                                <a style=margin-right:0 class="plan rplan" rel="tripoption-cavelossim-haathi-mahal-resort" href="http://www.abreakplease.com/cavelossim-haathi-mahal-resort">
-
-                                    <div class="imagetoload" style="display:none;" url="http://static.abreakplease.com/Content/Photos/19088_t.jpeg">
-                                    </div>
-                                    <p>
-                                        <span>
-                                            Haathi Mahal Resort
-
-                                            in Cavelossim
-                                        </span>
-                                    </p>
-                                    <div class="nub"></div>
-
-                                </a>
-
-
-
-
-                            </div>
-                            <div class="item" id="trippage2">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage3">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage4">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage5">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage6">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage7">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage8">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage9">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage10">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                            <div class="item" id="trippage11">
-                                <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                    Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                                </p>
-
-                            </div>
-                        </div>
-
+                                        </a>
+                                    </li>
+                                </ul>
+                             
                     </div>
-                </div>
+                            
             </div>
             <div class="clear"></div>
         </div>
@@ -823,9 +765,6 @@
 <div id="resultdetail">
 
     <div class="tempplan plandetail" id="tripoption-varca-the-zuri-white-sands">
-
-
-
 
         <div class="h2">
             The Zuri White Sands <span>in Varca, South Goa</span>
