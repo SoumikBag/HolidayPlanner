@@ -127,6 +127,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
@@ -263,6 +264,7 @@
     <Content Include="Views\Home\Beaches.cshtml" />
     <Content Include="Views\Home\HillStations.cshtml" />
     <Content Include="Views\Home\Farms.cshtml" />
+    <Content Include="Views\Home\Info.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
