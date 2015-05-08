@@ -132,6 +132,7 @@ namespace HolidayPlanner.Controllers
                                        on f.FId equals h.FId
                                    select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
 
+                return View("FacilityInfo", facilityinfo);
 
             }
         }
