@@ -1,0 +1,98 @@
+﻿@model IEnumerable<HolidayPlanner.Models.InfoViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Info</title>
+</head>
+<body>
+    <p>
+        <h4> Room Info </h4>
+    </p>
+    <table class="table">
+        @*<tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Facility.FacilitiesType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HotelType.HotelType1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Room.RoomType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HotelName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CityId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HotelPolices)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FoodDetails)
+                </th>
+                <th></th>
+            </tr>*@
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelitem => item.RoomCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.RoomDetails)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.Rate)
+                </td>
+            </tr>
+
+            @*<tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Facility.FacilitiesType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HotelType.HotelType1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Room.RoomType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HotelName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CityId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HotelPolices)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FoodDetails)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.HotelId }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.HotelId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.HotelId })
+                    </td>
+                </tr>*@
+        }
+
+    </table>
+</body>
+</html>
+

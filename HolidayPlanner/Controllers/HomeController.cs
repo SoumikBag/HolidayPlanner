@@ -111,27 +111,40 @@ namespace HolidayPlanner.Controllers
         //ended by sandy
         
         
-        public ActionResult Info()
+
+        public ActionResult Info(string clickinfo)
         {
 
             var db = new HolidayPlanner.Models.InfoData();
 
-            var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
+            //var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
 
-            var roominfo = (from r in db.Rooms
+            //var model = (from p in db.Hotels
+            //             where p.HotelId == 11
+            //             select p).ToList();
+
+            if (clickinfo == "room")
+            {
+                var roominfo = from r in db.Rooms
                             join h in db.Hotels
                                 on r.RoomId equals h.RoomId
-                            select new { r.Rate, r.RoomDetails, r.RoomCapacity });
+                               select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
 
-            var model = (from p in db.Hotels
-                         where p.HotelId == 11
-                         select p).ToList();
+                return View("RoomInfo", roominfo);
+            }
                        
-            return View(hotelinfo);
+            else
+            {
+                var facilityinfo = from f in db.Facilities
+                                   join h in db.Hotels
+                                       on f.FId equals h.FId
+                                   select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
 
             
         }
-    
+        }
+
+
         public ActionResult First()
         {
             return View();
@@ -213,13 +226,21 @@ namespace HolidayPlanner.Controllers
         //ended by sandy
 
 
-
+            
 
         public ActionResult Tents()
         {
             return View();
         }
 
+        public ActionResult Pune()
+        {
+            return View();
+        }
 
+        public ActionResult Banglore()
+        {
+            return View();
+    }
     }
 }
