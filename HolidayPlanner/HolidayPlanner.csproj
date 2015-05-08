@@ -265,6 +265,7 @@
     <Content Include="Views\Home\HillStations.cshtml" />
     <Content Include="Views\Home\Farms.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\Banglore.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -293,6 +294,7 @@
     <Content Include="Views\Home\PureVeg.cshtml" />
     <Content Include="Views\Home\PetFriendly.cshtml" />
     <Content Include="Views\Home\Tents.cshtml" />
+    <Content Include="Views\Home\Pune.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

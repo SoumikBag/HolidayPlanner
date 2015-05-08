@@ -184,6 +184,15 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
+        public ActionResult Pune()
+        {
+            return View();
+        }
 
+        public ActionResult Banglore()
+        {
+            return View();
+
+        }
     }
 }
