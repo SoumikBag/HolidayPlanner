@@ -101,19 +101,26 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult First()
+        
+        
+        
+        public ActionResult Info()
         {
 
-            //var db = new HolidayPlanner.Models.InfoData();
-                       
-            //var hotelinfo = db.Hotels.Where(h=>h.HotelId==11);
+            var db = new HolidayPlanner.Models.InfoData();
 
-            //var model = (from p in db.Hotels
-            //             where p.HotelId == 11
-            //             select p).ToList();
+            var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
 
-            return View();
+            var roominfo = (from r in db.Rooms
+                            join h in db.Hotels
+                                on r.RoomId equals h.RoomId
+                            select new { r.Rate, r.RoomDetails, r.RoomCapacity });
+
+            var model = (from p in db.Hotels
+                         where p.HotelId == 11
+                         select p).ToList();
+
+            return View(hotelinfo);
 
             
         }
