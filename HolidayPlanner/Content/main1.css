@@ -599,7 +599,7 @@ form.searchforms .controls {
   width: 78em;
   margin: 1em auto 0 auto; }
   #citybar #citybarinner {
-    margin-left: 25em;
+    margin-left: -36em;
     background: #faf9f0;
     display: inline-block;
     -moz-border-radius-topleft: 5px;
@@ -630,7 +630,7 @@ form.searchforms .controls {
       #citybar #citybarinner .city:hover a {
         text-decoration: underline; }
     #citybar #citybarinner .currentcity {
-      background: #009899;
+      background:#e94e38;
       color: white !important;
       position: relative; }
       #citybar #citybarinner .currentcity a {
@@ -641,7 +641,7 @@ form.searchforms .controls {
         position: absolute;
         width: 0;
         border: 10px solid transparent;
-        border-top-color: #009899;
+        border-top-color:#e94e38;
         left: 50%;
         margin-left: -10px;
         top: 100%; }

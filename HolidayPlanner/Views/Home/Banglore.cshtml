@@ -1,0 +1,381 @@
+﻿
+@{
+    ViewBag.Title = "Banglore";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(window).load(function () {
+       $('#slider').nivoSlider({
+            directionNavHide: false,
+            captionOpacity: 1,
+            prevText: '<',
+            nextText: '>'
+
+        });
+
+    });
+</script>
+
+<div class="wrapper theme-default">
+
+    <div class="container-wrap theme-default">
+        <div id="citybar">
+            <div id="citybarinner">
+
+                <div class="city" style="color:#aaa;">Choose Getaways Ex-City </div>
+                <div class="city "><a href="@Url.Action("Index", "Home")">From Mumbai</a></div>
+                <div class="city "><a href="@Url.Action("Pune", "Home")">From Pune</a></div>
+                <div class="city currentcity"><a href="@Url.Action("Banglore", "Home")">From Bangalore</a></div>
+            </div>
+        </div>
+        <br />
+        <h1>Which place are you looking for Holidays?</h1>
+
+        <center>
+            <div class="dropdown-buttons">
+
+                <div class="dropdown-button">
+                    @*<select class="dropdown" tabindex="20" data-settings='{"wrapperClass":"flat"}'>
+                            <option value="0">Dubai</option>
+                            <option value="1">Australia</option>
+                            <option value="2">Sri Lanka</option>
+                            <option value="3">Newziland</option>
+                            <option value="4">Pakistan</option>
+                            <option value="5">United Kingdom</option>
+                            <option value="6">United states</option>
+                            <option value="7">Russia</option>
+                            <option value="8">Mirum</option>
+                        </select>*@
+
+                </div>
+
+                @*<div class="dropdown-button">
+                        <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
+                            <option value="0">Education</option>
+                            <option value="1">tempor</option>
+                            <option value="2">congue</option>
+                            <option value="3">mazim </option>
+                            <option value="4">mutationem</option>
+                            <option value="5">hendrerit </option>
+                            <option value="5"></option>
+                            <option value="5"></option>
+                        </select>
+                    </div>*@
+            </div>
+        </center>
+        <form>
+            @*<input type="text" value="Keyword, name, date, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">*@
+            <br /><br />
+            <div class="contact_btn">
+                <h1><label class=""><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home")'" /></label></h1>
+
+            </div>
+        </form>
+        <div class="clearfix"></div>
+
+    </div>
+
+    <div class="nivoSlider theme-default" id="slider">
+
+        <img src="~/Images/1.jpg" />
+
+        <img src="~/Images/2.jpg" />
+
+        <img src="~/Images/A Sunset on a Texas Farm.jpg" />
+
+    </div>
+
+
+</div>
+
+<div class="content_top">
+    <div class="container">
+        <div style="font-family: 'PT Sans Narrow', 'Open Sans Condensed', Arial, sans-serif;text-shadow:0 0 2px rgba(0, 0, 0, 0.6);font-weight: bold;font-size:3em;word-spacing:0.192em;padding:0.25em 0 0.5em 0;text-align:center;color:#333;line-height: 1em;display:block;">
+            Theme based Weekend getaways from Bangalore
+        </div>
+    </div>
+</div>
+<div class="content_middle">
+    <div class="container">
+        <div class="content_middle_box">
+            <div class="top_grid">
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img"><a href="@Url.Action("First", "Home")" /><img src="@Url.Content("~/Images/luxury.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home"></i>
+                        <div class="inner_wrap">
+                            <h4 class="green">Luxury</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star1.png")" alt="">(236)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img1"><a href="@Url.Action("BeachFacing", "Home")" /><img src="@Url.Content("~/Images/beach-facing.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home1"> </i>
+                        <div class="inner_wrap">
+                            <h4 class="yellow">Beach Facing</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star2.png")" alt="">(136)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img2"><a href="@Url.Action("Romantic", "Home")" /><img src="@Url.Content("~/Images/romantic.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home2"> </i>
+                        <div class="inner_wrap">
+                            <h4 class="blue">Romantic</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star2.png")" alt="">(136)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img"><a href="@Url.Action("ValleyView", "Home")" /><img src="@Url.Content("~/Images/valley-view.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home"></i>
+                        <div class="inner_wrap">
+                            <h4 class="green">Valley View</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star1.png")" alt="">(236)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="middle_grid wow fadeInUp" data-wow-delay="0.4s">
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img"><a href="@Url.Action("Adventure", "Home")" /><img src="@Url.Content("~/Images/adventure.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home"></i>
+                        <div class="inner_wrap">
+                            <h4 class="green">Adventure</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star1.png")" alt="">(236)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img1"><a href="@Url.Action("RiverSide", "Home")" /><img src="@Url.Content("~/Images/riverside.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home1"> </i>
+                        <div class="inner_wrap">
+                            <h4 class="yellow">Riverside</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star2.png")" alt="">(136)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img2"><a href="@Url.Action("PureVeg", "Home")" /><img src="@Url.Content("~/Images/pure-veg.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home2"> </i>
+                        <div class="inner_wrap">
+                            <h4 class="blue">Pure-Veg</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star2.png")" alt="">(136)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img"><a href="@Url.Action("PetFriendly", "Home")" /><img src="@Url.Content("~/Images/pet-friendly.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home"></i>
+                        <div class="inner_wrap">
+                            <h4 class="green">Pet-Friendly</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star1.png")" alt="">(236)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="top_grid wow fadeInRight" data-wow-delay="0.4s">
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img"><a href="@Url.Action("Beaches", "Home")" /><img src="@Url.Content("~/Images/beach-stay.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home"></i>
+                        <div class="inner_wrap">
+                            <h4 class="green">Beaches</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star1.png")" alt="">(236)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img1"><a href="@Url.Action("HillStations", "Home")" /><img src="@Url.Content("~/Images/beach-facing.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home1"> </i>
+                        <div class="inner_wrap">
+                            <h4 class="yellow">Hill Stations</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star2.png")" alt="">(136)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img2"><a href="@Url.Action("Farms", "Home")" /><img src="@Url.Content("~/Images/farms.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home2"> </i>
+                        <div class="inner_wrap">
+                            <h4 class="blue">Farms</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star2.png")" alt="">(136)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="grid1">
+                        <div class="view view-first">
+                            <div class="index_img"><a href="@Url.Action("Tents", "Home")" /><img src="@Url.Content("~/Images/tents.jpg")" class="img-responsive" alt="" /></div>
+                            <div class="mask">
+                                <div class="info"><i class="search"> </i> Show More</div>
+                                <ul class="mask_img">
+                                    <li class="star"><img src="@Url.Content("~/Images/star.png")" alt="" /></li>
+                                    <li class="set"><img src="@Url.Content("~/Images/set.png")" alt="" /></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="home"></i>
+                        <div class="inner_wrap">
+                            <h4 class="green">Tents</h4>
+                            <ul class="star1">
+                                <li><a href="#"> <img src="@Url.Content("~/Images/star1.png")" alt="">(236)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
