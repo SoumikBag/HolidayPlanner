@@ -260,9 +260,6 @@
     <Content Include="Scripts\uisearch.js" />
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Home\404.html" />
-    <Content Include="Views\Home\education.html" />
-    <Content Include="Views\Home\entertain.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\First.cshtml" />
     <Content Include="Views\Home\BeachFacing.cshtml" />
