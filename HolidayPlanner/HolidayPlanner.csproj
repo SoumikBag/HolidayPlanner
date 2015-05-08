@@ -135,8 +135,9 @@
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
-    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Facility.cs" />
+    <Compile Include="Models\InfoViewModel.cs" />
+    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
@@ -236,6 +237,7 @@
     <Content Include="Images\zoom.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -260,9 +262,6 @@
     <Content Include="Scripts\uisearch.js" />
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Home\404.html" />
-    <Content Include="Views\Home\education.html" />
-    <Content Include="Views\Home\entertain.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\First.cshtml" />
     <Content Include="Views\Home\BeachFacing.cshtml" />
@@ -271,7 +270,9 @@
     <Content Include="Views\Home\HillStations.cshtml" />
     <Content Include="Views\Home\Farms.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\DropDown1.cshtml" />
     <Content Include="Views\Home\Banglore.cshtml" />
+    <Content Include="Views\Home\FacilityInfo.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -301,6 +302,7 @@
     <Content Include="Views\Home\PetFriendly.cshtml" />
     <Content Include="Views\Home\Tents.cshtml" />
     <Content Include="Views\Home\Pune.cshtml" />
+    <Content Include="Views\Home\RoomInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

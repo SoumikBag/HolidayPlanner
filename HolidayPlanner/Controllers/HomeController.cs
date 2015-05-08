@@ -12,11 +12,18 @@ namespace HolidayPlanner.Controllers
     [CustomAuthorize(Roles = "Client")]
     public class HomeController : Controller
     {
-        
+        //started by sandy
         public ActionResult Index()
         {
-            return View();
+            Country c = new Country();
+            c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
+            return View(c);
         }
+        //ended by sandy
+
+
+
+
 
         public ActionResult About()
         {
@@ -41,7 +48,7 @@ namespace HolidayPlanner.Controllers
 
 
 
-
+        //started by sandy
         [HttpGet]
         public ActionResult Register()
         {
@@ -101,29 +108,43 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        
-        
-        
-        public ActionResult Info()
+        //ended by sandy
+
+
+
+        public ActionResult Info(string clickinfo)
         {
 
             var db = new HolidayPlanner.Models.InfoData();
 
-            var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
+            //var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
 
-            var roominfo = (from r in db.Rooms
-                            join h in db.Hotels
-                                on r.RoomId equals h.RoomId
-                            select new { r.Rate, r.RoomDetails, r.RoomCapacity });
+            //var model = (from p in db.Hotels
+            //             where p.HotelId == 11
+            //             select p).ToList();
 
-            var model = (from p in db.Hotels
-                         where p.HotelId == 11
-                         select p).ToList();
-                       
-            return View(hotelinfo);
+            if (clickinfo == "room")
+            {
+                var roominfo = from r in db.Rooms
+                               join h in db.Hotels
+                                   on r.RoomId equals h.RoomId
+                               select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
 
-            
+                return View("RoomInfo", roominfo);
+            }
+
+            else
+            {
+                var facilityinfo = from f in db.Facilities
+                                   join h in db.Hotels
+                                       on f.FId equals h.FId
+                                   select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
+
+                return View("FacilityInfo", facilityinfo);
+
+            }
         }
+
 
         public ActionResult First()
         {
@@ -144,7 +165,7 @@ namespace HolidayPlanner.Controllers
         {
             return View();
         }
-
+            
         public ActionResult Adventure()
         {
             return View();
@@ -154,7 +175,7 @@ namespace HolidayPlanner.Controllers
         {
             return View();
         }
-            
+
         public ActionResult PureVeg()
         {
             return View();
@@ -180,15 +201,33 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        CountryContext Ccon = new CountryContext();
-        public ActionResult DropDown()
-        {
-            Country c = new Country();
-            c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
 
-            return View("Index",c);
+
+
+
+
+        //added by sandy for dropdown
+        CountryContext Ccon = new CountryContext();
+    
+        //public ActionResult DropDown1()
+        //{
+        //    Country c = new Country();
+        //    c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
+
+        //    return View("Index",c);
             
+        //}
+
+
+       //added by sandy
+        public ActionResult Search()
+        {
+            return View("First");
         }
+        //ended by sandy
+
+
+            
 
         public ActionResult Tents()
         {
@@ -203,7 +242,6 @@ namespace HolidayPlanner.Controllers
         public ActionResult Banglore()
         {
             return View();
-
-        }
     }
+}
 }

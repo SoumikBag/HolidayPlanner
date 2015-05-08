@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HolidayPlanner.Models.Hotel>
+﻿@model IEnumerable<HolidayPlanner.Models.InfoViewModel>
 
 @{
     Layout = null;
@@ -16,7 +16,7 @@
         @Html.ActionLink("Create New", "Create")
     </p>
     <table class="table">
-        <tr>
+        @*<tr>
             <th>
                 @Html.DisplayNameFor(model => model.Facility.FacilitiesType)
             </th>
@@ -42,10 +42,23 @@
                 @Html.DisplayNameFor(model => model.FoodDetails)
             </th>
             <th></th>
-        </tr>
+        </tr>*@
     
     @foreach (var item in Model) {
+        
         <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.RoomCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.RoomDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Rate)
+            </td>
+        </tr>
+        
+        @*<tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Facility.FacilitiesType)
             </td>
@@ -75,7 +88,7 @@
                 @Html.ActionLink("Details", "Details", new { id=item.HotelId }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.HotelId })
             </td>
-        </tr>
+        </tr>*@
     }
     
     </table>

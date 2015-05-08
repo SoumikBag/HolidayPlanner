@@ -1,4 +1,5 @@
 ﻿@model HolidayPlanner.Models.Country
+
 @{
     ViewBag.Title = "Mumbai";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -29,6 +30,7 @@
                 <div class="city "><a href="@Url.Action("Banglore", "Home")">From Bangalore</a></div>
             </div>
         </div>
+        <br />
         <h1>Which place are you looking for Holidays?</h1>
 
         <center>
@@ -50,6 +52,8 @@
 
                     @*@Html.DropDownList("CountryDropDown", Model.CountryList, "Select Country")*@
                     
+                   
+                    
                 </div>
 
                 @*<div class="dropdown-button">
@@ -70,12 +74,12 @@
             @*<input type="text" value="Keyword, name, date, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">*@
             <br/><br/>
             <div class="contact_btn">
-                <h1><label class=""><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home")'"/></label></h1>
+                <h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home")'" /></label></h1>
                
             </div>
         </form>
         <div class="clearfix"></div>
-
+        <br />
     </div>
 
     <div class="nivoSlider theme-default" id="slider">
