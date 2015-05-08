@@ -22,5 +22,7 @@ namespace HolidayPlanner.Models
             .WithMany(e => e.Roles)
             .Map(m => m.ToTable("UserInRole").MapLeftKey("RoleId").MapRightKey("UserId"));
         }
+
+        public System.Data.Entity.DbSet<HolidayPlanner.Models.Country> Countries { get; set; }
     }
 }

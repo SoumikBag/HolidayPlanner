@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 
 
+
 namespace HolidayPlanner.Controllers
 {
     [CustomAuthorize(Roles = "Client")]
@@ -100,49 +101,120 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        
-        
-        
+
+
+
         public ActionResult Info(string clickinfo)
         {
 
             var db = new HolidayPlanner.Models.InfoData();
 
             //var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
-                        
+
             //var model = (from p in db.Hotels
             //             where p.HotelId == 11
             //             select p).ToList();
-                        
-            if(clickinfo == "room")
+
+            if (clickinfo == "room")
             {
-            var roominfo = from r in db.Rooms join h in db.Hotels
-                                     on r.RoomId equals h.RoomId
-                                     select new InfoViewModel {  Rate=r.Rate,  RoomDetails=r.RoomDetails,  RoomCapacity=r.RoomCapacity } ;
-                        
-            return View("RoomInfo", roominfo);
+                var roominfo = from r in db.Rooms
+                               join h in db.Hotels
+                                   on r.RoomId equals h.RoomId
+                               select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
+
+                return View("RoomInfo", roominfo);
             }
 
             else
             {
-            var facilityinfo = from f in db.Facilities join h in db.Hotels
-                               on f.FId equals h.FId
-                               select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
+                var facilityinfo = from f in db.Facilities
+                                   join h in db.Hotels
+                                       on f.FId equals h.FId
+                                   select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
 
-            return View("FacilityInfo", facilityinfo);
+
             }
+        }
+
+
+        public ActionResult First()
+        {
+            return View();
+        }
+
+        public ActionResult BeachFacing()
+        {
+            return View();
+        }
+                       
+        public ActionResult Romantic()
+        {
+            return View();
+        }
+
+        public ActionResult ValleyView()
+        {
+            return View();
+        }
+            
+        public ActionResult Adventure()
+        {
+            return View();
+        }
+
+        public ActionResult RiverSide()
+        {
+            return View();
+        }
+
+        public ActionResult PureVeg()
+        {
+            return View();
+        }
+
+        public ActionResult PetFriendly()
+        {
+            return View();
+        }
+
+        public ActionResult Beaches()
+        {
+            return View();
+        }
+
+        public ActionResult HillStations()
+        {
+            return View();
+        }
+
+        public ActionResult Farms()
+        {
+            return View();
+        }
+
+        CountryContext Ccon = new CountryContext();
+        public ActionResult DropDown()
+        {
+            Country c = new Country();
+            c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
+
+            return View("Index",c);
             
         }
 
-
-
-        public ActionResult Search()    //Is being written by SANDY
+        public ActionResult Tents()
         {
-            return View("First");
+            return View();
         }
 
+        public ActionResult Pune()
+        {
+            return View();
+        }
 
-
-
+        public ActionResult Banglore()
+        {
+            return View();
     }
+}
 }
