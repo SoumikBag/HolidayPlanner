@@ -125,8 +125,6 @@ namespace HolidayPlanner.Controllers
             
         }
 
-        public ActionResult First()
-        {
             return View();
         }
 
