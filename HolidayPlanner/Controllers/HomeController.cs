@@ -12,11 +12,18 @@ namespace HolidayPlanner.Controllers
     [CustomAuthorize(Roles = "Client")]
     public class HomeController : Controller
     {
-        
+        //started by sandy
         public ActionResult Index()
         {
-            return View();
+            Country c = new Country();
+            c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
+            return View(c);
         }
+        //ended by sandy
+
+
+
+
 
         public ActionResult About()
         {
@@ -41,7 +48,7 @@ namespace HolidayPlanner.Controllers
 
 
 
-
+        //started by sandy
         [HttpGet]
         public ActionResult Register()
         {
@@ -101,6 +108,7 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
+        //ended by sandy
 
 
 
@@ -193,15 +201,33 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        CountryContext Ccon = new CountryContext();
-        public ActionResult DropDown()
-        {
-            Country c = new Country();
-            c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
 
-            return View("Index",c);
+
+
+
+
+        //added by sandy for dropdown
+        CountryContext Ccon = new CountryContext();
+    
+        //public ActionResult DropDown1()
+        //{
+        //    Country c = new Country();
+        //    c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
+
+        //    return View("Index",c);
             
+        //}
+
+
+       //added by sandy
+        public ActionResult Search()
+        {
+            return View("First");
         }
+        //ended by sandy
+
+
+            
 
         public ActionResult Tents()
         {

@@ -270,6 +270,7 @@
     <Content Include="Views\Home\HillStations.cshtml" />
     <Content Include="Views\Home\Farms.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\DropDown1.cshtml" />
     <Content Include="Views\Home\Banglore.cshtml" />
     <Content Include="Views\Home\FacilityInfo.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
