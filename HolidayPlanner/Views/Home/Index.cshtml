@@ -1,4 +1,5 @@
 ﻿@model HolidayPlanner.Models.Country
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -41,6 +42,11 @@
 
 
                     @Html.DropDownList("CountryDropDown", Model.CountryList, "Select Country")
+                    @*@Html.DropDownListFor(m => m.CountryId, new SelectList(Model.CountryList, "CountryId", "CountryName"), "Select Country")*@
+                    @*@Html.DropDownList("CountryDropDown",ViewBag.CountryList as SelectList)
+
+                    ViewBag.CountryList = new SelectList(c.GetCountryList(), "CountryId", "CountryName");*@  
+                   
                     
                 </div>
 

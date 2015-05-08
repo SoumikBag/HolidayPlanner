@@ -269,6 +269,7 @@
     <Content Include="Views\Home\HillStations.cshtml" />
     <Content Include="Views\Home\Farms.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\DropDown1.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
