@@ -148,7 +148,10 @@ namespace HolidayPlanner.Controllers
 
         public ActionResult First()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> abc = (from hot in db.Hotels
+                               select hot).ToList();
+            return View(abc);
         }
 
         public ActionResult BeachFacing()
