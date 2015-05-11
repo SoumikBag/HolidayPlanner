@@ -130,6 +130,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\CityContext.cs" />
+    <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryContext.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
@@ -145,6 +148,7 @@
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInRole.cs" />
     <Compile Include="Models\UserInRoleContext.cs" />

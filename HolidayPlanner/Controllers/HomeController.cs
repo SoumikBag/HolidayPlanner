@@ -208,14 +208,14 @@ namespace HolidayPlanner.Controllers
 
         //added by sandy for dropdown
         CountryContext Ccon = new CountryContext();
-    
+
         //public ActionResult DropDown1()
         //{
         //    Country c = new Country();
         //    c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
 
-        //    return View("Index",c);
-            
+        //    return View("Index", c);
+
         //}
 
 
