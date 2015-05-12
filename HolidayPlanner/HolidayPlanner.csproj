@@ -138,9 +138,10 @@
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\Facility.cs" />
+    <Compile Include="Models\InfoViewModel.cs" />
+    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
-    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Register.cs" />
@@ -235,6 +236,7 @@
     <Content Include="Images\star.png" />
     <Content Include="Images\star1.png" />
     <Content Include="Images\star2.png" />
+    <Content Include="Images\temple.jpg" />
     <Content Include="Images\tents.jpg" />
     <Content Include="Images\valley-view.jpg" />
     <Content Include="Images\zoom.png" />
@@ -310,6 +312,7 @@
     <Content Include="Views\Home\Pune.cshtml" />
     <Content Include="Views\Home\RoomInfo.cshtml" />
     <Content Include="Views\Shared\Date.cshtml" />
+    <Content Include="Views\Home\ReviewInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -664,19 +664,19 @@
                 <div class="item" id="trippage1">
 
                     <ul id="scroller" class="simply-scroll-list" style="width: 2900px;">
-                        
+
 @for (var i = 0; i < Model.Count(); i++)
 {
                                     <li>
-                                        <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("GetId", "Home", new { name = Model[i].HotelName})" >
+                                        <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new { clickinfo = "overview", Hname=Model[i].HotelName})">
 
                                             <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100" />
                                             <div class="caption">
                                                @Html.DisplayFor(model=>model[i].HotelName)
-                                               
+
                                             </div>
-                                            <div class="nub"></div>
-                                        </a>
+                                    <div class="nub"></div>
+                                </a>
                                     </li>
 }
                                 </ul>
@@ -723,10 +723,10 @@
         <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
             <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
                 <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-8" aria-selected="true" aria-expanded="true">
-                    <a href="@Url.Action("Info", "Home", new { clickinfo = "room" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
+                            <a href="#tab-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
                         </li>
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-9" aria-selected="false" aria-expanded="false">
-                            <a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "facility" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
                         </li>
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
                             <a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Photos</a>
@@ -736,9 +736,10 @@
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
                     <a href="#tabs-5" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Location</a></li>
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="#tabs-6" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Traveller Reviews</a></li>
-
-                
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "review" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Traveller Reviews</a></li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "room" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Rooms and Rates</a>
+                </li>
 
             </ul>
            

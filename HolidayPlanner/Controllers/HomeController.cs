@@ -22,9 +22,6 @@ namespace HolidayPlanner.Controllers
         //ended by sandy
 
 
-
-
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -115,7 +112,7 @@ namespace HolidayPlanner.Controllers
         public ActionResult Info(string clickinfo)
         {
 
-            //var db = new HolidayPlanner.Models.InfoData();
+            var db = new HolidayPlanner.Models.InfoData();
 
             //var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
 
@@ -123,28 +120,47 @@ namespace HolidayPlanner.Controllers
             //             where p.HotelId == 11
             //             select p).ToList();
 
-            //if (clickinfo == "room")
-            //{
-            //    var roominfo = from r in db.Rooms
-            //                   join h in db.Hotels
-            //                       on r.RoomId equals h.RoomId
-            //                   select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
+            switch(clickinfo)
+            { 
+                case "room":            
+                {
+                    var roominfo = from r in db.Rooms
+                                   join h in db.Hotels
+                                       on r.RoomId equals h.RoomId
+                                   select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
 
-            //    return View("RoomInfo", roominfo);
-            //}
+                    return View("RoomInfo", roominfo);
+                }
 
-            //else
-            //{
-            //    var facilityinfo = from f in db.Facilities
-            //                       join h in db.Hotels
-            //                           on f.FId equals h.FId
-            //                       select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
+                case "facility":
+                {
+                    var facilityinfo = from f in db.Facilities
+                                       join h0 in db.Hotels
+                                       on f.FId equals h0.FId into f0
 
-            //    return View("FacilityInfo", facilityinfo);
+                                        from h1 in db.Hotels
+                                                                                                                        
+                                       select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails, FoodDetails = h1.FoodDetails, Policies = h1.HotelPolices};
 
-            //}
-            return View();
+                    return View("FacilityInfo", facilityinfo);
+                }
+
+                case "review":
+                {
+                    var review = from r in db.Reviews
+                                       join h in db.Hotels
+                                       on r.HotelId equals h.HotelId
+                                       select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
+
+                    return View("ReviewInfo", review);
+                }
+
+            }
+
+            return View("Error");
+
         }
+
 
 
         public ActionResult First()
