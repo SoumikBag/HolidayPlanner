@@ -10,11 +10,12 @@ namespace HolidayPlanner.Models
     [Table("Country")]
     public partial class Country
     {
-        public int CountryId { get; set; }
+        [StringLength(10)]
+        public string CountryId { get; set; }
 
         [StringLength(50)]
         public string CountryName { get; set; }
 
-        public SelectList CountryList { get; set; } 
+        public SelectList CountryList { get; set; }
     }
 }

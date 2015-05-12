@@ -8,11 +8,10 @@ namespace HolidayPlanner.Models
     public partial class InfoData : DbContext
     {
         public InfoData()
-            : base("name=InfoData")
+            : base("name=InfoData2")
         {
         }
 
-        public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Facility> Facilities { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<HotelType> HotelTypes { get; set; }
@@ -21,17 +20,8 @@ namespace HolidayPlanner.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Booking>()
-                .Property(e => e.TotalAmount)
-                .HasPrecision(2, 2);
-
-            modelBuilder.Entity<Facility>()
-                .HasMany(e => e.Hotels)
-                .WithRequired(e => e.Facility)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Hotel>()
-                .HasMany(e => e.Bookings)
+                .HasMany(e => e.Facilities)
                 .WithRequired(e => e.Hotel)
                 .WillCascadeOnDelete(false);
 
@@ -40,14 +30,14 @@ namespace HolidayPlanner.Models
                 .WithRequired(e => e.Hotel)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Hotel>()
+                .HasMany(e => e.Rooms)
+                .WithRequired(e => e.Hotel)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<HotelType>()
                 .HasMany(e => e.Hotels)
                 .WithRequired(e => e.HotelType)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Room>()
-                .HasMany(e => e.Hotels)
-                .WithRequired(e => e.Room)
                 .WillCascadeOnDelete(false);
         }
     }

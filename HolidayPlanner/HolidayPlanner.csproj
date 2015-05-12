@@ -138,10 +138,10 @@
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\Facility.cs" />
-    <Compile Include="Models\InfoViewModel.cs" />
-    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
+    <Compile Include="Models\InfoData.cs" />
+    <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Review.cs" />
@@ -278,7 +278,9 @@
     <Content Include="Views\Home\FacilityInfo.cshtml" />
     <Content Include="Views\Home\bookingform.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
