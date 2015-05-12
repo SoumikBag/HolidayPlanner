@@ -9,8 +9,15 @@ namespace HolidayPlanner.Models
     [Table("Room")]
     public partial class Room
     {
+        [Key]
+        [Column(Order = 0)]
         [StringLength(10)]
         public string RoomId { get; set; }
+
+        [Key]
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int HotelId { get; set; }
 
         [StringLength(50)]
         public string RoomType { get; set; }
@@ -23,5 +30,7 @@ namespace HolidayPlanner.Models
 
         [StringLength(50)]
         public string Rate { get; set; }
+
+        public virtual Hotel Hotel { get; set; }
     }
 }

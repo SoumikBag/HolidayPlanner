@@ -8,7 +8,7 @@ namespace HolidayPlanner.Models
     public partial class InfoData : DbContext
     {
         public InfoData()
-            : base("name=InfoData1")
+            : base("name=InfoData2")
         {
         }
 
@@ -21,7 +21,17 @@ namespace HolidayPlanner.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Hotel>()
+                .HasMany(e => e.Facilities)
+                .WithRequired(e => e.Hotel)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Hotel>()
                 .HasMany(e => e.Reviews)
+                .WithRequired(e => e.Hotel)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Hotel>()
+                .HasMany(e => e.Rooms)
                 .WithRequired(e => e.Hotel)
                 .WillCascadeOnDelete(false);
 

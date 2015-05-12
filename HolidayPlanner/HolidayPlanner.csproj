@@ -131,7 +131,6 @@
     </Compile>
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\City.cs" />
-    <Compile Include="Models\CityContext.cs" />
     <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryContext.cs" />
@@ -279,7 +278,9 @@
     <Content Include="Views\Home\FacilityInfo.cshtml" />
     <Content Include="Views\Home\bookingform.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

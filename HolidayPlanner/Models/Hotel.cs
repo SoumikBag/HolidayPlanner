@@ -11,7 +11,9 @@ namespace HolidayPlanner.Models
     {
         public Hotel()
         {
+            Facilities = new HashSet<Facility>();
             Reviews = new HashSet<Review>();
+            Rooms = new HashSet<Room>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -40,14 +42,12 @@ namespace HolidayPlanner.Models
         [StringLength(1000)]
         public string FoodDetails { get; set; }
 
-        [StringLength(200)]
-        public string FacilitiesAv { get; set; }
-
-        [StringLength(200)]
-        public string RoomsAv { get; set; }
+        public virtual ICollection<Facility> Facilities { get; set; }
 
         public virtual HotelType HotelType { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
+
+        public virtual ICollection<Room> Rooms { get; set; }
     }
 }
