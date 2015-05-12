@@ -1,0 +1,48 @@
+﻿
+@model IEnumerable<HolidayPlanner.Models.InfoViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Info</title>
+</head>
+<body>
+
+    <h2>Reviews</h2>
+
+    <div>
+        <hr />
+
+        <dl class="dl-horizontal">
+
+            @foreach (var item in Model)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(modelitem => item.Rating)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ReviewDetails)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(modelitem => item.ReviewDetails)
+                </dd>
+            }
+            </dl>
+        </div>
+                <p>
+
+                </p>
+    </body>
+</html>
