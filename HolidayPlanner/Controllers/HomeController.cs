@@ -148,8 +148,10 @@ namespace HolidayPlanner.Controllers
 
         public ActionResult First()
         {
-        
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> abc = (from hot in db.Hotels
+                               select hot).ToList();
+            return View(abc);
         }
 
         public ActionResult BeachFacing()
@@ -215,7 +217,7 @@ namespace HolidayPlanner.Controllers
         //    Country c = new Country();
         //    c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
 
-        //    return View("Index",c);
+        //    return View("Index", c);
             
         //}
 
@@ -243,7 +245,7 @@ namespace HolidayPlanner.Controllers
         public ActionResult Banglore()
         {
             return View();
-        }
+    }
 
         //public ActionResult GetID()
         //{
