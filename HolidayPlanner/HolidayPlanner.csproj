@@ -142,7 +142,6 @@
     <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
-    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Register.cs" />

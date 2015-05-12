@@ -129,8 +129,8 @@ namespace HolidayPlanner.Controllers
                                        on r.RoomId equals h.RoomId
                                    select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
 
-            //    return View("RoomInfo", roominfo);
-            //}
+                    return View("RoomInfo", roominfo);
+                }
 
                 case "facility":
                 {
@@ -155,12 +155,12 @@ namespace HolidayPlanner.Controllers
                     return View("ReviewInfo", review);
                 }
 
-            //}
-            return View();
             }
+
             return View("Error");
 
         }
+
 
 
         public ActionResult First()
