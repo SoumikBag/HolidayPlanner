@@ -15,7 +15,8 @@ namespace HolidayPlanner.Models
         }
 
         [Key]
-        public int HTypeId { get; set; }
+        [StringLength(10)]
+        public string HTypeId { get; set; }
 
         [Column("HotelType")]
         [StringLength(50)]

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IList<HolidayPlanner.Models.Hotel>
+@{
     ViewBag.Title = "First";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -612,15 +613,15 @@
 </div>
 
 <script type="text/javascript">
-    (function ($) {
-        $(function () {
+    
+        $(window).load(function() {
             $("#scroller").simplyScroll({
                 auto: false,
                 manualMode: 'loop',
                 speed: 10
             });
         });
-    })(jQuery);
+   
 </script>
 <style type="text/css">
     .caption:hover {
@@ -657,108 +658,34 @@
 </style>
 
 
-
-
-
     <div id="resultbarcontainer">
-
         <div id="resultbar">
             <div id="rightpanel">
                 <div class="item" id="trippage1">
+
                     <ul id="scroller" class="simply-scroll-list" style="width: 2900px;">
+
+@for (var i = 0; i < Model.Count(); i++)
+{
                                     <li>
-                                <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="http://www.abreakplease.com/varca-the-zuri-white-sands">
+                                        <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new { clickinfo = "overview"})">
 
-                                            <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100"/>
-                                            <div class="caption">The Zuri White Sands in Varca</div>
+                                            <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100" />
+                                            <div class="caption">
+                                               @Html.DisplayFor(model=>model[i].HotelName)
 
+                                            </div>
                                     <div class="nub"></div>
-
                                 </a>
                                     </li>
-                                    <li>
-                                <a class="plan rplan" rel="tripoption-mulshi-malhar-machi-resort" href="http://www.abreakplease.com/mulshi-malhar-machi-resort">
-
-
-                                            <img src="~/Images/10433_t.jpeg" border="0" width="140" height="100" />
-                                            <div class="caption">Malhar Machi Resort in Mulshi</div>
-                                            
-                                    <div class="nub"></div>
-
-                                </a>
-                                    </li>
-                                    <li>
-                                <a class="plan rplan" rel="tripoption-candolim-lemon-tree-amarante-beach-resort" href="http://www.abreakplease.com/candolim-lemon-tree-amarante-beach-resort">
-
-
-                                            <img src="~/Images/18211_t.jpeg" border="0" width="140" height="100" />
-                                            <div class="caption">Lemon Tree Amarante Beach Resort in Candolim</div>
-                                          
-                                    <div class="nub"></div>
-
-                                </a>
-                                    </li>
-                                    <li>
-                                <a class="plan rplan" rel="tripoption-cavelossim-dona-sylvia-beach-resort" href="http://www.abreakplease.com/cavelossim-dona-sylvia-beach-resort">
-
-
-                                            <img src="~/Images/18918_t.jpeg" border="0" width="140" height="100" />
-                                            <div class="caption">Dona Sylvia Beach Resort in Cavelossim</div>
-
-                                    <div class="nub"></div>
-
-                                </a>
-                                    </li>
-                                    <li>
-                                <a class="plan rplan" rel="tripoption-betul-mayfair-hideaway-spa-resort" href="http://www.abreakplease.com/betul-mayfair-hideaway-spa-resort">
-
-
-                                            <img src="~/Images/18980_t.jpeg" border="0" width="140" height="100" />
-                                            <div class="caption">Mayfair Hideaway Spa Resort in Betul</div>
-                                            
-                                    <div class="nub"></div>
-
-                                </a>
-                                    </li>
-                                    <li>
-                                <a class="plan rplan" rel="tripoption-benaulim-joecons-beach-resort" href="http://www.abreakplease.com/benaulim-joecons-beach-resort">
-
-                                            
-                                                <img src="~/Images/19295_t.jpeg" border="0" width="140" height="100" />
-                                                <div class="caption">Joecons Beach Resort in Benaulim</div>
-
-                                    <div class="nub"></div>
-
-                                </a>
-                                    </li>
-                                    <li>
-                                <a class="plan rplan" rel="tripoption-cavelossim-radisson-blu-resort" href="http://www.abreakplease.com/cavelossim-radisson-blu-resort">
-
-                                            <img src="~/Images/19295_t.jpeg" border="0" width="140" height="100" />
-                                            <div class="caption">Radisson Blu Resort in Cavelossim</div>
-
-                                    <div class="nub"></div>
-
-                                </a>
-                                    </li>
-                                    <li>
-                                <a style=margin-right:0 class="plan rplan" rel="tripoption-cavelossim-haathi-mahal-resort" href="http://www.abreakplease.com/cavelossim-haathi-mahal-resort">
-
-                                            <img src="~/Images/19295_t.jpeg" border="0" width="140" height="100" />
-                                            <div class="caption">Haathi Mahal Resort in Cavelossim</div>
-
-                                    <div class="nub"></div>
-
-                                </a>
-                                    </li>
+}
                                 </ul>
-
                             </div>
-
                     </div>
             <div class="clear"></div>
         </div>
     </div>
+
 
 <div id="resultdetailbackground">
 </div>
@@ -767,6 +694,7 @@
     <div class="tempplan plandetail" id="tripoption-varca-the-zuri-white-sands">
 
         <div class="h2">
+            
             The Zuri White Sands <span>in Varca, South Goa</span>
             <a class="loadsharebar" href="http://www.abreakplease.com/varca-the-zuri-white-sands/share" style="display:none;"></a>
             <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em;"></div>
@@ -784,7 +712,7 @@
             <div class="clear"></div>
         </div>
 
-        <script type="text/javascript"> 
+        <script type="text/javascript">
             $(document).ready(function () {
                 $('#tabs').tabs();
                 //$("#tabs").tabs();
@@ -814,12 +742,17 @@
                 </li>
 
             </ul>
-            @*<div id="tabs-1" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+           
+            <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em;">
+                <h3>@Html.ActionLink("Contact Us", "bookingform", "Home", new { id= ViewData["Id"]})</h3>
+            </div>
+
+            <div id="tabs-1" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
             <div id="tabs-2" aria-labelledby="ui-id-9" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
             <div id="tabs-3" aria-labelledby="ui-id-10" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
             <div id="tabs-4" aria-labelledby="ui-id-11" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 4 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
             <div id="tabs-5" aria-labelledby="ui-id-12" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 5 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
-            <div id="tabs-6" aria-labelledby="ui-id-13" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 6 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>*@
+            <div id="tabs-6" aria-labelledby="ui-id-13" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 6 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 
         </div>
 
@@ -866,4 +799,5 @@
         </div>*@
     </div>
 </div> 
+
 

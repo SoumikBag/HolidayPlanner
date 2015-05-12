@@ -9,12 +9,13 @@ namespace HolidayPlanner.Models
     [Table("Review")]
     public partial class Review
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ReviewId { get; set; }
 
-        [StringLength(50)]
+        [StringLength(2000)]
         public string ReviewDetails { get; set; }
 
-        public int? Rating { get; set; }
+        public double? Rating { get; set; }
 
         public int UserId { get; set; }
 

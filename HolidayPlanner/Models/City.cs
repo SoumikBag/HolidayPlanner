@@ -5,17 +5,18 @@ namespace HolidayPlanner.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    using System.Web.Mvc;
 
-    [Table("Country")]
-    public partial class Country
+    [Table("City")]
+    public partial class City
     {
         [StringLength(10)]
-        public string CountryId { get; set; }
+        public string CityId { get; set; }
 
         [StringLength(50)]
-        public string CountryName { get; set; }
+        public string CityName { get; set; }
 
-        public SelectList CountryList { get; set; }
+        [Required]
+        [StringLength(10)]
+        public string StateId { get; set; }
     }
 }

@@ -9,16 +9,18 @@ namespace HolidayPlanner.Models
     public partial class Facility
     {
         [Key]
-        public int FId { get; set; }
+        [Column(Order = 0)]
+        [StringLength(10)]
+        public string FacilityId { get; set; }
 
-        [StringLength(50)]
+        [Key]
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int HotelId { get; set; }
+
+        [StringLength(100)]
         public string FacilitiesType { get; set; }
 
-        [StringLength(50)]
-        public string FacilitiesDetails { get; set; }
-
-        public virtual ICollection<Hotel> Hotels { get; set; }
-
-
+        public virtual Hotel Hotel { get; set; }
     }
 }

@@ -130,6 +130,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryContext.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
@@ -140,11 +142,14 @@
     <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
+    <Compile Include="Models\InfoData.cs" />
+    <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInRole.cs" />
     <Compile Include="Models\UserInRoleContext.cs" />
@@ -273,8 +278,11 @@
     <Content Include="Views\Home\DropDown1.cshtml" />
     <Content Include="Views\Home\Banglore.cshtml" />
     <Content Include="Views\Home\FacilityInfo.cshtml" />
+    <Content Include="Views\Home\bookingform.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -303,6 +311,7 @@
     <Content Include="Views\Home\Tents.cshtml" />
     <Content Include="Views\Home\Pune.cshtml" />
     <Content Include="Views\Home\RoomInfo.cshtml" />
+    <Content Include="Views\Shared\Date.cshtml" />
     <Content Include="Views\Home\ReviewInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -21,7 +21,7 @@ namespace HolidayPlanner.Controllers
         }
         //ended by sandy
 
-        
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -129,8 +129,8 @@ namespace HolidayPlanner.Controllers
                                        on r.RoomId equals h.RoomId
                                    select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
 
-                    return View("RoomInfo", roominfo);
-                }
+            //    return View("RoomInfo", roominfo);
+            //}
 
                 case "facility":
                 {
@@ -155,6 +155,8 @@ namespace HolidayPlanner.Controllers
                     return View("ReviewInfo", review);
                 }
 
+            //}
+            return View();
             }
             return View("Error");
 
@@ -163,7 +165,11 @@ namespace HolidayPlanner.Controllers
 
         public ActionResult First()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> abc = (from hot in db.Hotels
+                               where hot.HTypeId=="LU"
+                               select hot).ToList();
+            return View(abc);
         }
 
         public ActionResult BeachFacing()
@@ -229,7 +235,7 @@ namespace HolidayPlanner.Controllers
         //    Country c = new Country();
         //    c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
 
-        //    return View("Index",c);
+        //    return View("Index", c);
             
         //}
 
@@ -258,5 +264,32 @@ namespace HolidayPlanner.Controllers
         {
             return View();
     }
+
+        public ActionResult GetId(string name)
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+
+            var id = from item in db.Hotels
+                      where item.HotelName.Equals(name)
+                      select item;
+
+            ViewData["Id"] = id;
+
+            return RedirectToAction("First");
+
+        }
+
+        
+
+
+        [HttpGet]
+        public ActionResult bookingform()
+        {
+            
+            return View();
+    }
+
+        
+
 }
 }
