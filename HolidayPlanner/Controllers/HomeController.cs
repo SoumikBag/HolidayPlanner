@@ -249,21 +249,31 @@ namespace HolidayPlanner.Controllers
             return View();
     }
 
-        //public ActionResult GetID()
-        //{
-        //    TempData["msg"] = id;
-        //    return RedirectToAction("First", "Home");
-        //}
+        public ActionResult GetId(string name)
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+
+            var id = from item in db.Hotels
+                      where item.HotelName.Equals(name)
+                      select item;
+
+            ViewData["Id"] = id;
+
+            return RedirectToAction("First");
+
+        }
+
+        
 
 
         [HttpGet]
         public ActionResult bookingform()
         {
+            
             return View();
         }
 
-
-
+        
 
 }
 }
