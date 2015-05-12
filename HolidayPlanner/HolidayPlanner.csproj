@@ -131,7 +131,6 @@
     </Compile>
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\City.cs" />
-    <Compile Include="Models\CityContext.cs" />
     <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryContext.cs" />

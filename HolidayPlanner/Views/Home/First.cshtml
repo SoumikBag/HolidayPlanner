@@ -613,15 +613,15 @@
 </div>
 
 <script type="text/javascript">
-    (function ($) {
-        $(function () {
+    
+        $(window).load(function() {
             $("#scroller").simplyScroll({
                 auto: false,
                 manualMode: 'loop',
                 speed: 10
             });
         });
-    })(jQuery);
+   
 </script>
 <style type="text/css">
     .caption:hover {
@@ -658,27 +658,26 @@
 </style>
 
 
-
-
-
     <div id="resultbarcontainer">
         <div id="resultbar">
             <div id="rightpanel">
                 <div class="item" id="trippage1">
 
                     <ul id="scroller" class="simply-scroll-list" style="width: 2900px;">
+                        
 @for (var i = 0; i < Model.Count(); i++)
 {
                                     <li>
-                                        <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new { clickinfo = "room" })">
+                                        <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("GetId", "Home", new { name = Model[i].HotelName})" >
 
                                             <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100" />
                                             <div class="caption">
-                                                @Html.DisplayFor(model => model[i].HotelName)
+                                               @Html.DisplayFor(model=>model[i].HotelName)
+                                               
                                             </div>
                                             <div class="nub"></div>
                                         </a>
-                              </li>
+                                    </li>
 }
                                 </ul>
                             </div>
@@ -695,6 +694,7 @@
     <div class="tempplan plandetail" id="tripoption-varca-the-zuri-white-sands">
 
         <div class="h2">
+            
             The Zuri White Sands <span>in Varca, South Goa</span>
             <a class="loadsharebar" href="http://www.abreakplease.com/varca-the-zuri-white-sands/share" style="display:none;"></a>
             <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em;"></div>
@@ -723,7 +723,7 @@
         <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
             <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
                 <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-8" aria-selected="true" aria-expanded="true">
-                            <a href="@Url.Action("Info", "Home", new { clickinfo = "room" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "room" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
                         </li>
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-9" aria-selected="false" aria-expanded="false">
                             <a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
@@ -743,7 +743,7 @@
             </ul>
            
             <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em;">
-                <h3>@Html.ActionLink("Contact Us","bookingform","Home")</h3>
+                <h3>@Html.ActionLink("Contact Us", "bookingform", "Home", new { id= ViewData["Id"]})</h3>
             </div>
 
             <div id="tabs-1" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
