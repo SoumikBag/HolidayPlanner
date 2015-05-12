@@ -273,6 +273,7 @@
     <Content Include="Views\Home\DropDown1.cshtml" />
     <Content Include="Views\Home\Banglore.cshtml" />
     <Content Include="Views\Home\FacilityInfo.cshtml" />
+    <Content Include="Views\Home\bookingform.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -303,6 +304,7 @@
     <Content Include="Views\Home\Tents.cshtml" />
     <Content Include="Views\Home\Pune.cshtml" />
     <Content Include="Views\Home\RoomInfo.cshtml" />
+    <Content Include="Views\Shared\Date.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

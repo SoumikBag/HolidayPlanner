@@ -20,8 +20,10 @@ namespace HolidayPlanner.Models
 
         public int HotelId { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime? CheckInDate { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime? CheckOutDate { get; set; }
 
         public int? NoOfAdults { get; set; }

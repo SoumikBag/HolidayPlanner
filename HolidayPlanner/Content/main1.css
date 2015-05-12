@@ -3394,6 +3394,7 @@ body > #superoutercontainer {
   z-index: -2; }
 
 #resultdetail {
+    padding-top:50px;
   width: 65em;
   margin: 0.5em auto 0 auto;
   z-index: 10; }

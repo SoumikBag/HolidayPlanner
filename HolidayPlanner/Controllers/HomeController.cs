@@ -148,6 +148,7 @@ namespace HolidayPlanner.Controllers
 
         public ActionResult First()
         {
+        
             return View();
         }
 
@@ -242,6 +243,23 @@ namespace HolidayPlanner.Controllers
         public ActionResult Banglore()
         {
             return View();
-    }
+        }
+
+        //public ActionResult GetID()
+        //{
+        //    TempData["msg"] = id;
+        //    return RedirectToAction("First", "Home");
+        //}
+
+
+        [HttpGet]
+        public ActionResult bookingform()
+        {
+            return View();
+        }
+
+
+
+
 }
 }
