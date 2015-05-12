@@ -115,7 +115,7 @@ namespace HolidayPlanner.Controllers
         public ActionResult Info(string clickinfo)
         {
 
-            var db = new HolidayPlanner.Models.InfoData();
+            //var db = new HolidayPlanner.Models.InfoData();
 
             //var hotelinfo = db.Hotels.Where(h => h.HotelId == 11);
 
@@ -123,26 +123,27 @@ namespace HolidayPlanner.Controllers
             //             where p.HotelId == 11
             //             select p).ToList();
 
-            if (clickinfo == "room")
-            {
-                var roominfo = from r in db.Rooms
-                               join h in db.Hotels
-                                   on r.RoomId equals h.RoomId
-                               select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
+            //if (clickinfo == "room")
+            //{
+            //    var roominfo = from r in db.Rooms
+            //                   join h in db.Hotels
+            //                       on r.RoomId equals h.RoomId
+            //                   select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
 
-                return View("RoomInfo", roominfo);
-            }
+            //    return View("RoomInfo", roominfo);
+            //}
 
-            else
-            {
-                var facilityinfo = from f in db.Facilities
-                                   join h in db.Hotels
-                                       on f.FId equals h.FId
-                                   select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
+            //else
+            //{
+            //    var facilityinfo = from f in db.Facilities
+            //                       join h in db.Hotels
+            //                           on f.FId equals h.FId
+            //                       select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails };
 
-                return View("FacilityInfo", facilityinfo);
+            //    return View("FacilityInfo", facilityinfo);
 
-            }
+            //}
+            return View();
         }
 
 
@@ -150,6 +151,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> abc = (from hot in db.Hotels
+                               where hot.HTypeId=="LU"
                                select hot).ToList();
             return View(abc);
         }
