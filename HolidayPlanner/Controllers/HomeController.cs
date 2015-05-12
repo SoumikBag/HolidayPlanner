@@ -283,12 +283,17 @@ namespace HolidayPlanner.Controllers
 
 
         [HttpGet]
-        public ActionResult bookingform()
+        public ActionResult bookingform(int id)
         {
             
-            return View();
-    }
+            return RedirectToAction("Id",id);
+        }
 
+        public ActionResult Id(int id)
+        {
+            TempData["Id"] = id;
+            return View("bookingform");
+        }
         
 
 }
