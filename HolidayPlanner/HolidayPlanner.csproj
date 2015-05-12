@@ -235,6 +235,7 @@
     <Content Include="Images\star.png" />
     <Content Include="Images\star1.png" />
     <Content Include="Images\star2.png" />
+    <Content Include="Images\temple.jpg" />
     <Content Include="Images\tents.jpg" />
     <Content Include="Images\valley-view.jpg" />
     <Content Include="Images\zoom.png" />
