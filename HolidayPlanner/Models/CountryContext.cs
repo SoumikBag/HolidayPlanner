@@ -15,7 +15,7 @@ namespace HolidayPlanner.Models
 
         public IEnumerable<Country> GetCountryList()
         {
-            
+
             string query = "SELECT [CountryId],[CountryName]FROM [HolidayPlanner].[dbo].[Country]";
             var result = con.Query<Country>(query);
             return result;

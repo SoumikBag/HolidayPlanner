@@ -217,7 +217,7 @@ namespace HolidayPlanner.Controllers
         //    Country c = new Country();
         //    c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
 
-        //    return View("Index",c);
+        //    return View("Index", c);
             
         //}
 
@@ -246,5 +246,22 @@ namespace HolidayPlanner.Controllers
         {
             return View();
     }
+
+        //public ActionResult GetID()
+        //{
+        //    TempData["msg"] = id;
+        //    return RedirectToAction("First", "Home");
+        //}
+
+
+        [HttpGet]
+        public ActionResult bookingform()
+        {
+            return View();
+        }
+
+
+
+
 }
 }
