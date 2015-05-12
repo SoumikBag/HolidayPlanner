@@ -8,11 +8,10 @@ namespace HolidayPlanner.Models
     public partial class InfoData : DbContext
     {
         public InfoData()
-            : base("name=InfoData")
+            : base("name=InfoData1")
         {
         }
 
-        public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Facility> Facilities { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<HotelType> HotelTypes { get; set; }
@@ -21,20 +20,6 @@ namespace HolidayPlanner.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Booking>()
-                .Property(e => e.TotalAmount)
-                .HasPrecision(2, 2);
-
-            modelBuilder.Entity<Facility>()
-                .HasMany(e => e.Hotels)
-                .WithRequired(e => e.Facility)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Hotel>()
-                .HasMany(e => e.Bookings)
-                .WithRequired(e => e.Hotel)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Hotel>()
                 .HasMany(e => e.Reviews)
                 .WithRequired(e => e.Hotel)
@@ -43,11 +28,6 @@ namespace HolidayPlanner.Models
             modelBuilder.Entity<HotelType>()
                 .HasMany(e => e.Hotels)
                 .WithRequired(e => e.HotelType)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Room>()
-                .HasMany(e => e.Hotels)
-                .WithRequired(e => e.Room)
                 .WillCascadeOnDelete(false);
         }
     }

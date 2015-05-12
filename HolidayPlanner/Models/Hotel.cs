@@ -11,39 +11,42 @@ namespace HolidayPlanner.Models
     {
         public Hotel()
         {
-            Bookings = new HashSet<Booking>();
             Reviews = new HashSet<Review>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int HotelId { get; set; }
 
         [StringLength(50)]
         public string HotelName { get; set; }
 
-        public int CityId { get; set; }
+        [StringLength(2000)]
+        public string HotelDetails { get; set; }
 
-        [StringLength(50)]
+        [Required]
+        [StringLength(10)]
+        public string CityId { get; set; }
+
+        [StringLength(500)]
         public string Address { get; set; }
 
-        public int HTypeId { get; set; }
+        [Required]
+        [StringLength(10)]
+        public string HTypeId { get; set; }
 
-        [StringLength(50)]
+        [StringLength(1000)]
         public string HotelPolices { get; set; }
 
-        [StringLength(50)]
+        [StringLength(1000)]
         public string FoodDetails { get; set; }
 
-        public int RoomId { get; set; }
+        [StringLength(200)]
+        public string FacilitiesAv { get; set; }
 
-        public int FId { get; set; }
-
-        public virtual ICollection<Booking> Bookings { get; set; }
-
-        public virtual Facility Facility { get; set; }
+        [StringLength(200)]
+        public string RoomsAv { get; set; }
 
         public virtual HotelType HotelType { get; set; }
-
-        public virtual Room Room { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
     }

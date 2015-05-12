@@ -9,23 +9,19 @@ namespace HolidayPlanner.Models
     [Table("Room")]
     public partial class Room
     {
-        public Room()
-        {
-            Hotels = new HashSet<Hotel>();
-        }
-
-        public int RoomId { get; set; }
+        [StringLength(10)]
+        public string RoomId { get; set; }
 
         [StringLength(50)]
         public string RoomType { get; set; }
 
-        public int? RoomCapacity { get; set; }
-
         [StringLength(50)]
+        public string RoomCapacity { get; set; }
+
+        [StringLength(200)]
         public string RoomDetails { get; set; }
 
-        public int? Rate { get; set; }
-
-        public virtual ICollection<Hotel> Hotels { get; set; }
+        [StringLength(50)]
+        public string Rate { get; set; }
     }
 }
