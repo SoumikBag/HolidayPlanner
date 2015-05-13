@@ -668,7 +668,7 @@
 @for (var i = 0; i < Model.Count(); i++)
 {
                                     <li>
-                                        <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new { clickinfo = "overview", Hname=Model[i].HotelName})">
+                                        <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new { clickinfo = "overview", Hid=Model[i].HotelId})">
 
                                             <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100" />
                                             <div class="caption">
@@ -691,7 +691,7 @@
 </div>
 <div id="resultdetail">
 
-    <div class="tempplan plandetail" id="tripoption-varca-the-zuri-white-sands">
+    @*<div class="tempplan plandetail" id="tripoption-varca-the-zuri-white-sands">
 
         <div class="h2">
             
@@ -796,8 +796,8 @@
                 <div class="hotelpane inquirypane ">
                 </div>
             </div>
-        </div>*@
-    </div>
+        </div>
+    </div>*@
 </div> 
 
 

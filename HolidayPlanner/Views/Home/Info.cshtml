@@ -1,5 +1,4 @@
-﻿@model IEnumerable<HolidayPlanner.Models.InfoViewModel>
-
+﻿
 @{
     Layout = null;
 }
@@ -12,85 +11,118 @@
     <title>Info</title>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        @*<tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Facility.FacilitiesType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HotelType.HotelType1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Room.RoomType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HotelName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CityId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HotelPolices)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FoodDetails)
-            </th>
-            <th></th>
-        </tr>*@
-    
-    @foreach (var item in Model) {
-        
-        <tr>
-            <td>
-                @Html.DisplayFor(modelitem => item.RoomCapacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelitem => item.RoomDetails)
-            </td>
-            <td>
-                @Html.DisplayFor(modelitem => item.Rate)
-            </td>
-        </tr>
-        
-        @*<tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Facility.FacilitiesType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HotelType.HotelType1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Room.RoomType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HotelName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CityId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HotelPolices)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FoodDetails)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.HotelId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.HotelId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.HotelId })
-            </td>
-        </tr>*@
-    }
-    
-    </table>
+   
+    <div class="tempplan plandetail" id="tripoption-varca-the-zuri-white-sands">
+
+        <div class="h2">
+
+            The Zuri White Sands <span>in Varca, South Goa</span>
+            <a class="loadsharebar" href="http://www.abreakplease.com/varca-the-zuri-white-sands/share" style="display:none;"></a>
+            <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em;"></div>
+        </div>
+
+
+        <div style="background: white;padding:0 1em 1em 1em;">
+
+            <div style="background: white;line-height: 1.5em;padding-left: 5px;">
+
+
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#tabs').tabs();
+                //$("#tabs").tabs();
+            });
+        </script>
+
+
+        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-8" aria-selected="true" aria-expanded="true">
+                    <a href="#tab-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
+                </li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-9" aria-selected="false" aria-expanded="false">
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "facility" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
+                </li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                    <a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Photos</a>
+                </li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                    <a href="#tabs-4" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Map</a>
+                </li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                    <a href="#tabs-5" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Location</a>
+                </li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "review" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Traveller Reviews</a>
+                </li>
+                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "room" })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Rooms and Rates</a>
+                </li>
+
+            </ul>
+
+            <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em;">
+                <h3>@Html.ActionLink("Contact Us", "bookingform", "Home", new { id = ViewData["Id"] })</h3>
+            </div>
+
+            <div id="tabs-1" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            <div id="tabs-2" aria-labelledby="ui-id-9" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+            <div id="tabs-3" aria-labelledby="ui-id-10" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+            <div id="tabs-4" aria-labelledby="ui-id-11" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 4 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+            <div id="tabs-5" aria-labelledby="ui-id-12" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 5 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+            <div id="tabs-6" aria-labelledby="ui-id-13" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 6 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+
+        </div>
+
+        @*<div class="hoteltabscontainer" style="position: relative;">
+                <ul class="hoteltabs">
+                    <li><a href="@Url.Action("Index", "Home")" rel="hotelhighlights" class=""><span>Overview</span></a></li>
+                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/overview" rel="hoteloverview" class=""><span>Info & Facilities</span></a></li>
+                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/photos" rel="hotelphotos" class=""><span>Photos</span></a></li>
+                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/howtoreach" rel="hotelmap" class=""><span>Map</span></a></li>
+                    <li><a href="http://www.abreakplease.com/varca-goa" rel="hotellocation" class=""><span>Location</span></a></li>
+                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/reviews" rel="hotelreviews" class=""><span>Traveller Reviews</span></a></li>
+
+
+
+                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/rates" rel="booknow" class=""><span>Rooms & Rates</span></a></li>
+
+                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/onlineinquiry" rel="hotelinquiry" class="" style="visibility: hidden;"><span>Online Inquiry</span></a></li>
+
+                </ul>
+                <div style="position:absolute;z-index: 20;top:-10px;right:0;left:auto">
+                    <a href="http://www.abreakplease.com/varca-the-zuri-white-sands/villa-on-rent/onlinevillainquiry" onclick="loadinquirytab($(this).parents('.hoteltabscontainer'),'http://www.abreakplease.com/varca-the-zuri-white-sands/villa-on-rent/onlinevillainquiry');return false;" class="bigenquirybutton " style="font-size:2.25em;padding:0.75em 0.5em 0.75em 1.75em;background-position: 3% 45%;">
+                       <span>CONTACT PROPERTY</span>
+                    </a>
+                </div>
+                <div class="clear"></div>
+                <div class="hotelpanes">
+                    <div class="hotelpane highlightpane ">
+                    </div>
+                    <div class="hotelpane ">
+                    </div>
+                    <div class="hotelpane ">
+                    </div>
+                    <div class="hotelpane ">
+                    </div>
+                    <div class="hotelpane">
+                    </div>
+                    <div class="hotelpane ">
+                    </div>
+                    <div class="hotelpane ratepane ">
+                    </div>
+                    <div class="hotelpane inquirypane ">
+                    </div>
+                </div>
+            </div>*@
+    </div>
+
 </body>
 </html>
+

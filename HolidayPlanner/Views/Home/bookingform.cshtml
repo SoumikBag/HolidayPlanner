@@ -119,6 +119,12 @@
 
     </div>
 
+@if(null!=TempData["Id"])
+{
+    <script>alert("@TempData["Id"]")</script>
+}
+
+
 <script type="text/javascript">
     $('CheckoutDate').datepicker;
     $('CheckinDate').datepicker;
