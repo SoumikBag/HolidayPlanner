@@ -138,8 +138,6 @@
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\Facility.cs" />
-    <Compile Include="Models\InfoViewModel.cs" />
-    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
     <Compile Include="Models\InfoViewModel.cs" />
@@ -243,6 +241,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
