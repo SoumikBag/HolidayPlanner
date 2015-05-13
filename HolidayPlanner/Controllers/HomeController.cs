@@ -109,7 +109,7 @@ namespace HolidayPlanner.Controllers
 
 
 
-        public ActionResult Info(string clickinfo, int Hid)
+        public ActionResult Info(string clickinfo, int? HId)
         {
 
             var db = new HolidayPlanner.Models.InfoData();
@@ -117,35 +117,48 @@ namespace HolidayPlanner.Controllers
 
             switch(clickinfo)
             {
+
+                case "hoteldetails":
+                    {
+                        var Hdetail = (from p in db.Hotels
+                                         where p.HotelId == HId
+                                         select new {HotelId = p.HotelId, HotelName = p.HotelName }).SingleOrDefault();
+
+                        ViewData["HotelDetail"] = Hdetail;
+
+                        return View("Info", Hdetail);
+                    }
+
                 case "overview":
                     {
-                        var Odetail = (from p in db.Hotels
-                                       where p.HotelId == Hid
-                                       select p.HotelDetails).SingleOrDefault();
+                        var Odetail = from p in db.Hotels
+                                       where p.HotelId == HId
+                                       select new InfoViewModel { HotelDetails = p.HotelDetails };
                         return View("Overview", Odetail);
                     }
 
                 case "room":
                     {
                         var roominfo = from r in db.Rooms
-                                       where r.HotelId == Hid
-                                       select new InfoViewModel { Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
+                                       where r.HotelId == HId
+                                       select new InfoViewModel { RoomType = r.RoomType, Rate = r.Rate, RoomDetails = r.RoomDetails, RoomCapacity = r.RoomCapacity };
 
                         return View("RoomInfo", roominfo);
                     }
 
-            //    case "facility":
-            //    {
-            //        var facilityinfo = from f in db.Facilities
-            //                           join h0 in db.Hotels
-            //                           on f.FId equals h0.FId into f0
+                case "facility":
+                    {
+                        var facilityinfo = from f in db.Facilities
+                                           join h in db.Hotels
+                                           on f.HotelId equals h.HotelId
+                                           where f.HotelId == HId
 
-            //                            from h1 in db.Hotels
-                                                                                                                        
-            //                           select new InfoViewModel { FacilityType = f.FacilitiesType, FacilityDetails = f.FacilitiesDetails, FoodDetails = h1.FoodDetails, Policies = h1.HotelPolices};
+                                           //from h in db.Hotels
 
-            //        return View("FacilityInfo", facilityinfo);
-            //    }
+                                           select new InfoViewModel { FacilityType = f.FacilitiesType, FoodDetails = h.FoodDetails, Policies = h.HotelPolices };
+
+                        return View("FacilityInfo", facilityinfo);
+                    }
 
                 case "review":
                     {
