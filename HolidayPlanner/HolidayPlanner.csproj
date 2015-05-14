@@ -280,6 +280,7 @@
     <Content Include="Views\Home\FacilityInfo.cshtml" />
     <Content Include="Views\Home\bookingform.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\HolyPlaces.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -309,7 +310,6 @@
     <Content Include="Views\Home\RiverSide.cshtml" />
     <Content Include="Views\Home\PureVeg.cshtml" />
     <Content Include="Views\Home\PetFriendly.cshtml" />
-    <Content Include="Views\Home\Tents.cshtml" />
     <Content Include="Views\Home\Pune.cshtml" />
     <Content Include="Views\Home\RoomInfo.cshtml" />
     <Content Include="Views\Shared\Date.cshtml" />
