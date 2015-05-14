@@ -16,21 +16,10 @@
 </head>
 <body>
 
-    <div class="tempplan plandetail" id="tripoption-varca-the-zuri-white-sands">
+    <div class="tempplan plandetail">
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div class="h2">
+        <div class="h3">
 
             <div>
                 @Html.DisplayFor(model => model.HotelName)
@@ -64,10 +53,10 @@
         <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
             <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
                 <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-8" aria-selected="true" aria-expanded="true">
-                    <a href="@Url.Action("Info", "Home" , new { clickinfo ="overview" , HId = 1})" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
+                    <a href="@Url.Action("Info", "Home" , new { clickinfo ="overview" , HId = Model.HotelId})" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
                 </li>
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-9" aria-selected="false" aria-expanded="false">
-                    <a href="@Url.Action("Info", "Home", new { clickinfo = "facility", HId = 1 })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "facility", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
                 </li>
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
                     <a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Photos</a>
@@ -79,10 +68,10 @@
                     <a href="#tabs-5" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Location</a>
                 </li>
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="@Url.Action("Info", "Home", new { clickinfo = "review", HId = 1 })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Traveller Reviews</a>
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "review", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Traveller Reviews</a>
                 </li>
                 <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="@Url.Action("Info", "Home", new { clickinfo = "room", HId = 1 })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Rooms and Rates</a>
+                    <a href="@Url.Action("Info", "Home", new { clickinfo = "room", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Rooms and Rates</a>
                 </li>
 
             </ul>

@@ -120,12 +120,11 @@ namespace HolidayPlanner.Controllers
 
                 case "hoteldetails":
                     {
+
                         var Hdetail = (from p in db.Hotels
                                          where p.HotelId == HId
-                                         select new {HotelId = p.HotelId, HotelName = p.HotelName }).SingleOrDefault();
-
-                        ViewData["HotelDetail"] = Hdetail;
-
+                                        select p ).SingleOrDefault();
+                                                
                         return View("Info", Hdetail);
                     }
 
