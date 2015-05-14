@@ -174,7 +174,11 @@ namespace HolidayPlanner.Controllers
             return View();
 
         }
-
+         
+        public ActionResult Par()
+        {
+            return PartialView();
+        }
 
 
         public ActionResult First()
