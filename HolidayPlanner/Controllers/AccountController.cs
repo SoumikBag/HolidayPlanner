@@ -20,6 +20,7 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
+
         [HttpPost]
         public ActionResult Login(LoginViewModel model, string returnUrl = "")
         {
@@ -29,6 +30,8 @@ namespace HolidayPlanner.Controllers
                 if (user != null)
                 {
                     var roles = user.Roles.Select(m => m.RoleName).ToArray();
+
+                    Session["UserId"] = user.UserId;
 
                     CustomPrincipalSerializeModel serializeModel = new CustomPrincipalSerializeModel();
                     serializeModel.UserId = user.UserId;
@@ -71,6 +74,7 @@ namespace HolidayPlanner.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
+            Session.Abandon();
             return RedirectToAction("Login", "Account", null);
         }
     }
