@@ -185,7 +185,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> abc = (from hot in db.Hotels
-                               where hot.HTypeId=="LU"
+                               where hot.HTypeId == "LU" && hot.CityId == "MU"
                                select hot).ToList();
             return View(abc);
         }
@@ -194,7 +194,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> bfac = (from hot in db.Hotels
-                               where hot.HTypeId == "BF"
+                                where hot.HTypeId == "BF" && hot.CityId == "MU"
                                select hot).ToList();
             return View(bfac);
         }
@@ -203,7 +203,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> rom = (from hot in db.Hotels
-                                where hot.HTypeId == "RM"
+                               where hot.HTypeId == "RM" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(rom);
         }
@@ -212,7 +212,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> valy = (from hot in db.Hotels
-                                where hot.HTypeId == "VV"
+                                where hot.HTypeId == "VV" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(valy);
         }
@@ -221,7 +221,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> adv = (from hot in db.Hotels
-                                where hot.HTypeId == "AV"
+                               where hot.HTypeId == "AV" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(adv);
         }
@@ -230,7 +230,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> rside = (from hot in db.Hotels
-                                where hot.HTypeId == "RS"
+                                 where hot.HTypeId == "RS" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(rside);
         }
@@ -239,7 +239,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> pveg = (from hot in db.Hotels
-                                where hot.HTypeId == "PV"
+                                where hot.HTypeId == "PV" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(pveg);
         }
@@ -248,7 +248,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> pet = (from hot in db.Hotels
-                                where hot.HTypeId == "PF"
+                               where hot.HTypeId == "PF" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(pet);
         }
@@ -257,7 +257,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> beach = (from hot in db.Hotels
-                                where hot.HTypeId == "BC"
+                                 where hot.HTypeId == "BC" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(beach);
         }
@@ -266,7 +266,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> hill = (from hot in db.Hotels
-                                where hot.HTypeId == "HS"
+                                where hot.HTypeId == "HS" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(hill);
         }
@@ -275,7 +275,7 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> far = (from hot in db.Hotels
-                                where hot.HTypeId == "FA"
+                               where hot.HTypeId == "FA" && hot.CityId == "MU"
                                 select hot).ToList();
             return View(far);
         }
@@ -309,20 +309,14 @@ namespace HolidayPlanner.Controllers
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> holy = (from hot in db.Hotels
-                               where hot.HTypeId == "HP"
+                                where hot.HTypeId == "HP" && hot.CityId == "MU"
                                select hot).ToList();
             return View(holy);
         }
 
-        public ActionResult Pune()
-        {
-            return View();
-        }
+       
 
-        public ActionResult Banglore()
-        {
-            return View();
-    }
+        
 
         public ActionResult GetId(string name)
         {
@@ -348,7 +342,7 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-        
+       
 
 }
 }

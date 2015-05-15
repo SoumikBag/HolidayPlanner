@@ -1,0 +1,703 @@
+﻿@model IList<HolidayPlanner.Models.Hotel>
+@{
+    ViewBag.Title = "BeachesPune";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="outputcontainer">
+    <div style="background:#fbeedb;color:#C94A00;padding:10px 0;width:100%;text-align: center;font-size:13px;border-bottom:1px dotted #ccc;">We have seperate section where you can search <strong>VILLAS/BUNGALOWS ON RENT</strong> for your vacation. <a class="linkbutton" href="http://www.abreakplease.com/villas" style="margin-left: 1em;">Explore Now</a> </div>
+    <div id="displaybar" style="width:100%;background:border-box; border-top:groove">
+        <div style="width:65em;margin:0 auto; text-align:left">
+            <div class="text" style="">
+                <h1 style="font-size:1.5em;line-height:1.2em;" id="pageresulttitle">
+
+                    Beaches accommodation, hotels, getaways around pune
+                </h1>
+                <div style="padding: 5px 0;">
+                    <span style="color:#aaa;display:inline-block;" id="pageresultcount">
+                        (82 options found)
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="newfiltersection" style="width:100%;background:white;height:40px;">
+        <div style="width:65em;margin:0 auto;height:40px;" id="filters">
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Location<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_big">
+                        <div id="filterlocationlinks">
+                            <div class="filtersubheader" style="margin-top:10px;">Select Location Type</div>
+                            <a rel="locationtype.beach-stay" href="http://www.abreakplease.com/getaways/around-mumbai/luxury/beach-stay" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Beach
+                            </a>
+                            <a rel="locationtype.hill-station-stay" href="http://www.abreakplease.com/getaways/around-mumbai/luxury/hill-station-stay" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Hill Station
+                            </a>
+                            <div class="clear"></div>
+                            <div class="filtersubheader" style="margin-top:10px;">Travel Distance</div>
+                            <a rel="traveldistance.0.100" href="#" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Within 100km
+                            </a>
+                            <a rel="traveldistance.0.150" href="#" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Within 150km
+                            </a>
+                            <a rel="traveldistance.0.200" href="#" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Within 200km
+                            </a>
+                            <a rel="traveldistance.0.300" href="#" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Within 300km
+                            </a>
+                            <a rel="traveldistance.300.0" href="#" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                More than 300km
+                            </a>
+                            <div class="clear"></div>
+                            <div class="filtersubheader" style="margin-top:10px;">Select Places</div>
+                            <div id="placeoptions" style="word-spacing:0;">
+
+                                <a rel="places.candolim-goa" href="http://www.abreakplease.com/candolim-goa/accommodation/luxury" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Candolim (9)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a rel="places.mahabaleshwar-maharashtra" href="http://www.abreakplease.com/mahabaleshwar-maharashtra/accommodation/luxury" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Mahabaleshwar (8)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a rel="places.lonavala-maharashtra" href="http://www.abreakplease.com/lonavala-maharashtra/accommodation/luxury" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Lonavala (6)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a rel="places.calangute-goa" href="http://www.abreakplease.com/calangute-goa/accommodation/luxury" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Calangute (5)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a rel="places.cavelossim-goa" href="http://www.abreakplease.com/cavelossim-goa/accommodation/luxury" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Cavelossim (4)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a id="showmoreplaces" href="#"
+                                   style="padding: 0.5em 1em; display: inline-block; clear: both; color: white ;background:#2daebf;border-radius: 2px;margin-top:5px;font-weight: bold;text-shadow: none;width:11em;text-align:center;">Show More Places</a>
+                                <div class="hiddenplaces" style="display: none;top:0;left:0;position:fixed;width:100%;height:100%;z-index:200;">
+                                    <div id="showmoreplacesmask" style="background:#000;opacity:0.8;position:absolute;width:100%;height:100%;z-index:200;"></div>
+                                    <a id="showmoreplacesclose" href="#" style="position:absolute;top:100px;left:50%;margin-left:155px;margin-top:-1.5em;z-index:301;height:3em;width:3em;background:url(http://in.static.abreakplease.com/1.4//Content/images/close.png) no-repeat;cursor:pointer;"></a>
+                                    <div style="background: white;padding:1em;position: absolute;top:100px;left:50%;margin-left:-150px;width:300px;overflow: hidden;border: 1px solid #333;z-index:300;">
+
+                                        <div style="padding:0.5em 0.25em;">
+                                            <span style="font-size:1em;font-weight: bold;">Select one or more places</span>
+                                        </div>
+                                        <div style="max-height:350px;overflow:auto;">
+                                            <a rel="tplaces.candolim-goa" href="http://www.abreakplease.com/candolim-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Candolim
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(9)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.mahabaleshwar-maharashtra" href="http://www.abreakplease.com/mahabaleshwar-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Mahabaleshwar
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(8)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.lonavala-maharashtra" href="http://www.abreakplease.com/lonavala-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Lonavala
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(6)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.calangute-goa" href="http://www.abreakplease.com/calangute-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Calangute
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(5)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.cavelossim-goa" href="http://www.abreakplease.com/cavelossim-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Cavelossim
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(4)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.silvassa-dadra-and-nagar-haveli" href="http://www.abreakplease.com/silvassa-dadra-and-nagar-haveli/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Silvassa
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(4)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.anjuna-goa" href="http://www.abreakplease.com/anjuna-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Anjuna
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(4)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.munnar-kerala" href="http://www.abreakplease.com/munnar-kerala/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Munnar
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(4)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.karjat-maharashtra" href="http://www.abreakplease.com/karjat-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Karjat
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(3)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.alibag-maharashtra" href="http://www.abreakplease.com/alibag-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Alibag
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(3)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.alleppey-kerala" href="http://www.abreakplease.com/alleppey-kerala/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Alleppey
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(3)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.varca-goa" href="http://www.abreakplease.com/varca-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Varca
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(2)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.utorda-goa" href="http://www.abreakplease.com/utorda-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Utorda
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(2)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.kihim-maharashtra" href="http://www.abreakplease.com/kihim-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Kihim
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(2)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.shimla-himachal-pradesh" href="http://www.abreakplease.com/shimla-himachal-pradesh/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Shimla
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(2)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.kovalam-kerala" href="http://www.abreakplease.com/kovalam-kerala/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Kovalam
+                                                <span style="display:inline-block;float:right;" class="count">(2)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.thekkady-kerala" href="http://www.abreakplease.com/thekkady-kerala/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Thekkady
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(2)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.mulshi-maharashtra" href="http://www.abreakplease.com/mulshi-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Mulshi
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.betul-goa" href="http://www.abreakplease.com/betul-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Betul
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.benaulim-goa" href="http://www.abreakplease.com/benaulim-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Benaulim
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.lavasa-maharashtra" href="http://www.abreakplease.com/lavasa-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Lavasa
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.majorda-goa" href="http://www.abreakplease.com/majorda-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Majorda
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.saputara-gujarat" href="http://www.abreakplease.com/saputara-gujarat/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Saputara
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.nashik-maharashtra" href="http://www.abreakplease.com/nashik-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Nashik
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.chiplun-maharashtra" href="http://www.abreakplease.com/chiplun-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Chiplun
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.kashid-maharashtra" href="http://www.abreakplease.com/kashid-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Kashid
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.diveagar-maharashtra" href="http://www.abreakplease.com/diveagar-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Diveagar
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.matheran-maharashtra" href="http://www.abreakplease.com/matheran-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Matheran
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.dona-paula-goa" href="http://www.abreakplease.com/dona-paula-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Dona Paula
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.ganpatipule-maharashtra" href="http://www.abreakplease.com/ganpatipule-maharashtra/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Ganpatipule
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.baga-goa" href="http://www.abreakplease.com/baga-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Baga
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.patnem-goa" href="http://www.abreakplease.com/patnem-goa/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Patnem
+                                                <i class="icon-beach-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.manali-himachal-pradesh" href="http://www.abreakplease.com/manali-himachal-pradesh/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Manali
+                                                <i class="icon-hillstation-selected"></i>
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <a rel="tplaces.kottayam-kerala" href="http://www.abreakplease.com/kottayam-kerala/accommodation/luxury" class="fpllink " style="width:90%;">
+                                                <i class="icon-selected"></i>
+                                                Kottayam
+                                                <span style="display:inline-block;float:right;" class="count">(1)</span>
+
+                                                <span class="onlythis">only</span>
+                                            </a>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div style="padding:1em 0.5em;">
+                                            <a href="#" class="newlinkbutton applyselection" style="width:10em;text-shadow: none;display:inline-block;padding:0.5em;">Apply Changes</a>
+                                            <a href="#" onclick="$('.hiddenplaces a.fpllink').removeClass('ready');return false;" style="display: inline-block;margin-left:1em;width:5em;">clear all</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Pricing<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+                            <div class="li">
+                                <a href="#" rel="budget.all" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    All
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/cheap" rel="budget.cheap" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Cheap
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/budget" rel="budget.budget" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Budget
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/mid-range" rel="budget.mid-range" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Mid Range
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/premium" rel="budget.premium" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Premium
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury" rel="budget.luxury" class="flink ready">
+                                    <i class="icon-selected"></i>
+                                    Luxury
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Stay Type<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+                            <div class="li">
+                                <a href="#" rel="staytheme.all" class="flink  ready">
+                                    <i class="icon-selected"></i>
+                                    All
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/resorts/luxury" rel="staytheme.resorts" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Resorts
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/homestays/luxury" rel="staytheme.homestays" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Homestays
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/farms/luxury" rel="staytheme.farms" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Farms
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/tents/luxury" rel="staytheme.tents" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Tents
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Theme<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/beach-facing/luxury" rel="theme.beach-facing" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Beach facing
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/romantic/luxury" rel="theme.romantic" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Romantic
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/valley-view/luxury" rel="theme.valley-view" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Valley view
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/riverside/luxury" rel="theme.riverside" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Riverside
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/adventure/luxury" rel="theme.adventure" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Adventure
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Policy<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/pure-veg/luxury" rel="policy.pure-veg" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Pure veg
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/pet-friendly/luxury" rel="policy.pet-friendly" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Pet friendly
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/all-stags/luxury" rel="policy.all-stags" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    All stag friendly
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible" style="margin-right: 0;">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Facility<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/swimming-pool" rel="facilities.swimming-pool" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Swimming Pool
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/indoor-games" rel="facilities.indoor-games" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Indoor Games
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/outdoor-games" rel="facilities.outdoor-games" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Outdoor Games
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/spa-facility" rel="facilities.spa-facility" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Spa Facility
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/ac-rooms" rel="facilities.ac-rooms" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    AC Rooms
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/jacuzzi" rel="facilities.jacuzzi" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Jacuzzi
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/bathtub" rel="facilities.bathtub" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Bathtub
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/caretaker" rel="facilities.caretaker" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Caretaker
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/kitchen-available" rel="facilities.kitchen-available" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Kitchen Available
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+        $("#scroller").simplyScroll({
+            auto: false,
+            manualMode: 'loop',
+            speed: 10
+        });
+    });
+
+</script>
+<style type="text/css">
+    .caption:hover {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        bottom: 0px;
+        left: 0px;
+        color: #000000;
+        background: #fbeedb;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0.7;
+        z-index: 2;
+    }
+
+    .caption {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        bottom: 0px;
+        left: 0px;
+        color: #000000;
+        background: #fbeedb;
+        text-align: center;
+        font-weight: initial;
+        opacity: 0.7;
+        z-index: 2;
+        font-size: smaller;
+    }
+</style>
+
+
+<div id="resultbarcontainer">
+    <div id="resultbar">
+        <div id="rightpanel">
+            <div class="item" id="trippage1">
+
+                <ul id="scroller" class="simply-scroll-list" style="width: 2900px;">
+
+                    @for (var i = 0; i < Model.Count(); i++)
+                    {
+                        <li>
+                            <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new {clickinfo = "hoteldetails", HId=Model[i].HotelId})">
+
+                                <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100" />
+                                <div class="caption">
+                                    @Html.DisplayFor(model => model[i].HotelName)
+
+                                </div>
+                                <div class="nub"></div>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div id="resultdetailbackground">
+</div>
+<div id="resultdetail">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
