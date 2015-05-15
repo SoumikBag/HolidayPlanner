@@ -12,6 +12,7 @@ namespace HolidayPlanner.Controllers
     [CustomAuthorize(Roles = "Client")]
     public class HomeController : Controller
     {
+        
         //started by sandy
         public ActionResult Index()
         {
@@ -316,7 +317,7 @@ namespace HolidayPlanner.Controllers
 
        
 
-        
+
 
         public ActionResult GetId(string name)
         {
@@ -332,9 +333,6 @@ namespace HolidayPlanner.Controllers
 
         }
 
-        
-
-
         [HttpGet]
         public ActionResult bookingform(int? id)
         {
@@ -342,7 +340,41 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
-       
+        [HttpPost]
+        public ActionResult bookingform(FormCollection Collection)
+        {
+            Random ran= new Random();
+
+            var db= new HolidayPlanner.Models.InfoData();
+            Booking buk= new Booking();
+
+            buk.BookingId="B"+ran.Next();
+            buk.UserId = Convert.ToInt32(Collection[1]);
+            buk.ClientMobileNumber = Collection[2];
+            buk.ClientEmailId = Collection[3];
+            buk.HotelId = Convert.ToInt32(Collection[4]);
+            buk.CheckInDate = Convert.ToDateTime(Collection[5]);
+            buk.CheckOutDate = Convert.ToDateTime(Collection[6]);
+            buk.NoOfAdults = Convert.ToInt32(Collection[7]);
+            buk.NoOfChildren = Convert.ToInt32(Collection[8]);
+            buk.Message = Collection[9];
+            buk.TotalAmount = Convert.ToDecimal(Collection[10]);
+
+            db.Bookings.Add(buk);
+
+
+            //var newrec = from c in db.Bookings
+            //             select c;
+
+            
+
+
+            //buk.UserId= Collection[0];
+
+            return View();
+        }
+
+        
 
 }
 }
