@@ -157,6 +157,7 @@
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\default.css" />
+    <Content Include="Content\infotable.css" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery.simplyscroll.css" />
     <Content Include="Content\main1.css" />
