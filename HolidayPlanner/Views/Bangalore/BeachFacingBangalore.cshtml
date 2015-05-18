@@ -1,6 +1,6 @@
 ﻿@model IList<HolidayPlanner.Models.Hotel>
 @{
-    ViewBag.Title = "Farms";
+    ViewBag.Title = "BeachFacingBangalore";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,11 +11,11 @@
             <div class="text" style="">
                 <h1 style="font-size:1.5em;line-height:1.2em;" id="pageresulttitle">
 
-                    Farms accommodation, hotels, getaways around mumbai
+                    Beach Facing accommodation, hotels, getaways around bangalore
                 </h1>
                 <div style="padding: 5px 0;">
                     <span style="color:#aaa;display:inline-block;" id="pageresultcount">
-                        (84 options found)
+                        (92 options found)
                     </span>
 
                 </div>
@@ -612,7 +612,6 @@
     </div>
 </div>
 
-
 <script type="text/javascript">
 
     $(window).load(function () {
@@ -656,6 +655,9 @@
 </style>
 
 
+
+
+
 <div id="resultbarcontainer">
     <div id="resultbar">
         <div id="rightpanel">
@@ -668,7 +670,7 @@
                         <li>
                             <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new {clickinfo = "hoteldetails", HId=Model[i].HotelId})">
 
-                                <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100" />
+                                <img src="~/Images/10433_t.jpeg" border="0" width="140" height="100" />
                                 <div class="caption">
                                     @Html.DisplayFor(model => model[i].HotelName)
 
@@ -688,10 +690,8 @@
 </div>
 <div id="resultdetail">
 
+
 </div>
-
-
-
 
 
 

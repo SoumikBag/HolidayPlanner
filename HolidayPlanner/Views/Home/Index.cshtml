@@ -1,4 +1,7 @@
-﻿@model HolidayPlanner.Models.Country
+﻿@*@model HolidayPlanner.Models.Country*@
+
+@model IEnumerable<HolidayPlanner.Models.InfoViewModel>
+
 
 @{
     ViewBag.Title = "Mumbai";
@@ -26,8 +29,8 @@
 
                 <div class="city" style="color:#aaa;">Choose Getaways Ex-City </div>
                 <div class="city currentcity"><a href="@Url.Action("Index", "Home")">From Mumbai</a></div>
-                <div class="city "><a href="@Url.Action("Pune", "Home")">From Pune</a></div>
-                <div class="city "><a href="@Url.Action("Banglore", "Home")">From Bangalore</a></div>
+                <div class="city "><a href="@Url.Action("Pune1", "Pune")">From Pune</a></div>
+                <div class="city "><a href="@Url.Action("Bangalore", "Bangalore")">From Bangalore</a></div>
             </div>
         </div>
         <br />
@@ -50,7 +53,7 @@
                     </select>*@
 
 
-                    @Html.DropDownList("CountryDropDown", Model.CountryList, "Select Country")
+                    @*@Html.DropDownList("CountryDropDown", Model.CountryList, "Select Country")*@
                    
                     @*@Html.DropDownList("CityDropDown",Model.CityList,"Select City")*@
 
@@ -79,7 +82,9 @@
             <br/>
             <div class="contact_btn">
                 <h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home")'" /></label></h1>
-               
+                @*<h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home" , new {CId = "GOA"})'" /></label></h1>*@
+
+
             </div>
         </form>
         <div class="clearfix"></div>

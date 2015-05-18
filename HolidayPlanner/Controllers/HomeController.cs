@@ -12,12 +12,14 @@ namespace HolidayPlanner.Controllers
     [CustomAuthorize(Roles = "Client")]
     public class HomeController : Controller
     {
+        
         //started by sandy
         public ActionResult Index()
         {
             Country c = new Country();
             c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
-            return View(c);
+            InfoViewModel ivm = new InfoViewModel();
+            return View(ivm);
         }
         //ended by sandy
 
@@ -170,66 +172,110 @@ namespace HolidayPlanner.Controllers
             return View();
 
         }
-
+         
+        public ActionResult Par()
+        {
+            return PartialView();
+        }
 
 
         public ActionResult First()
         {
             var db = new HolidayPlanner.Models.InfoData();
             List<Hotel> abc = (from hot in db.Hotels
-                               where hot.HTypeId=="LU"
+                               where hot.HTypeId == "LU" && hot.CityId == "MU"
                                select hot).ToList();
             return View(abc);
         }
 
         public ActionResult BeachFacing()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> bfac = (from hot in db.Hotels
+                                where hot.HTypeId == "BF" && hot.CityId == "MU"
+                               select hot).ToList();
+            return View(bfac);
         }
                        
         public ActionResult Romantic()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> rom = (from hot in db.Hotels
+                               where hot.HTypeId == "RM" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(rom);
         }
 
         public ActionResult ValleyView()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> valy = (from hot in db.Hotels
+                                where hot.HTypeId == "VV" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(valy);
         }
             
         public ActionResult Adventure()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> adv = (from hot in db.Hotels
+                               where hot.HTypeId == "AV" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(adv);
         }
 
         public ActionResult RiverSide()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> rside = (from hot in db.Hotels
+                                 where hot.HTypeId == "RS" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(rside);
         }
 
         public ActionResult PureVeg()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> pveg = (from hot in db.Hotels
+                                where hot.HTypeId == "PV" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(pveg);
         }
 
         public ActionResult PetFriendly()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> pet = (from hot in db.Hotels
+                               where hot.HTypeId == "PF" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(pet);
         }
 
         public ActionResult Beaches()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> beach = (from hot in db.Hotels
+                                 where hot.HTypeId == "BC" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(beach);
         }
 
         public ActionResult HillStations()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> hill = (from hot in db.Hotels
+                                where hot.HTypeId == "HS" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(hill);
         }
 
         public ActionResult Farms()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> far = (from hot in db.Hotels
+                               where hot.HTypeId == "FA" && hot.CityId == "MU"
+                                select hot).ToList();
+            return View(far);
         }
 
 
@@ -251,29 +297,31 @@ namespace HolidayPlanner.Controllers
 
 
        //added by sandy
-        public ActionResult Search()
+        public ActionResult Search(string CId)
         {
-            return View("First");
+             var db = new HolidayPlanner.Models.InfoData();
+
+             var Hdetail = (from p in db.Hotels
+                                         where p.CityId == CId
+                                        select p ).SingleOrDefault();
+
+
+            return View("First", Hdetail);
         }
         //ended by sandy
 
-
-            
-
-        public ActionResult Tents()
+        public ActionResult HolyPlaces()
         {
-            return View();
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.HTypeId == "HP" && hot.CityId == "MU"
+                               select hot).ToList();
+            return View(holy);
         }
 
-        public ActionResult Pune()
-        {
-            return View();
-        }
+       
 
-        public ActionResult Banglore()
-        {
-            return View();
-    }
+
 
         public ActionResult GetId(string name)
         {
@@ -289,21 +337,47 @@ namespace HolidayPlanner.Controllers
 
         }
 
-        
-
-
         [HttpGet]
-        public ActionResult bookingform(int id)
+        public ActionResult bookingform(int? id)
         {
-            
-            return RedirectToAction("Id",id);
+            ViewData["Id"] = id;
+            return View();
         }
 
-        public ActionResult Id(int id)
+        [HttpPost]
+        public ActionResult bookingform(FormCollection Collection)
         {
-            TempData["Id"] = id;
-            return View("bookingform");
+            Random ran= new Random();
+
+            var db= new HolidayPlanner.Models.InfoData();
+            Booking buk= new Booking();
+
+            buk.BookingId="B"+ran.Next();
+            buk.UserId = Convert.ToInt32(Collection[1]);
+            buk.ClientMobileNumber = Collection[2];
+            buk.ClientEmailId = Collection[3];
+            buk.HotelId = Convert.ToInt32(Collection[4]);
+            buk.CheckInDate = Convert.ToDateTime(Collection[5]);
+            buk.CheckOutDate = Convert.ToDateTime(Collection[6]);
+            buk.NoOfAdults = Convert.ToInt32(Collection[7]);
+            buk.NoOfChildren = Convert.ToInt32(Collection[8]);
+            buk.Message = Collection[9];
+            buk.TotalAmount = Convert.ToDecimal(Collection[10]);
+
+            db.Bookings.Add(buk);
+
+
+            //var newrec = from c in db.Bookings
+            //             select c;
+
+            
+
+
+            //buk.UserId= Collection[0];
+
+            return View();
         }
+
         
 
 }
