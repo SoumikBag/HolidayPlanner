@@ -1,4 +1,4 @@
-﻿
+﻿@model IList<HolidayPlanner.Models.Hotel>
 @{
     ViewBag.Title = "Romantic";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -614,318 +614,83 @@
 </div>
 
 
-<div id="resultbarcontainer">
+<script type="text/javascript">
 
+    $(window).load(function () {
+        $("#scroller").simplyScroll({
+            auto: false,
+            manualMode: 'loop',
+            speed: 10
+        });
+    });
+
+</script>
+<style type="text/css">
+    .caption:hover {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        bottom: 0px;
+        left: 0px;
+        color: #000000;
+        background: #fbeedb;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0.7;
+        z-index: 2;
+    }
+
+    .caption {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        bottom: 0px;
+        left: 0px;
+        color: #000000;
+        background: #fbeedb;
+        text-align: center;
+        font-weight: initial;
+        opacity: 0.7;
+        z-index: 2;
+        font-size: smaller;
+    }
+</style>
+
+
+<div id="resultbarcontainer">
     <div id="resultbar">
         <div id="rightpanel">
+            <div class="item" id="trippage1">
 
-            <div id="resulthotelwrapper" class="scrollablecontainer">
-                <a class="prev browse left " title="previous suggestions"></a><a class="next browse right " title="next suggestions"></a>
-                <div id="listofplanshotelwrapper" class="scrollable">
+                <ul id="scroller" class="simply-scroll-list" style="width: 2900px;">
 
-                    <div id="listofhotelplans" class="items">
+                    @for (var i = 0; i < Model.Count(); i++)
+                    {
+                        <li>
+                            <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new {clickinfo = "hoteldetails", HId=Model[i].HotelId})">
 
+                                <img src="~/Images/18211_t.jpeg" border="0" width="140" height="100" />
+                                <div class="caption">
+                                    @Html.DisplayFor(model => model[i].HotelName)
 
-                        <div class="item" id="trippage1">
-
-                            <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="http://www.abreakplease.com/varca-the-zuri-white-sands">
-
-                                <div class="imagetoload">
-                                    <img src="~/Images/19011_t.jpeg" border="0"></img>
                                 </div>
-                                <p>
-                                    <span>
-                                        Mantra Hill Resort 
-
-                                        in Bhor
-                                    </span>
-                                </p>
                                 <div class="nub"></div>
-
                             </a>
-                            <a class="plan rplan" rel="tripoption-mulshi-malhar-machi-resort" href="http://www.abreakplease.com/mulshi-malhar-machi-resort">
-
-                                <div class="imagetoload">
-                                    <img src="~/Images/10433_t.jpeg" border="0"></img>
-                                </div>
-                                <p>
-                                    <span>
-                                        Tropicana Beach
-
-                                        Resort in Kihim
-                                    </span>
-                                </p>
-                                <div class="nub"></div>
-
-                            </a>
-                            <a class="plan rplan" rel="tripoption-candolim-lemon-tree-amarante-beach-resort" href="http://www.abreakplease.com/candolim-lemon-tree-amarante-beach-resort">
-
-                                <div class="imagetoload">
-                                    <img src="~/Images/18211_t.jpeg" border="0"></img>
-                                </div>
-                                <p>
-                                    <span>
-                                        Royal Orchid Resort
-
-                                        in Candolim
-                                    </span>
-                                </p>
-                                <div class="nub"></div>
-
-                            </a>
-                            <a class="plan rplan" rel="tripoption-cavelossim-dona-sylvia-beach-resort" href="http://www.abreakplease.com/cavelossim-dona-sylvia-beach-resort">
-
-                                <div class="imagetoload">
-                                    <img src="~/Images/18918_t.jpeg" border="0"></img>
-                                </div>
-                                <p>
-                                    <span>
-                                        Holiday Inn Resort
-
-                                        in Daman
-                                    </span>
-                                </p>
-                                <div class="nub"></div>
-
-                            </a>
-                            <a class="plan rplan" rel="tripoption-betul-mayfair-hideaway-spa-resort" href="http://www.abreakplease.com/betul-mayfair-hideaway-spa-resort">
-
-                                <div class="imagetoload">
-                                    <img src="~/Images/18980_t.jpeg" border="0"></img>
-                                </div>
-                                <p>
-                                    <span>
-                                        Aakar Lords Inn 
-
-                                        in Saputara
-                                    </span>
-                                </p>
-                                <div class="nub"></div>
-
-                            </a>
-                            <a class="plan rplan" rel="tripoption-benaulim-joecons-beach-resort" href="http://www.abreakplease.com/benaulim-joecons-beach-resort">
-
-                                <div class="imagetoload">
-                                    <img src="~/Images/19295_t.jpeg" border="0"></img>
-                                </div>
-                                <p>
-                                    <span>
-                                        Fountain Resort
-
-                                        in Mahabaleshwar
-                                    </span>
-                                </p>
-                                <div class="nub"></div>
-
-                            </a>
-                            <a class="plan rplan" rel="tripoption-cavelossim-radisson-blu-resort" href="http://www.abreakplease.com/cavelossim-radisson-blu-resort">
-
-                                <div class="imagetoload" style="display:none;" url="http://static.abreakplease.com/Content/Photos/19901_t.jpeg">
-                                </div>
-                                <p>
-                                    <span>
-                                        Sun N Shade
-
-                                        Beach Resort
-
-                                        in Matheran
-                                    </span>
-                                </p>
-                                <div class="nub"></div>
-
-                            </a>
-                            <a style=margin-right:0 class="plan rplan" rel="tripoption-cavelossim-haathi-mahal-resort" href="http://www.abreakplease.com/cavelossim-haathi-mahal-resort">
-
-                                <div class="imagetoload" style="display:none;" url="http://static.abreakplease.com/Content/Photos/19088_t.jpeg">
-                                </div>
-                                <p>
-                                    <span>
-                                        Haathi Mahal Resort
-
-                                        in Cavelossim
-                                    </span>
-                                </p>
-                                <div class="nub"></div>
-
-                            </a>
-
-
-
-
-                        </div>
-                        <div class="item" id="trippage2">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage3">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage4">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage5">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage6">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage7">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage8">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage9">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage10">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                        <div class="item" id="trippage11">
-                            <p style="text-align: center;padding-top: 30px;font-size:20px;color:white;font-style: italic;font-weight: bold;">
-                                Loading Results <img src="http://in.static.abreakplease.com/1.4//Content/images/text-loader.gif" />
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
+                        </li>
+                    }
+                </ul>
             </div>
         </div>
         <div class="clear"></div>
     </div>
 </div>
 
+
 <div id="resultdetailbackground">
 </div>
 <div id="resultdetail">
 
-    <div class="tempplan plandetail" id="tripoption-varca-the-zuri-white-sands">
-
-
-
-
-        <div class="h2">
-            Mantra Hill Resort <span>in Bhor</span>
-            <a class="loadsharebar" href="http://www.abreakplease.com/varca-the-zuri-white-sands/share" style="display:none;"></a>
-            <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em;"></div>
-        </div>
-
-
-        <div style="background: white;padding:0 1em 1em 1em;">
-
-            <div style="background: white;line-height: 1.5em;padding-left: 5px;">
-
-
-
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#tabs').tabs();
-                //$("#tabs").tabs();
-            });
-        </script>
-
-
-
-        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-8" aria-selected="true" aria-expanded="true">
-                    <a href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-9" aria-selected="false" aria-expanded="false">
-                    <a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Photos</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Map</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Location</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="#tabs-3" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Traveller Reviews</a>
-                </li>
-            </ul>
-            <div id="tabs-1" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-            <div id="tabs-2" aria-labelledby="ui-id-9" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
-            <div id="tabs-3" aria-labelledby="ui-id-10" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
-        </div>
-
-        @*<div class="hoteltabscontainer" style="position: relative;">
-                <ul class="hoteltabs">
-                    <li><a href="@Url.Action("Index", "Home")" rel="hotelhighlights" class=""><span>Overview</span></a></li>
-                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/overview" rel="hoteloverview" class=""><span>Info & Facilities</span></a></li>
-                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/photos" rel="hotelphotos" class=""><span>Photos</span></a></li>
-                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/howtoreach" rel="hotelmap" class=""><span>Map</span></a></li>
-                    <li><a href="http://www.abreakplease.com/varca-goa" rel="hotellocation" class=""><span>Location</span></a></li>
-                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/reviews" rel="hotelreviews" class=""><span>Traveller Reviews</span></a></li>
-
-
-
-                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/rates" rel="booknow" class=""><span>Rooms & Rates</span></a></li>
-
-                    <li><a href="http://www.abreakplease.com/varca-the-zuri-white-sands/onlineinquiry" rel="hotelinquiry" class="" style="visibility: hidden;"><span>Online Inquiry</span></a></li>
-
-                </ul>
-                <div style="position:absolute;z-index: 20;top:-10px;right:0;left:auto">
-                    <a href="http://www.abreakplease.com/varca-the-zuri-white-sands/villa-on-rent/onlinevillainquiry" onclick="loadinquirytab($(this).parents('.hoteltabscontainer'),'http://www.abreakplease.com/varca-the-zuri-white-sands/villa-on-rent/onlinevillainquiry');return false;" class="bigenquirybutton " style="font-size:2.25em;padding:0.75em 0.5em 0.75em 1.75em;background-position: 3% 45%;">
-                       <span>CONTACT PROPERTY</span>
-                    </a>
-                </div>
-                <div class="clear"></div>
-                <div class="hotelpanes">
-                    <div class="hotelpane highlightpane ">
-                    </div>
-                    <div class="hotelpane ">
-                    </div>
-                    <div class="hotelpane ">
-                    </div>
-                    <div class="hotelpane ">
-                    </div>
-                    <div class="hotelpane">
-                    </div>
-                    <div class="hotelpane ">
-                    </div>
-                    <div class="hotelpane ratepane ">
-                    </div>
-                    <div class="hotelpane inquirypane ">
-                    </div>
-                </div>
-            </div>*@
-    </div>
+    
 </div>
 
 

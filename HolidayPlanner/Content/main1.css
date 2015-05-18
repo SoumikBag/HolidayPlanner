@@ -2513,7 +2513,7 @@ body > #superoutercontainer {
     #filterpanelmask #infscr-loading a.close {
       background: #C94A00;
       color: white;
-      padding: 0.5em;displaybar
+      padding: 0.5em;
       -moz-border-radius-topleft: 2px;
       border-top-left-radius: 2px;
       -webkit-border-topleft-radius: 2px;
@@ -3905,7 +3905,7 @@ body > #superoutercontainer {
   top: 50%;
   margin-top: -20px;
   cursor: pointer;
-  opacity: 0.8em;
+  opacity: 0.8;
   border: #555 solid 1px;
   box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5); }
 .scrollablecontainer a.disabled {

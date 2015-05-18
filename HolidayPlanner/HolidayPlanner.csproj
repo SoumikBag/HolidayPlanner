@@ -124,8 +124,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BangaloreController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PuneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -276,10 +278,23 @@
     <Content Include="Views\Home\HillStations.cshtml" />
     <Content Include="Views\Home\Farms.cshtml" />
     <Content Include="Views\Home\DropDown1.cshtml" />
-    <Content Include="Views\Home\Banglore.cshtml" />
     <Content Include="Views\Home\FacilityInfo.cshtml" />
     <Content Include="Views\Home\bookingform.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
+    <Content Include="Views\Home\HolyPlaces.cshtml" />
+    <Content Include="Views\Bangalore\Bangalore.cshtml" />
+    <Content Include="Views\Bangalore\LuxuryBangalore.cshtml" />
+    <Content Include="Views\Bangalore\BeachFacingBangalore.cshtml" />
+    <Content Include="Views\Bangalore\RomanticBangalore.cshtml" />
+    <Content Include="Views\Bangalore\ValleyViewBangalore.cshtml" />
+    <Content Include="Views\Bangalore\AdventureBangalore.cshtml" />
+    <Content Include="Views\Bangalore\RiverSideBangalore.cshtml" />
+    <Content Include="Views\Bangalore\PureVegBangalore.cshtml" />
+    <Content Include="Views\Bangalore\PetFriendlyBangalore.cshtml" />
+    <Content Include="Views\Bangalore\BeachesBangalore.cshtml" />
+    <Content Include="Views\Bangalore\HillStationsBangalore.cshtml" />
+    <Content Include="Views\Bangalore\FarmsBangalore.cshtml" />
+    <Content Include="Views\Bangalore\HolyPlacesBangalore.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -309,12 +324,23 @@
     <Content Include="Views\Home\RiverSide.cshtml" />
     <Content Include="Views\Home\PureVeg.cshtml" />
     <Content Include="Views\Home\PetFriendly.cshtml" />
-    <Content Include="Views\Home\Tents.cshtml" />
-    <Content Include="Views\Home\Pune.cshtml" />
     <Content Include="Views\Home\RoomInfo.cshtml" />
     <Content Include="Views\Shared\Date.cshtml" />
     <Content Include="Views\Home\ReviewInfo.cshtml" />
     <Content Include="Views\Home\Overview.cshtml" />
+    <Content Include="Views\Pune\Pune1.cshtml" />
+    <Content Include="Views\Pune\LuxuryPune.cshtml" />
+    <Content Include="Views\Pune\BeachFacingPune.cshtml" />
+    <Content Include="Views\Pune\RomanticPune.cshtml" />
+    <Content Include="Views\Pune\ValleyViewPune.cshtml" />
+    <Content Include="Views\Pune\AdventurePune.cshtml" />
+    <Content Include="Views\Pune\RiverSidePune.cshtml" />
+    <Content Include="Views\Pune\PureVegPune.cshtml" />
+    <Content Include="Views\Pune\PetFriendlyPune.cshtml" />
+    <Content Include="Views\Pune\BeachesPune.cshtml" />
+    <Content Include="Views\Pune\HillStationsPune.cshtml" />
+    <Content Include="Views\Pune\FarmsPune.cshtml" />
+    <Content Include="Views\Pune\HolyPlacesPune.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
