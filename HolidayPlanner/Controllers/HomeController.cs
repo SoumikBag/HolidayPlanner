@@ -269,9 +269,6 @@ namespace HolidayPlanner.Controllers
                                            join h in db.Hotels
                                            on f.HotelId equals h.HotelId
                                            where f.HotelId == HId
-
-                                           //from h in db.Hotels
-
                                            select new InfoViewModel { FacilityType = f.FacilitiesType, FoodDetails = h.FoodDetails, Policies = h.HotelPolices };
 
                         return View("FacilityInfo", facilityinfo);
@@ -280,9 +277,8 @@ namespace HolidayPlanner.Controllers
                 case "review":
                     {
                         var review = from r in db.Reviews
-                                     join h in db.Hotels
-                                     on r.HotelId equals h.HotelId
-                                     select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
+                                        where r.HotelId == HId
+                                        select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
 
                         return View("ReviewInfo", review);
                     }
