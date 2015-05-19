@@ -13,13 +13,130 @@ namespace HolidayPlanner.Controllers
     public class HomeController : Controller
     {
         
-        //started by sandy
+        private AddressRepository addressRepository;
+        
+        public HomeController() : this(new AddressRepository())
+        {
+        }
+
+
+        public HomeController(AddressRepository addressRepository)
+        {
+            
+            this.addressRepository = addressRepository;
+        }
+
+       
         public ActionResult Index()
         {
-            Country c = new Country();
-            c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
-            return View(c);
+            AddressModel model = new AddressModel();
+            model.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+            model.AvailableCountries.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+
+            var countries = addressRepository.GetAllCountries();
+            foreach (var country in countries)
+            {
+
+                model.AvailableCountries.Add(new SelectListItem()
+                {
+                    Text = country.CountryName,
+                    Value = country.CountryId.ToString()
+                });
+
+            }
+
+
+
+            return View(model);
         }
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetStatesByCountryId(string countryId)
+        {
+            if (String.IsNullOrEmpty(countryId))
+            {
+                throw new ArgumentNullException("countryId");
+            }
+            //int id = 0;
+            //bool isValid = Int32.TryParse(countryId, out id);
+
+            AddressModel p = new AddressModel();
+            var states = addressRepository.GetAllStatesByCountryId(countryId);
+
+            foreach (var state in states)
+            {
+                p.AvailableStates.Add(new SelectListItem()
+                {
+                    Text = state.StateName,
+                    Value = state.StateId.ToString()
+                });
+            }
+            var result = (from s in p.AvailableStates
+                          select new
+                          {
+                              countryId = s.Value,
+                              name = s.Text,
+
+                          }).ToList();
+
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetCitysByStateId(string stateId)
+        {
+            if (String.IsNullOrEmpty(stateId))
+            {
+                throw new ArgumentNullException("stateId");
+            }
+            //int id = 0;
+            //bool isValid = Int32.TryParse(countryId, out id);
+            AddressModel c = new AddressModel();
+            var citys = addressRepository.GetAllCitysByStateId(stateId);
+
+           
+            var result = (from c1 in citys
+                          select new
+                          {
+                              stateId = c1.CityId,
+                              name = c1.CityName
+                          }).ToList();
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+        
+        //started by sandy
+        //public ActionResult Index()
+        //{
+        //    //AddressModel model = new AddressModel();
+        //    //model.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+        //    //model.AvailableCountries.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+
+        //    //var countries = _repository.GetAllCountries();
+        //    //foreach (var country in countries)
+        //    //{
+
+        //    //    model.AvailableCountries.Add(new SelectListItem()
+        //    //    {
+        //    //        Text = country.CountryName,
+        //    //        Value = country.CountryId.ToString()
+        //    //    });
+
+        //    //}
+
+
+
+        //    return View();
+        //    //AddressModel adress = new AddressModel();
+        //    //return View();
+        //    //InfoViewModel c = new InfoViewModel();
+        //    //c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
+        //    //InfoViewModel ivm = new InfoViewModel();
+        //    //return View(ivm);
+        //}
         //ended by sandy
 
 
@@ -152,9 +269,6 @@ namespace HolidayPlanner.Controllers
                                            join h in db.Hotels
                                            on f.HotelId equals h.HotelId
                                            where f.HotelId == HId
-
-                                           //from h in db.Hotels
-
                                            select new InfoViewModel { FacilityType = f.FacilitiesType, FoodDetails = h.FoodDetails, Policies = h.HotelPolices };
 
                         return View("FacilityInfo", facilityinfo);
@@ -163,9 +277,8 @@ namespace HolidayPlanner.Controllers
                 case "review":
                     {
                         var review = from r in db.Reviews
-                                     join h in db.Hotels
-                                     on r.HotelId equals h.HotelId
-                                     select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
+                                        where r.HotelId == HId
+                                        select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
 
                         return View("ReviewInfo", review);
                     }
@@ -296,9 +409,16 @@ namespace HolidayPlanner.Controllers
 
 
        //added by sandy
-        public ActionResult Search()
+        public ActionResult Search(string CId)
         {
-            return View("First");
+             var db = new HolidayPlanner.Models.InfoData();
+
+             var Hdetail = (from p in db.Hotels
+                                         where p.CityId == CId
+                                        select p ).SingleOrDefault();
+
+
+            return View("First", Hdetail);
         }
         //ended by sandy
 
