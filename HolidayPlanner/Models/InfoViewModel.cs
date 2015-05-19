@@ -21,6 +21,7 @@ namespace HolidayPlanner.Models
         public string ReviewDetails;
         public double? Rating;
         public string CityId;
+
         public SelectList CountryList { get; set; }
 
         public IEnumerable<Hotel> Hotel { get; set; }

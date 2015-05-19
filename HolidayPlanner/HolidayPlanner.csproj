@@ -51,6 +51,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -131,11 +132,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\AddressRepository.cs" />
     <Compile Include="Models\Booking.cs" />
-    <Compile Include="Models\City.cs" />
     <Compile Include="Models\CityContxt.cs" />
+    <Compile Include="Models\Address.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Address.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Models\InfoViewModel.cs" />
-    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryContext.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
@@ -149,7 +155,6 @@
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
-    <Compile Include="Models\State.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInRole.cs" />
     <Compile Include="Models\UserInRoleContext.cs" />
@@ -246,6 +251,11 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
     <Content Include="ClassDiagram2.cd" />
+    <Content Include="Models\Address.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Address.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -344,6 +354,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Address\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -353,7 +364,13 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Address.dbml.layout">
+      <DependentUpon>Address.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

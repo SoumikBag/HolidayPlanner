@@ -18,6 +18,14 @@ namespace HolidayPlanner
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute("GetStatesByCountryId",
+                            "home/getstatesbycountryid/",
+                            new { controller = "Home", action = "GetStatesByCountryId" },
+                            new[] { "HolidayPlanner.Controllers" });
+            routes.MapRoute("GetCitysByStateId",
+                            "home/getcitysbystateid/",
+                            new { controller = "Home", action = "GetCitysByStateId" },
+                            new[] { "HolidayPlanner.Controllers" });
         }
     }
 }
