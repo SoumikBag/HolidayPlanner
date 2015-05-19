@@ -295,7 +295,6 @@
     <Content Include="Views\Bangalore\HillStationsBangalore.cshtml" />
     <Content Include="Views\Bangalore\FarmsBangalore.cshtml" />
     <Content Include="Views\Bangalore\HolyPlacesBangalore.cshtml" />
-    <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -341,6 +340,30 @@
     <Content Include="Views\Pune\HillStationsPune.cshtml" />
     <Content Include="Views\Pune\FarmsPune.cshtml" />
     <Content Include="Views\Pune\HolyPlacesPune.cshtml" />
+    <Content Include="Views\Home\Distance100.cshtml" />
+    <Content Include="Views\Home\Distance150.cshtml" />
+    <Content Include="Views\Home\Distance200.cshtml" />
+    <Content Include="Views\Home\Distance300.cshtml" />
+    <Content Include="Views\Home\DistanceGreater300.cshtml" />
+    <Content Include="Views\Home\Lonavala.cshtml" />
+    <Content Include="Views\Home\Silvassa.cshtml" />
+    <Content Include="Views\Home\Alibag.cshtml" />
+    <Content Include="Views\Home\Lavasa.cshtml" />
+    <Content Include="Views\Home\Karjet.cshtml" />
+    <Content Include="Views\Home\CheapHotel.cshtml" />
+    <Content Include="Views\Home\MidRangeHotel.cshtml" />
+    <Content Include="Views\Home\PremiumHotel.cshtml" />
+    <Content Include="Views\Home\LuxuryHotel.cshtml" />
+    <Content Include="Views\Home\AllPriceHotel.cshtml" />
+    <Content Include="Views\Home\SwimmingPool.cshtml" />
+    <Content Include="Views\Home\IndoorGames.cshtml" />
+    <Content Include="Views\Home\OutdoorGames.cshtml" />
+    <Content Include="Views\Home\Spa.cshtml" />
+    <Content Include="Views\Home\Garden.cshtml" />
+    <Content Include="Views\Home\PartyHall.cshtml" />
+    <Content Include="Views\Home\Bar.cshtml" />
+    <Content Include="Views\Pune\FirstPune.cshtml" />
+    <Content Include="Views\Bangalore\FirstBangalore.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
