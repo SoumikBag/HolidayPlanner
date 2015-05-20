@@ -13,14 +13,130 @@ namespace HolidayPlanner.Controllers
     public class HomeController : Controller
     {
         
-        //started by sandy
+        private AddressRepository addressRepository;
+        
+        public HomeController() : this(new AddressRepository())
+        {
+        }
+
+
+        public HomeController(AddressRepository addressRepository)
+        {
+            
+            this.addressRepository = addressRepository;
+        }
+
+       
         public ActionResult Index()
         {
-            Country c = new Country();
-            c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
-            //InfoViewModel ivm = new InfoViewModel();
-            return View(c);
+            AddressModel model = new AddressModel();
+            model.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+            model.AvailableCountries.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+
+            var countries = addressRepository.GetAllCountries();
+            foreach (var country in countries)
+            {
+
+                model.AvailableCountries.Add(new SelectListItem()
+                {
+                    Text = country.CountryName,
+                    Value = country.CountryId.ToString()
+                });
+
+            }
+
+
+
+            return View(model);
         }
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetStatesByCountryId(string countryId)
+        {
+            if (String.IsNullOrEmpty(countryId))
+            {
+                throw new ArgumentNullException("countryId");
+            }
+            //int id = 0;
+            //bool isValid = Int32.TryParse(countryId, out id);
+
+            AddressModel p = new AddressModel();
+            var states = addressRepository.GetAllStatesByCountryId(countryId);
+
+            foreach (var state in states)
+            {
+                p.AvailableStates.Add(new SelectListItem()
+                {
+                    Text = state.StateName,
+                    Value = state.StateId.ToString()
+                });
+            }
+            var result = (from s in p.AvailableStates
+                          select new
+                          {
+                              countryId = s.Value,
+                              name = s.Text,
+
+                          }).ToList();
+
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetCitysByStateId(string stateId)
+        {
+            if (String.IsNullOrEmpty(stateId))
+            {
+                throw new ArgumentNullException("stateId");
+            }
+            //int id = 0;
+            //bool isValid = Int32.TryParse(countryId, out id);
+            AddressModel c = new AddressModel();
+            var citys = addressRepository.GetAllCitysByStateId(stateId);
+
+           
+            var result = (from c1 in citys
+                          select new
+                          {
+                              stateId = c1.CityId,
+                              name = c1.CityName
+                          }).ToList();
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+        
+        //started by sandy
+        //public ActionResult Index()
+        //{
+        //    //AddressModel model = new AddressModel();
+        //    //model.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+        //    //model.AvailableCountries.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+
+        //    //var countries = _repository.GetAllCountries();
+        //    //foreach (var country in countries)
+        //    //{
+
+        //    //    model.AvailableCountries.Add(new SelectListItem()
+        //    //    {
+        //    //        Text = country.CountryName,
+        //    //        Value = country.CountryId.ToString()
+        //    //    });
+
+        //    //}
+
+
+
+        //    return View();
+        //    //AddressModel adress = new AddressModel();
+        //    //return View();
+        //    //InfoViewModel c = new InfoViewModel();
+        //    //c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
+        //    //InfoViewModel ivm = new InfoViewModel();
+        //    //return View(ivm);
+        //}
         //ended by sandy
 
 
@@ -153,9 +269,6 @@ namespace HolidayPlanner.Controllers
                                            join h in db.Hotels
                                            on f.HotelId equals h.HotelId
                                            where f.HotelId == HId
-
-                                           //from h in db.Hotels
-
                                            select new InfoViewModel { FacilityType = f.FacilitiesType, FoodDetails = h.FoodDetails, Policies = h.HotelPolices };
 
                         return View("FacilityInfo", facilityinfo);
@@ -164,8 +277,7 @@ namespace HolidayPlanner.Controllers
                 case "review":
                     {
                         var review = from r in db.Reviews
-                                     join h in db.Hotels
-                                     on r.HotelId equals h.HotelId
+                                        where r.HotelId == HId
                                      select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
 
                         return View("ReviewInfo", review);
@@ -197,9 +309,9 @@ namespace HolidayPlanner.Controllers
                         }
                             ViewBag.ImageData = src;
                             return View("ImageInfo");
+
                         
-                        
-                    }
+            }
 
             }
 
@@ -207,10 +319,6 @@ namespace HolidayPlanner.Controllers
 
         }
          
-        public ActionResult Par()
-        {
-            return PartialView();
-        }
 
 
         public ActionResult First()
@@ -412,7 +520,231 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
+        public ActionResult Distance100()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Distance==100  
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult Distance150()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Distance == 150
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult Distance200()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Distance == 200
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult Distance300()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Distance == 300
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult DistanceGreater300()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Distance > 300
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult Lonavala()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Address=="Lonavala"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult Silvassa()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Address == "Silvassa"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult Alibag()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Address == "Alibag"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult Lavasa()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Address == "Lavasa"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult Karjet()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Address == "Karjet"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult CheapHotel()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Budget=="Cheap"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult MidRangeHotel()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Budget == "Mid Range"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult PremiumHotel()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Budget == "Premium"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        public ActionResult LuxuryHotel()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> holy = (from hot in db.Hotels
+                                where hot.CityId == "MU" && hot.Budget == "Luxury"
+                                select hot).ToList();
+            return View(holy);
+        }
+
+        //public ActionResult AllPriceHotel()
+        //{
+        //    var list = new List<string>();
+        //    list.Add("Cheap");
+        //    list.Add("Luxury");
+        //    list.Add("Premium");
+        //    list.Add("Mid Range");
+
+
+        //    var db = new HolidayPlanner.Models.InfoData();
+        //    List<Hotel> holy = (from hot in db.Hotels
+        //                        where hot.CityId == "MU" && hot.Budget.Contains(list)
+        //                        select hot).ToList();
+        //    return View(holy);
+        //}
+
+       public ActionResult SwimmingPool()
+        {
+            var db = new HolidayPlanner.Models.InfoData();
+            List<Hotel> facilityinfo = (from f in db.Facilities
+                               join h in db.Hotels
+                               on f.HotelId equals h.HotelId
+                               where f.FacilitiesType == "Swimming Pool" && h.CityId=="MU"
+                                        select h).ToList(); 
+
+            return View(facilityinfo);
+        }
+
+       public ActionResult IndoorGames()
+       {
+           var db = new HolidayPlanner.Models.InfoData();
+           List<Hotel> facilityinfo = (from f in db.Facilities
+                                       join h in db.Hotels
+                                       on f.HotelId equals h.HotelId
+                                       where f.FacilitiesType == "Indoor Games" && h.CityId == "MU"
+                                       select h).ToList();
+
+           return View(facilityinfo);
+       }
+
+       public ActionResult OutdoorGames()
+       {
+           var db = new HolidayPlanner.Models.InfoData();
+           List<Hotel> facilityinfo = (from f in db.Facilities
+                                       join h in db.Hotels
+                                       on f.HotelId equals h.HotelId
+                                       where f.FacilitiesType == "Outdoor Games" && h.CityId == "MU"
+                                       select h).ToList();
+
+           return View(facilityinfo);
+       }
+
+       public ActionResult Spa()
+       {
+           var db = new HolidayPlanner.Models.InfoData();
+           List<Hotel> facilityinfo = (from f in db.Facilities
+                                       join h in db.Hotels
+                                       on f.HotelId equals h.HotelId
+                                       where f.FacilitiesType == "Spa" && h.CityId == "MU"
+                                       select h).ToList();
+
+           return View(facilityinfo);
+       }
+
+       public ActionResult Garden()
+       {
+           var db = new HolidayPlanner.Models.InfoData();
+           List<Hotel> facilityinfo = (from f in db.Facilities
+                                       join h in db.Hotels
+                                       on f.HotelId equals h.HotelId
+                                       where f.FacilitiesType == "Garden" && h.CityId == "MU"
+                                       select h).ToList();
+
+           return View(facilityinfo);
+       }
         
+        public ActionResult PartyHall()
+       {
+           var db = new HolidayPlanner.Models.InfoData();
+           List<Hotel> facilityinfo = (from f in db.Facilities
+                                       join h in db.Hotels
+                                       on f.HotelId equals h.HotelId
+                                       where f.FacilitiesType == "Party Hall" && h.CityId == "MU"
+                                       select h).ToList();
+
+           return View(facilityinfo);
+       }
+
+           public ActionResult Bar()
+           {
+               var db = new HolidayPlanner.Models.InfoData();
+               List<Hotel> facilityinfo = (from f in db.Facilities
+                                           join h in db.Hotels
+                                           on f.HotelId equals h.HotelId
+                                           where f.FacilitiesType == "Bar" && h.CityId == "MU"
+                                           select h).ToList();
+
+               return View(facilityinfo);
+           }
 
 }
 }

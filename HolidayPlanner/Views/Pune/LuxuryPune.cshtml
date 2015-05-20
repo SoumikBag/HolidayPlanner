@@ -34,33 +34,33 @@
                     <div class="dropdown_columns dropdown_columns_big">
                         <div id="filterlocationlinks">
                             <div class="filtersubheader" style="margin-top:10px;">Select Location Type</div>
-                            <a rel="locationtype.beach-stay" href="http://www.abreakplease.com/getaways/around-mumbai/luxury/beach-stay" class="flink ">
+                            <a rel="locationtype.beach-stay" href="@Url.Action("BeachesPune","Pune")" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Beach
                             </a>
-                            <a rel="locationtype.hill-station-stay" href="http://www.abreakplease.com/getaways/around-mumbai/luxury/hill-station-stay" class="flink ">
+                            <a rel="locationtype.hill-station-stay" href="@Url.Action("HillStationsPune", "Pune")" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Hill Station
                             </a>
                             <div class="clear"></div>
                             <div class="filtersubheader" style="margin-top:10px;">Travel Distance</div>
-                            <a rel="traveldistance.0.100" href="#" class="flink ">
+                            <a rel="traveldistance.0.100" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Distance100" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Within 100km
                             </a>
-                            <a rel="traveldistance.0.150" href="#" class="flink ">
+                            <a rel="traveldistance.0.150" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Distance150" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Within 150km
                             </a>
-                            <a rel="traveldistance.0.200" href="#" class="flink ">
+                            <a rel="traveldistance.0.200" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Distance200" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Within 200km
                             </a>
-                            <a rel="traveldistance.0.300" href="#" class="flink ">
+                            <a rel="traveldistance.0.300" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Distance300" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Within 300km
                             </a>
-                            <a rel="traveldistance.300.0" href="#" class="flink ">
+                            <a rel="traveldistance.300.0" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "DistanceGreater300" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 More than 300km
                             </a>
@@ -68,29 +68,29 @@
                             <div class="filtersubheader" style="margin-top:10px;">Select Places</div>
                             <div id="placeoptions" style="word-spacing:0;">
 
-                                <a rel="places.candolim-goa" href="http://www.abreakplease.com/candolim-goa/accommodation/luxury" class="flink ">
+                                <a rel="places.candolim-goa" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Lonavala" }))" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Candolim (9)
+                                    Lonavala (9)
                                     <span class="onlythis">only</span>
                                 </a>
-                                <a rel="places.mahabaleshwar-maharashtra" href="http://www.abreakplease.com/mahabaleshwar-maharashtra/accommodation/luxury" class="flink ">
+                                <a rel="places.mahabaleshwar-maharashtra" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Mahabaleshwar" })" class="flink ">
                                     <i class="icon-selected"></i>
                                     Mahabaleshwar (8)
                                     <span class="onlythis">only</span>
                                 </a>
-                                <a rel="places.lonavala-maharashtra" href="http://www.abreakplease.com/lonavala-maharashtra/accommodation/luxury" class="flink ">
+                                <a rel="places.lonavala-maharashtra" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Kolad" })" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Lonavala (6)
+                                    Kolad (6)
                                     <span class="onlythis">only</span>
                                 </a>
-                                <a rel="places.calangute-goa" href="http://www.abreakplease.com/calangute-goa/accommodation/luxury" class="flink ">
+                                <a rel="places.calangute-goa" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Panchgani" })" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Calangute (5)
+                                    Panchgani (5)
                                     <span class="onlythis">only</span>
                                 </a>
-                                <a rel="places.cavelossim-goa" href="http://www.abreakplease.com/cavelossim-goa/accommodation/luxury" class="flink ">
+                                <a rel="places.cavelossim-goa" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Saputara" })" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Cavelossim (4)
+                                    Saputara (4)
                                     <span class="onlythis">only</span>
                                 </a>
 
@@ -111,31 +111,25 @@
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/cheap" rel="budget.cheap" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "CheapHotel" })" rel="budget.cheap" class="flink ">
                                     <i class="icon-selected"></i>
                                     Cheap
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/budget" rel="budget.budget" class="flink ">
-                                    <i class="icon-selected"></i>
-                                    Budget
-                                </a>
-                            </div>
-                            <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/mid-range" rel="budget.mid-range" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "MidRangeHotel" })" rel="budget.mid-range" class="flink ">
                                     <i class="icon-selected"></i>
                                     Mid Range
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/premium" rel="budget.premium" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "PremiumHotel" })" rel="budget.premium" class="flink ">
                                     <i class="icon-selected"></i>
                                     Premium
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury" rel="budget.luxury" class="flink ready">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "LuxuryHotel" })" rel="budget.luxury" class="flink ready">
                                     <i class="icon-selected"></i>
                                     Luxury
                                 </a>
@@ -151,27 +145,21 @@
                     <div class="dropdown_columns dropdown_columns_small">
                         <div>
                             <div class="li">
-                                <a href="#" rel="staytheme.all" class="flink  ready">
-                                    <i class="icon-selected"></i>
-                                    All
-                                </a>
-                            </div>
-                            <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/resorts/luxury" rel="staytheme.resorts" class="flink ">
+                                <a href="@Url.Action("BeachesPune", "Pune")" rel="staytheme.resorts" class="flink ">
                                     <i class="icon-selected"></i>
                                     Resorts
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/farms/luxury" rel="staytheme.farms" class="flink ">
+                                <a href="@Url.Action("FarmsPune", "Pune")" rel="staytheme.farms" class="flink ">
                                     <i class="icon-selected"></i>
                                     Farms
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/tents/luxury" rel="staytheme.tents" class="flink ">
+                                <a href="@Url.Action("HolyPlacesPune", "Pune")" rel="staytheme.tents" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Tents
+                                    Holy Places
                                 </a>
                             </div>
 
@@ -186,59 +174,35 @@
                         <div>
 
                             <div class="li">
-                                <a href="@Url.Action("BeachFacing","Home")" rel="theme.beach-facing" class="flink ">
+                                <a href="@Url.Action("BeachFacingPune", "Pune")" rel="theme.beach-facing" class="flink ">
                                     <i class="icon-selected"></i>
                                     Beach facing
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("Romantic","Home")" rel="theme.romantic" class="flink ">
+                                <a href="@Url.Action("RomanticPune", "Pune")" rel="theme.romantic" class="flink ">
                                     <i class="icon-selected"></i>
                                     Romantic
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("ValleyView", "Home")" rel="theme.valley-view" class="flink ">
+                                <a href="@Url.Action("ValleyViewPune", "Pune")" rel="theme.valley-view" class="flink ">
                                     <i class="icon-selected"></i>
                                     Valley view
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("RiverSide", "Home")" rel="theme.riverside" class="flink ">
+                                <a href="@Url.Action("RiverSidePune", "Pune")" rel="theme.riverside" class="flink ">
                                     <i class="icon-selected"></i>
                                     Riverside
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("Adventure", "Home")" rel="theme.adventure" class="flink ">
+                                <a href="@Url.Action("AdventurePune", "Pune")" rel="theme.adventure" class="flink ">
                                     <i class="icon-selected"></i>
                                     Adventure
                                 </a>
                             </div>
-
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <ul class="menu_flexible">
-                <li>
-                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Policy<i class="icon-filter-dd"></i></span></a>
-                    <div class="dropdown_columns dropdown_columns_small">
-                        <div>
-
-                            <div class="li">
-                                <a href="@Url.Action("PureVeg", "Home")" rel="policy.pure-veg" class="flink ">
-                                    <i class="icon-selected"></i>
-                                    Pure veg
-                                </a>
-                            </div>
-                            <div class="li">
-                                <a href="@Url.Action("PetFriendly", "Home")" rel="policy.pet-friendly" class="flink ">
-                                    <i class="icon-selected"></i>
-                                    Pet friendly
-                                </a>
-                            </div>
-
 
                         </div>
                     </div>
@@ -251,43 +215,43 @@
                         <div>
 
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/swimming-pool" rel="facilities.swimming-pool" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "SwimmingPool" })" rel="facilities.swimming-pool" class="flink ">
                                     <i class="icon-selected"></i>
                                     Swimming Pool
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/indoor-games" rel="facilities.indoor-games" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "IndoorGames" })" rel="facilities.indoor-games" class="flink ">
                                     <i class="icon-selected"></i>
                                     Indoor Games
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/outdoor-games" rel="facilities.outdoor-games" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "OutdoorGames" })" rel="facilities.outdoor-games" class="flink ">
                                     <i class="icon-selected"></i>
                                     Outdoor Games
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/spa-facility" rel="facilities.spa-facility" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Spa" })" rel="facilities.spa-facility" class="flink ">
                                     <i class="icon-selected"></i>
                                     Spa Facility
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/ac-rooms" rel="facilities.ac-rooms" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Garden" })" rel="facilities.ac-rooms" class="flink ">
                                     <i class="icon-selected"></i>
                                     Garden
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/jacuzzi" rel="facilities.jacuzzi" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "PartyHall" })" rel="facilities.jacuzzi" class="flink ">
                                     <i class="icon-selected"></i>
                                     PartyHall
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="http://www.abreakplease.com/getaways/around-mumbai/luxury/bathtub" rel="facilities.bathtub" class="flink ">
+                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Bar" })" rel="facilities.bathtub" class="flink ">
                                     <i class="icon-selected"></i>
                                     Bar
                                 </a>
@@ -301,6 +265,7 @@
 
         </div>
     </div>
+    
 </div>
 
 <script type="text/javascript">

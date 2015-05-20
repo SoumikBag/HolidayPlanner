@@ -1,0 +1,15 @@
+﻿body {
+}
+
+td{
+    font-size : 80%;
+    text-align: left;
+    padding:initial;
+
+}
+
+table{
+    align-content:flex-end;
+    position:center;
+    align-items:flex-end;
+}
