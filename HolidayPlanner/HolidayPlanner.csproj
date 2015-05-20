@@ -248,6 +248,11 @@
     <Content Include="Images\star2.png" />
     <Content Include="Images\temple.jpg" />
     <Content Include="Images\tents.jpg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19011.jpeg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19013.jpeg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19015.jpeg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19016.jpeg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19019.jpeg" />
     <Content Include="Images\valley-view.jpg" />
     <Content Include="Images\zoom.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -308,6 +313,8 @@
     <Content Include="Views\Bangalore\HillStationsBangalore.cshtml" />
     <Content Include="Views\Bangalore\FarmsBangalore.cshtml" />
     <Content Include="Views\Bangalore\HolyPlacesBangalore.cshtml" />
+    <Content Include="Views\Home\ImageInfo.cshtml" />
+    <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -32,7 +32,7 @@ namespace HolidayPlanner.Controllers
             AddressModel model = new AddressModel();
             model.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
             model.AvailableCountries.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
-
+            model.AvailableCities.Add(new SelectListItem { Text = "-Please Select-", Value = "Selects items" });
             var countries = addressRepository.GetAllCountries();
             foreach (var country in countries)
             {
@@ -291,6 +291,36 @@ namespace HolidayPlanner.Controllers
 
                         return View("ReviewInfo", review);
                     }
+
+
+                case "Image":
+                    {
+                        var hname = (from p in db.Hotels
+                                     where p.HotelId == HId
+                                     select p.HotelName).SingleOrDefault();
+
+                        string[] src = new string[5]; 
+                        src[0] = "~/Images/" + hname + "/19011.jpeg";
+                        src[1] = "~/Images/" + hname + "/19013.jpeg";
+                        src[2] = "~/Images/" + hname + "/19015.jpeg";
+                        src[3] = "~/Images/" + hname + "/19016.jpeg";
+                        src[4] = "~/Images/" + hname + "/19019.jpeg";
+
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string path = Server.MapPath(src[i]);
+                            byte[] imageByteData = System.IO.File.ReadAllBytes(path);
+                            string imageBase64Data = Convert.ToBase64String(imageByteData);
+                            string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
+                            //ViewBag.ImageData[i] = imageDataURL;
+                            src[i] = imageDataURL;
+                        }
+                            ViewBag.ImageData = src;
+                            return View("ImageInfo");
+
+                        
+            }
 
             }
 
