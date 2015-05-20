@@ -32,7 +32,7 @@ namespace HolidayPlanner.Controllers
             AddressModel model = new AddressModel();
             model.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
             model.AvailableCountries.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
-
+            model.AvailableCities.Add(new SelectListItem { Text = "-Please Select-", Value = "Selects items" });
             var countries = addressRepository.GetAllCountries();
             foreach (var country in countries)
             {
