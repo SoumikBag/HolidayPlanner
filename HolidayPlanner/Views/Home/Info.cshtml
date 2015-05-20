@@ -15,91 +15,95 @@
     <title>Info</title>
 </head>
 <body>
+    <div id="container">
+        <div class="tempplan plandetail">
+            <br />
+            <br />
+            <div id="displaybar" style="width:100%;background:white; border-top:groove; margin-top:1.1em">
+                <div style="width:65em;margin:0 auto; text-align:left">
+                    <div class="text" style="">
+                        <h1 style="font-size:1.5em;line-height:1.2em;" id="pageresulttitle">
 
-    <div class="tempplan plandetail">
-        <br />
-        <br />
-        <div class="h3">
+                            @Html.DisplayFor(model=> model.HotelName)
+                        </h1>
+                        
+                    </div>
 
-            <div>
-                @Html.DisplayFor(model => model.HotelName)
+                </div>
+            </div>
+          
+
+
+            <div style="background: white;padding:0 1em 1em 1em;">
+
+                <div style="background: white;line-height: 1.5em;padding-left: 5px;">
+
+
+
+
+                </div>
+                <div class="clear"></div>
             </div>
 
-            @*The Zuri White Sands <span>in Varca, South Goa</span>*@
-            <a class="loadsharebar" href="http://www.abreakplease.com/varca-the-zuri-white-sands/share" style="display:none;"></a>
-            <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em;"></div>
-        </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#tabs').tabs();
+                    //$("#tabs").tabs();
+                });
+            </script>
 
 
-        <div style="background: white;padding:0 1em 1em 1em;">
+            <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+                <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                    <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-8" aria-selected="true" aria-expanded="true">
+                        <a href="@Url.Action("Info", "Home" , new { clickinfo ="overview" , HId = Model.HotelId})" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-9" aria-selected="false" aria-expanded="false">
+                        <a href="@Url.Action("Info", "Home", new { clickinfo = "facility", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
+                    </li>
 
-            <div style="background: white;line-height: 1.5em;padding-left: 5px;">
+
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                        <a href="@Url.Action("Info", "Home", new { clickinfo = "Image", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Photos</a>
+                    </li>
 
 
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                        <a href="#tabs-4" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Map</a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                        <a href="#tabs-5" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Location</a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                        <a href="@Url.Action("Info", "Home", new { clickinfo = "review", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Traveller Reviews</a>
+                    </li>
+                    <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
+                        <a href="@Url.Action("Info", "Home", new { clickinfo = "room", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Rooms and Rates</a>
+                    </li>
 
+                </ul>
+
+                <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em; padding-top:20px">
+                    <h3>
+                        @*@Html.ActionLink("Contact Us", "bookingform", "Home", new { id=Model.HotelId})*@
+                        <a href="@Url.Action("bookingform", "Home", new { id= Model.HotelId})">Contact Us</a>
+                    </h3>
+                </div>
+
+                <div id="tabs-1" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                <div id="tabs-2" aria-labelledby="ui-id-9" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
+                @*<div id="tabs-3" aria-labelledby="ui-id-10" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>*@
+
+                @*<div id="tabs-3" aria-labelledby="ui-id-10" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;"><img src="@ViewBag.ImageData" /></div>*@
+
+                <div id="tabs-4" aria-labelledby="ui-id-11" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 4 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+                <div id="tabs-5" aria-labelledby="ui-id-12" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 5 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
+                <div id="tabs-6" aria-labelledby="ui-id-13" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 6 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 
             </div>
-            <div class="clear"></div>
-        </div>
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#tabs').tabs();
-                //$("#tabs").tabs();
-            });
-        </script>
-
-
-        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-                <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-8" aria-selected="true" aria-expanded="true">
-                    <a href="@Url.Action("Info", "Home" , new { clickinfo ="overview" , HId = Model.HotelId})" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8">Overview</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-9" aria-selected="false" aria-expanded="false">
-                    <a href="@Url.Action("Info", "Home", new { clickinfo = "facility", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Info & Facilities</a>
-                </li>
-
-
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="@Url.Action("Info", "Home", new { clickinfo = "Image", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-9">Photos</a>
-                </li>
-
-
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="#tabs-4" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Map</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="#tabs-5" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Location</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="@Url.Action("Info", "Home", new { clickinfo = "review", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Traveller Reviews</a>
-                </li>
-                <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-3" aria-labelledby="ui-id-10" aria-selected="false" aria-expanded="false">
-                    <a href="@Url.Action("Info", "Home", new { clickinfo = "room", HId = Model.HotelId })" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-10">Rooms and Rates</a>
-                </li>
-
-            </ul>
-
-            <div class="sharebarcontainer" style="position:absolute;right:0;top:0.25em;z-index:100;width:6em;padding-right:0.25em; padding-top:20px">
-                <h3>@*@Html.ActionLink("Contact Us", "bookingform", "Home", new { id=Model.HotelId})*@
-                <a href="@Url.Action("bookingform", "Home", new { id= Model.HotelId})">Contact Us</a>
-                </h3>
-            </div>
-
-            <div id="tabs-1" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-            <div id="tabs-2" aria-labelledby="ui-id-9" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
-            @*<div id="tabs-3" aria-labelledby="ui-id-10" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>*@
-
-            @*<div id="tabs-3" aria-labelledby="ui-id-10" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;"><img src="@ViewBag.ImageData" /></div>*@
-
-            <div id="tabs-4" aria-labelledby="ui-id-11" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 4 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
-            <div id="tabs-5" aria-labelledby="ui-id-12" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 5 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
-            <div id="tabs-6" aria-labelledby="ui-id-13" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">tab 6 Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 
         </div>
-
     </div>
-
 </body>
 </html>
 
