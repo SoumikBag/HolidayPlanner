@@ -15,7 +15,8 @@
                 </h1>
                 <div style="padding: 5px 0;">
                     <span style="color:#aaa;display:inline-block;" id="pageresultcount">
-                        (92 options found)
+                        @Model.Count
+                        Options Found
                     </span>
 
                 </div>
@@ -322,7 +323,7 @@
                     @for (var i = 0; i < Model.Count(); i++)
                     {
                         <li>
-                            <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new {clickinfo = "hoteldetails", HId=Model[i].HotelId})">
+                            <a class="plan rplan" rel="tripoption-varca-the-zuri-white-sands" href="@Url.Action("Info", "Home", new { clickinfo = "hoteldetails", HId = Model[i].HotelId })">
 
                                 <img src="~/Images/10433_t.jpeg" border="0" width="140" height="100" />
                                 <div class="caption">
