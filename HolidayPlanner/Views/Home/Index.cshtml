@@ -1,6 +1,6 @@
-﻿@*@model HolidayPlanner.Models.Country*@
+﻿@model HolidayPlanner.Models.Country
 
-@model IEnumerable<HolidayPlanner.Models.InfoViewModel>
+@*@model IEnumerable<HolidayPlanner.Models.InfoViewModel>*@
 
 
 @{
@@ -57,7 +57,7 @@
                    
                     @*@Html.DropDownList("CityDropDown",Model.CityList,"Select City")*@
 
-                    @*@Html.DropDownList("CountryDropDown", Model.CountryList, "Select Country")*@
+                    @Html.DropDownList("CountryDropDown", Model.CountryList, "Select Country")
                     
                    
                     

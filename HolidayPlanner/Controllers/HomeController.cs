@@ -18,8 +18,8 @@ namespace HolidayPlanner.Controllers
         {
             Country c = new Country();
             c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
-            InfoViewModel ivm = new InfoViewModel();
-            return View(ivm);
+            //InfoViewModel ivm = new InfoViewModel();
+            return View(c);
         }
         //ended by sandy
 
@@ -171,6 +171,36 @@ namespace HolidayPlanner.Controllers
                         return View("ReviewInfo", review);
                     }
 
+
+                case "Image":
+                    {
+                        var hname = (from p in db.Hotels
+                                     where p.HotelId == HId
+                                     select p.HotelName).SingleOrDefault();
+
+                        string[] src = new string[5]; 
+                        src[0] = "~/Images/" + hname + "/19011.jpeg";
+                        src[1] = "~/Images/" + hname + "/19013.jpeg";
+                        src[2] = "~/Images/" + hname + "/19015.jpeg";
+                        src[3] = "~/Images/" + hname + "/19016.jpeg";
+                        src[4] = "~/Images/" + hname + "/19019.jpeg";
+
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            string path = Server.MapPath(src[i]);
+                            byte[] imageByteData = System.IO.File.ReadAllBytes(path);
+                            string imageBase64Data = Convert.ToBase64String(imageByteData);
+                            string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
+                            //ViewBag.ImageData[i] = imageDataURL;
+                            src[i] = imageDataURL;
+                        }
+                            ViewBag.ImageData = src;
+                            return View("ImageInfo");
+                        
+                        
+                    }
+
             }
 
             return View();
@@ -301,16 +331,16 @@ namespace HolidayPlanner.Controllers
 
 
        //added by sandy
-        public ActionResult Search(string CId)
+        public ActionResult Search()
         {
-             var db = new HolidayPlanner.Models.InfoData();
+             //var db = new HolidayPlanner.Models.InfoData();
 
-             var Hdetail = (from p in db.Hotels
-                                         where p.CityId == CId
-                                        select p ).SingleOrDefault();
+             //var Hdetail = (from p in db.Hotels
+             //                            where p.CityId == CId
+             //                           select p ).SingleOrDefault();
 
 
-            return View("First", Hdetail);
+            return View("Search");
         }
         //ended by sandy
 
