@@ -43,6 +43,11 @@ namespace HolidayPlanner.Models
         [StringLength(1000)]
         public string FoodDetails { get; set; }
 
+        public int Distance { get; set; }
+
+        [StringLength(50)]
+        public string Budget { get; set; }
+
         public virtual ICollection<Booking> Bookings { get; set; }
 
         public virtual ICollection<Facility> Facilities { get; set; }
