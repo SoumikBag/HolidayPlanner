@@ -26,7 +26,7 @@ namespace HolidayPlanner.Controllers
             this.addressRepository = addressRepository;
         }
 
-       
+        [HttpGet]
         public ActionResult Index()
         {
             AddressModel model = new AddressModel();
@@ -48,6 +48,15 @@ namespace HolidayPlanner.Controllers
 
 
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(AddressModel model)
+        {
+            var selectedId = model.CityId;
+
+            return RedirectToAction("Index1", "Main", new { Id = selectedId, clickinfo="hotels" });
+
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
@@ -409,17 +418,17 @@ namespace HolidayPlanner.Controllers
 
 
        //added by sandy
-        public ActionResult Search(string CId)
-        {
-             var db = new HolidayPlanner.Models.InfoData();
+        //public ActionResult Search(string CId)
+        //{
+        //    var db = new HolidayPlanner.Models.InfoData();
 
-             var Hdetail = (from p in db.Hotels
-                                         where p.CityId == CId
-                                        select p ).SingleOrDefault();
+        //    var Hdetail = (from p in db.Hotels
+        //                   where p.CityId == CId
+        //                   select p).SingleOrDefault();
 
 
-            return View("First", Hdetail);
-        }
+        //    return View("First", Hdetail);
+        //}
         //ended by sandy
 
         public ActionResult HolyPlaces()

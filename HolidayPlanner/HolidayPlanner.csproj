@@ -128,6 +128,7 @@
     <Compile Include="Controllers\BangaloreController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PuneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -141,6 +142,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Address.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\CityData.cs" />
     <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\CountryContext.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
@@ -375,6 +377,7 @@
     <Content Include="Views\Home\Bar.cshtml" />
     <Content Include="Views\Pune\FirstPune.cshtml" />
     <Content Include="Views\Bangalore\FirstBangalore.cshtml" />
+    <Content Include="Views\Main\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
