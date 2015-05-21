@@ -382,6 +382,7 @@
     <Content Include="Views\Home\Bar.cshtml" />
     <Content Include="Views\Pune\FirstPune.cshtml" />
     <Content Include="Views\Bangalore\FirstBangalore.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
