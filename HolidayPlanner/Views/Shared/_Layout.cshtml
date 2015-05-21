@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     @*<link href="css/style.css" rel='stylesheet' type='text/css' />*@
     <!-- Custom Theme files -->
     @*<meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script*@>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script*@
     <!--webfont-->
     @*<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
@@ -52,7 +52,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <a class="toggleMenu" href="#"><img src="~/Images/nav.png" alt="" /></a>
                     <ul class="nav" id="nav">
                         <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Living", "Living", "Home") </li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <div class="clearfix"></div>
@@ -104,7 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     </div>
 
-    @RenderBody();
+    @RenderBody()
 
         <div class="footer">
             <div class="container">

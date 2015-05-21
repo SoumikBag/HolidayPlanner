@@ -51,6 +51,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -127,15 +128,22 @@
     <Compile Include="Controllers\BangaloreController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PuneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\AddressRepository.cs" />
     <Compile Include="Models\Booking.cs" />
-    <Compile Include="Models\City.cs" />
     <Compile Include="Models\CityContxt.cs" />
+    <Compile Include="Models\Address.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Address.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CityData.cs" />
     <Compile Include="Models\InfoViewModel.cs" />
-    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryContext.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
@@ -149,7 +157,6 @@
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
-    <Compile Include="Models\State.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInRole.cs" />
     <Compile Include="Models\UserInRoleContext.cs" />
@@ -241,12 +248,22 @@
     <Content Include="Images\star2.png" />
     <Content Include="Images\temple.jpg" />
     <Content Include="Images\tents.jpg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19011.jpeg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19013.jpeg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19015.jpeg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19016.jpeg" />
+    <Content Include="Images\The Zuri White Sands in Varca\19019.jpeg" />
     <Content Include="Images\valley-view.jpg" />
     <Content Include="Images\zoom.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
     <Content Include="ClassDiagram2.cd" />
+    <Content Include="Models\Address.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Address.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -296,6 +313,7 @@
     <Content Include="Views\Bangalore\HillStationsBangalore.cshtml" />
     <Content Include="Views\Bangalore\FarmsBangalore.cshtml" />
     <Content Include="Views\Bangalore\HolyPlacesBangalore.cshtml" />
+    <Content Include="Views\Home\ImageInfo.cshtml" />
     <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -342,9 +360,35 @@
     <Content Include="Views\Pune\HillStationsPune.cshtml" />
     <Content Include="Views\Pune\FarmsPune.cshtml" />
     <Content Include="Views\Pune\HolyPlacesPune.cshtml" />
+    <Content Include="Views\Home\Distance100.cshtml" />
+    <Content Include="Views\Home\Distance150.cshtml" />
+    <Content Include="Views\Home\Distance200.cshtml" />
+    <Content Include="Views\Home\Distance300.cshtml" />
+    <Content Include="Views\Home\DistanceGreater300.cshtml" />
+    <Content Include="Views\Home\Lonavala.cshtml" />
+    <Content Include="Views\Home\Silvassa.cshtml" />
+    <Content Include="Views\Home\Alibag.cshtml" />
+    <Content Include="Views\Home\Lavasa.cshtml" />
+    <Content Include="Views\Home\Karjet.cshtml" />
+    <Content Include="Views\Home\CheapHotel.cshtml" />
+    <Content Include="Views\Home\MidRangeHotel.cshtml" />
+    <Content Include="Views\Home\PremiumHotel.cshtml" />
+    <Content Include="Views\Home\LuxuryHotel.cshtml" />
+    <Content Include="Views\Home\AllPriceHotel.cshtml" />
+    <Content Include="Views\Home\SwimmingPool.cshtml" />
+    <Content Include="Views\Home\IndoorGames.cshtml" />
+    <Content Include="Views\Home\OutdoorGames.cshtml" />
+    <Content Include="Views\Home\Spa.cshtml" />
+    <Content Include="Views\Home\Garden.cshtml" />
+    <Content Include="Views\Home\PartyHall.cshtml" />
+    <Content Include="Views\Home\Bar.cshtml" />
+    <Content Include="Views\Pune\FirstPune.cshtml" />
+    <Content Include="Views\Bangalore\FirstBangalore.cshtml" />
+    <Content Include="Views\Main\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Address\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -354,7 +398,13 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Address.dbml.layout">
+      <DependentUpon>Address.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

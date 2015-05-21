@@ -122,5 +122,218 @@ namespace HolidayPlanner.Controllers
                                 select hot).ToList();
             return View(holy);
         }
+
+
+        public ActionResult FirstPune(string clickinfo)
+        {
+
+            var db = new HolidayPlanner.Models.InfoData();
+
+
+            switch (clickinfo)
+            {
+
+                case "Distance100":
+                    {
+
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Distance == 100
+                                            select hot).ToList();
+
+                        return View("FirstPune", holy);
+                    }
+
+                case "Distance150":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Distance == 150
+                                            select hot).ToList();
+                        return View("FirstPune", holy);
+                    }
+
+                case "Distance200":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Distance == 200
+                                            select hot).ToList();
+
+                        return View("FirstPune", holy);
+                    }
+
+                case "Distance300":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Distance == 300
+                                            select hot).ToList();
+                        return View("FirstPune", holy);
+                    }
+
+                case "DistanceGreater300":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Distance > 300
+                                            select hot).ToList();
+
+                        return View("FirstPune", holy);
+                    }
+                case "CheapHotel":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Budget == "Cheap"
+                                            select hot).ToList();
+
+                        return View("FirstPune", holy);
+                    }
+                case "MidRangeHotel":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Budget == "Mid Range"
+                                            select hot).ToList();
+
+                        return View("FirstPune", holy);
+                    }
+                case "PremiumHotel":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Budget == "Premium"
+                                            select hot).ToList();
+
+                        return View("FirstPune", holy);
+                    }
+                case "LuxuryHotel":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Budget == "Luxury"
+                                            select hot).ToList();
+
+                        return View("FirstPune", holy);
+                    }
+               
+
+                case "SwimmingPool":
+                    {
+            
+                        List<Hotel> facilityinfo = (from f in db.Facilities
+                                                    join h in db.Hotels
+                                                    on f.HotelId equals h.HotelId
+                                                    where f.FacilitiesType == "Swimming Pool" && h.CityId == "PU"
+                                                    select h).ToList();
+
+                        return View("FirstPune", facilityinfo);
+                    }
+
+                case "IndoorGames":
+                    {
+                        List<Hotel> facilityinfo = (from f in db.Facilities
+                                                    join h in db.Hotels
+                                                    on f.HotelId equals h.HotelId
+                                                    where f.FacilitiesType == "Indoor Games" && h.CityId == "PU"
+                                                    select h).ToList();
+
+                        return View("FirstPune", facilityinfo);
+                    }
+
+                case "OutdoorGames":
+                        {
+                            List<Hotel> facilityinfo = (from f in db.Facilities
+                                                        join h in db.Hotels
+                                                        on f.HotelId equals h.HotelId
+                                                        where f.FacilitiesType == "Outdoor Games" && h.CityId == "PU"
+                                                        select h).ToList();
+
+                            return View("FirstPune", facilityinfo);
+                        }
+
+                case "Spa":
+                    {
+                        List<Hotel> facilityinfo = (from f in db.Facilities
+                                                    join h in db.Hotels
+                                                    on f.HotelId equals h.HotelId
+                                                    where f.FacilitiesType == "Spa" && h.CityId == "PU"
+                                                    select h).ToList();
+
+                        return View("FirstPune", facilityinfo);
+                    }
+
+                case "Garden":
+                    {
+                        List<Hotel> facilityinfo = (from f in db.Facilities
+                                                    join h in db.Hotels
+                                                    on f.HotelId equals h.HotelId
+                                                    where f.FacilitiesType == "Garden" && h.CityId == "PU"
+                                                    select h).ToList();
+
+                        return View("FirstPune", facilityinfo);
+                    }
+
+                case "PartyHall":
+                    {
+                        List<Hotel> facilityinfo = (from f in db.Facilities
+                                                    join h in db.Hotels
+                                                    on f.HotelId equals h.HotelId
+                                                    where f.FacilitiesType == "Party Hall" && h.CityId == "PU"
+                                                    select h).ToList();
+
+                        return View("FirstPune", facilityinfo);
+                    }
+
+                case "Bar":
+                    {
+                        List<Hotel> facilityinfo = (from f in db.Facilities
+                                                    join h in db.Hotels
+                                                    on f.HotelId equals h.HotelId
+                                                    where f.FacilitiesType == "Bar" && h.CityId == "PU"
+                                                    select h).ToList();
+
+                        return View("FirstPune", facilityinfo);
+                    }
+
+                case "Lonavala":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Address == "Lonavala"
+                                            select hot).ToList();
+                        return View("FirstPune", holy);
+                    }
+
+                case "Mahabaleshwar":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Address == "Mahabaleshwar"
+                                            select hot).ToList();
+                        return View("FirstPune", holy);
+                    }
+
+                case "Kolad":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Address == "Kolad"
+                                            select hot).ToList();
+                        return View("FirstPune", holy);
+                    }
+
+                case "Panchgani":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Address == "Panchgani"
+                                            select hot).ToList();
+                        return View("FirstPune", holy);
+                    }
+
+                case "Saputara":
+                    {
+                        List<Hotel> holy = (from hot in db.Hotels
+                                            where hot.CityId == "PU" && hot.Address == "Saputara"
+                                            select hot).ToList();
+                        return View("FirstPune", holy);
+                    }
+
+            }
+
+            return View();
+
+        }
+
+
     }
 }

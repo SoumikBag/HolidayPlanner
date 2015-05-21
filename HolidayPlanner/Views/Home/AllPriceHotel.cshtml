@@ -1,0 +1,355 @@
+﻿@model IList<HolidayPlanner.Models.Hotel>
+@{
+    ViewBag.Title = "AllPriceHotel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="outputcontainer">
+    <div style="background:#fbeedb;color:#C94A00;padding:10px 0;width:100%;text-align: center;font-size:13px;border-bottom:1px dotted #ccc;">We have seperate section where you can search <strong>VILLAS/BUNGALOWS ON RENT</strong> for your vacation. <a class="linkbutton" href="http://www.abreakplease.com/villas" style="margin-left: 1em;">Explore Now</a> </div>
+    <div id="displaybar" style="width:100%;background:white; border-top:groove">
+        <div style="width:65em;margin:0 auto; text-align:left">
+            <div class="text" style="">
+                <h1 style="font-size:1.5em;line-height:1.2em;" id="pageresulttitle">
+
+                    Around Mumbai
+                </h1>
+                <div style="padding: 5px 0;">
+                    <span style="color:#aaa;display:inline-block;" id="pageresultcount">
+                        @Model.Count
+                        Options Found
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="newfiltersection" style="width:100%;background:white;height:40px;">
+        <div style="width:65em;margin:0 auto;height:40px;" id="filters">
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Location<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_big">
+                        <div id="filterlocationlinks">
+                            <div class="filtersubheader" style="margin-top:10px;">Select Location Type</div>
+                            <a rel="locationtype.beach-stay" href="@Url.Action("Beaches","Home")" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Beach
+                            </a>
+                            <a rel="locationtype.hill-station-stay" href="@Url.Action("HillStations","Home")" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Hill Station
+                            </a>
+                            <div class="clear"></div>
+                            <div class="filtersubheader" style="margin-top:10px;">Travel Distance</div>
+                            <a rel="traveldistance.0.100" href="@Url.Action("Distance100","Home")" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Within 100km
+                            </a>
+                            <a rel="traveldistance.0.150" href="@Url.Action("Distance150","Home")" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Within 150km
+                            </a>
+                            <a rel="traveldistance.0.200" href="@Url.Action("Distance200","Home")" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Within 200km
+                            </a>
+                            <a rel="traveldistance.0.300" href="@Url.Action("Distance300","Home")" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                Within 300km
+                            </a>
+                            <a rel="traveldistance.300.0" href="@Url.Action("DistanceGreater300","Home")" class="flink ">
+                                <i class="icon-radio-selected"></i>
+                                More than 300km
+                            </a>
+                            <div class="clear"></div>
+                            <div class="filtersubheader" style="margin-top:10px;">Select Places</div>
+                            <div id="placeoptions" style="word-spacing:0;">
+
+                                <a rel="places.candolim-goa" href="@Url.Action("Lonavala","Home")" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Lonavala (9)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a rel="places.mahabaleshwar-maharashtra" href="@Url.Action("Silvassa", "Home")" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Silvassa (8)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a rel="places.lonavala-maharashtra" href="@Url.Action("Alibag","Home")" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Alibag (6)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a rel="places.calangute-goa" href="@Url.Action("Lavasa", "Home")" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Lavasa (5)
+                                    <span class="onlythis">only</span>
+                                </a>
+                                <a rel="places.cavelossim-goa" href="@Url.Action("Karjet","Home")" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Karjet (4)
+                                    <span class="onlythis">only</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Pricing<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+                            <div class="li">
+                                <a href="#" rel="budget.all" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    All
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("CheapHotel","Home")" rel="budget.cheap" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Cheap
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("MidRangeHotel","Home")" rel="budget.mid-range" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Mid Range
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("PremiumHotel","Home")" rel="budget.premium" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Premium
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("LuxuryHotel","Home")" rel="budget.luxury" class="flink ready">
+                                    <i class="icon-selected"></i>
+                                    Luxury
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Stay Type<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+                            <div class="li">
+                                <a href="@Url.Action("Beaches","Home")" rel="staytheme.resorts" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Resorts
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("Farms","Home")" rel="staytheme.farms" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Farms
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("HolyPlaces","Home")" rel="staytheme.tents" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Holy Places
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Theme<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+
+                            <div class="li">
+                                <a href="@Url.Action("BeachFacing","Home")" rel="theme.beach-facing" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Beach facing
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("Romantic","Home")" rel="theme.romantic" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Romantic
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("ValleyView", "Home")" rel="theme.valley-view" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Valley view
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("RiverSide", "Home")" rel="theme.riverside" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Riverside
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("Adventure", "Home")" rel="theme.adventure" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Adventure
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible" style="margin-right: 0;">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Facility<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
+
+                            <div class="li">
+                                <a href="@Url.Action("SwimmingPool", "Home")" rel="facilities.swimming-pool" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Swimming Pool
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("IndoorGames", "Home")" rel="facilities.indoor-games" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Indoor Games
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("OutdoorGames", "Home")" rel="facilities.outdoor-games" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Outdoor Games
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("Spa", "Home")" rel="facilities.spa-facility" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Spa Facility
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("Garden", "Home")" rel="facilities.ac-rooms" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Garden
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("PartyHall", "Home")" rel="facilities.jacuzzi" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    PartyHall
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("Bar", "Home")" rel="facilities.bathtub" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Bar
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+        $(window).load(function() {
+            $("#scroller").simplyScroll({
+                auto: false,
+                manualMode: 'loop',
+                speed: 10
+            });
+        });
+
+</script>
+<style type="text/css">
+    .caption:hover {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        bottom: 0px;
+        left: 0px;
+        color: #000000;
+        background: #fbeedb;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0.7;
+        z-index: 2;
+    }
+
+    .caption {
+        position: absolute;
+        width: 140px;
+        height: 60px;
+        bottom: 0px;
+        left: 0px;
+        color: #000000;
+        background: #fbeedb;
+        text-align: center;
+        font-weight: initial;
+        opacity: 0.7;
+        z-index: 2;
+        font-size: smaller;
+    }
+</style>
+
+
+<div id="resultbarcontainer">
+    <div id="resultbar">
+        <div id="rightpanel">
+            <div class="item" id="trippage1">
+
+                <ul id="scroller" class="simply-scroll-list" style="width: 2900px;">
+
+                    @for (var i = 0; i < Model.Count(); i++)
+                    {
+                        <li>
+                            <a class="plan rplan" href="@Url.Action("Info", "Home", new {clickinfo = "hoteldetails", HId=Model[i].HotelId})">
+
+                                <img src="~/Images/19011_t.jpeg" border="0" width="140" height="100" />
+                                <div class="caption">
+                                    @Html.DisplayFor(model => model[i].HotelName)
+
+                                </div>
+                                <div class="nub"></div>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<div id="resultdetailbackground">
+</div>
+<div id="resultdetail">
+
+</div>
+
+
+
+
+
+
+
+

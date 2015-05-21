@@ -1,11 +1,8 @@
-﻿@model HolidayPlanner.Models.Country
-
-@*@model IEnumerable<HolidayPlanner.Models.InfoViewModel>*@
-
+﻿@model HolidayPlanner.Models.AddressModel
 
 @{
     ViewBag.Title = "Mumbai";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 <script>
@@ -20,7 +17,9 @@
 
     });
 </script>
-
+<div>
+    @using(Html.BeginForm("Index", "Home", FormMethod.Post))
+{
 <div class="wrapper theme-default">
 
     <div class="container-wrap theme-default">
@@ -40,6 +39,97 @@
             <div class="dropdown-buttons">
 
                 <div class="dropdown-button">
+
+                    <script type="text/javascript">
+    $(function () {
+        
+        $("#CountryId").change(function () {
+            var selectedItem = $(this).val();
+            ddlStates = $("#StateId");
+            var statesProgress = $("#states-loading-progress");
+            statesProgress.show();
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: "@(Url.RouteUrl("GetStatesByCountryId"))",
+                data: { "countryId": selectedItem },
+                success: function (data) {
+                    ddlStates.html('');
+                    $.each(data, function (id, option) {
+                        ddlStates.append($('<option></option>').val(option.countryId).html(option.name));
+                        ChangeMe(option.countryId);
+
+
+                    });
+                    statesProgress.hide();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Failed to retrieve states.');
+                    statesProgress.hide();
+                }
+            });
+        });
+
+
+                                    function ChangeMe(abbr) {
+
+            //var selectedItem = $("#StateId").val();
+            var ddlCitys = $("#CityId");
+            var statesProgress = $("#citys-loading-progress");
+            statesProgress.show();
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: "@(Url.RouteUrl("GetCitysByStateId"))",
+                data: { "stateId": abbr },
+                success: function (data) {
+                    ddlCitys.html('');
+                    $.each(data, function (id, option) {
+                        ddlCitys.append($('<option></option>').val(option.stateId).html(option.name));
+                    });
+                    statesProgress.hide();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert('Failed to retrieve cities.');
+                    statesProgress.hide();
+                }
+            });
+
+    }
+
+        $("#StateId").change(function () {
+            var abbr = $("#StateId").val();
+            ChangeMe(abbr);
+        });
+    });
+
+</script>
+
+<div>
+    @Html.LabelFor(model => model.CountryId)
+    @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries)
+</div>
+<br />
+<div>
+    @Html.LabelFor(model => model.StateId)
+    @Html.DropDownListFor(model => model.StateId, Model.AvailableStates)
+    
+    <span id="states-loading-progress" style="display: none;">Please wait..</span>
+</div>
+<br />
+<div>
+    @Html.LabelFor(model => model.CityId)
+                                @Html.DropDownListFor(model => model.CityId, Model.AvailableCities)
+
+    <span id="Citys-loading-progress" style="display: none;">Please wait..</span>
+</div>
+                            <br />
+                            <div class="contact_btn">
+                                <h1><label class="btn1 btn-2 btn-2g"><input type="submit" id="submit" value="Search" onclick="location.href='@Url.Action("Index", "Home")'" formmethod="post" /></label></h1>
+                            </div>
+
+
+
                     @*<select class="dropdown" tabindex="20" data-settings='{"wrapperClass":"flat"}'>
                         <option value="0">Dubai</option>
                         <option value="1">Australia</option>
@@ -79,13 +169,13 @@
         </center>
         <form>
             @*<input type="text" value="Keyword, name, date, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">*@
-            <br/>
-            <div class="contact_btn">
-                <h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home")'" /></label></h1>
-                @*<h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home" , new {CId = "GOA"})'" /></label></h1>*@
+                    <br />
+                    @*<div class="contact_btn">
+                            <h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search"  /></label></h1>
+                            <h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home" , new {CId = "GOA"})'" /></label></h1>
 
 
-            </div>
+                        </div>*@
         </form>
         <div class="clearfix"></div>
         <br />
@@ -118,7 +208,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img"><a href="@Url.Action("First", "Home")"/><img src="@Url.Content("~/Images/luxury.jpg")" class="img-responsive" alt="" /></div>
+                                    <div class="index_img"><a href="@Url.Action("First", "Home")" /><img src="@Url.Content("~/Images/luxury.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -389,6 +479,7 @@
                 </div>
             </div>
         </div>
+        </div>
+    }
     </div>
     
-    	
