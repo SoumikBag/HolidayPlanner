@@ -328,7 +328,7 @@ namespace HolidayPlanner.Controllers
 
         }
          
-       
+
 
         public ActionResult First()
         {
@@ -528,7 +528,7 @@ namespace HolidayPlanner.Controllers
 
             return View();
         }
-        
+
         public ActionResult Distance100()
         {
             var db = new HolidayPlanner.Models.InfoData();
@@ -546,7 +546,7 @@ namespace HolidayPlanner.Controllers
                                 select hot).ToList();
             return View(holy);
         }
-
+        
         public ActionResult Distance200()
         {
             var db = new HolidayPlanner.Models.InfoData();
