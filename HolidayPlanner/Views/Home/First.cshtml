@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div id="outputcontainer">
+<div id="container">
     <div style="background:#fbeedb;color:#C94A00;padding:10px 0;width:100%;text-align: center;font-size:13px;border-bottom:1px dotted #ccc;">We have seperate section where you can search <strong>VILLAS/BUNGALOWS ON RENT</strong> for your vacation. <a class="linkbutton" href="http://www.abreakplease.com/villas" style="margin-left: 1em;">Explore Now</a> </div>
             <div id="displaybar" style="width:100%;background:white; border-top:groove">
                 <div style="width:65em;margin:0 auto; text-align:left">
@@ -15,6 +15,8 @@
                 </h1>
                 <div style="padding: 5px 0;">
                     <span style="color:#aaa;display:inline-block;" id="pageresultcount">
+                        @Model.Count
+                        Options Found
                         
                     </span>
 

@@ -1,8 +1,10 @@
 ﻿@model IList<HolidayPlanner.Models.Hotel>
+
 @{
-    ViewBag.Title = "RiverSidePune";
+    ViewBag.Title = "Index1";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 
 <div id="outputcontainer">
@@ -10,9 +12,11 @@
     <div id="displaybar" style="width:100%;background:border-box; border-top:groove">
         <div style="width:65em;margin:0 auto; text-align:left">
             <div class="text" style="">
-                <h1 style="font-size:1.5em;line-height:1.2em;" id="pageresulttitle">
 
-                    River Side accommodation, hotels, getaways around pune
+                  
+                <h1 style="font-size:1.5em;line-height:1.2em;" id="pageresulttitle">
+                
+                    Around 
                 </h1>
                 <div style="padding: 5px 0;">
                     <span style="color:#aaa;display:inline-block;" id="pageresultcount">
@@ -21,6 +25,7 @@
                     </span>
 
                 </div>
+
             </div>
 
         </div>
@@ -35,33 +40,33 @@
                     <div class="dropdown_columns dropdown_columns_big">
                         <div id="filterlocationlinks">
                             <div class="filtersubheader" style="margin-top:10px;">Select Location Type</div>
-                            <a rel="locationtype.beach-stay" href="@Url.Action("BeachesPune","Pune")" class="flink ">
+                            <a rel="locationtype.beach-stay" href="@Url.Action("Demo", "Main", new { clickinfo = "Beaches" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Beach
                             </a>
-                            <a rel="locationtype.hill-station-stay" href="@Url.Action("HillStationsPune", "Pune")" class="flink ">
+                            <a rel="locationtype.hill-station-stay" href="@Url.Action("Demo", "Main", new { clickinfo = "HillStations" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Hill Station
                             </a>
                             <div class="clear"></div>
                             <div class="filtersubheader" style="margin-top:10px;">Travel Distance</div>
-                            <a rel="traveldistance.0.100" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Distance100" })" class="flink ">
+                            <a rel="traveldistance.0.100" href="@Url.Action("Demo", "Main", new { clickinfo = "Distance100" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Within 100km
                             </a>
-                            <a rel="traveldistance.0.150" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Distance150" })" class="flink ">
+                            <a rel="traveldistance.0.150" href="@Url.Action("Demo", "Main", new { clickinfo = "Distance150" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Within 150km
                             </a>
-                            <a rel="traveldistance.0.200" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Distance200" })" class="flink ">
+                            <a rel="traveldistance.0.200" href="@Url.Action("Demo", "Main", new { clickinfo = "Distance200" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Within 200km
                             </a>
-                            <a rel="traveldistance.0.300" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Distance300" })" class="flink ">
+                            <a rel="traveldistance.0.300" href="@Url.Action("Demo", "Main", new { clickinfo = "Distance300" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 Within 300km
                             </a>
-                            <a rel="traveldistance.300.0" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "DistanceGreater300" })" class="flink ">
+                            <a rel="traveldistance.300.0" href="@Url.Action("Demo", "Main", new { clickinfo = "DistanceGreater300" })" class="flink ">
                                 <i class="icon-radio-selected"></i>
                                 More than 300km
                             </a>
@@ -69,29 +74,29 @@
                             <div class="filtersubheader" style="margin-top:10px;">Select Places</div>
                             <div id="placeoptions" style="word-spacing:0;">
 
-                                <a rel="places.candolim-goa" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Lonavala" }))" class="flink ">
+                                <a rel="places.candolim-goa" href="@Url.Action("Demo", "Main", new { clickinfo = "Ooty" })" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Lonavala (9)
+                                    Ooty (9)
                                     <span class="onlythis">only</span>
                                 </a>
-                                <a rel="places.mahabaleshwar-maharashtra" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Mahabaleshwar" })" class="flink ">
+                                <a rel="places.mahabaleshwar-maharashtra" href="@Url.Action("Demo", "Main", new { clickinfo = "Mysore" })" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Mahabaleshwar (8)
+                                    Mysore (8)
                                     <span class="onlythis">only</span>
                                 </a>
-                                <a rel="places.lonavala-maharashtra" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Kolad" })" class="flink ">
+                                <a rel="places.lonavala-maharashtra" href="@Url.Action("Demo", "Main", new { clickinfo = "Sakleshpur" })" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Kolad (6)
+                                    Sakleshpur (6)
                                     <span class="onlythis">only</span>
                                 </a>
-                                <a rel="places.calangute-goa" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Panchgani" })" class="flink ">
+                                <a rel="places.calangute-goa" href="@Url.Action("Demo", "Main", new { clickinfo = "Coorg" })" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Panchgani (5)
+                                    Coorg (5)
                                     <span class="onlythis">only</span>
                                 </a>
-                                <a rel="places.cavelossim-goa" href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Saputara" })" class="flink ">
+                                <a rel="places.cavelossim-goa" href="@Url.Action("Demo", "Main", new { clickinfo = "Coonoor" })" class="flink ">
                                     <i class="icon-selected"></i>
-                                    Saputara (4)
+                                    Coonoor (4)
                                     <span class="onlythis">only</span>
                                 </a>
 
@@ -112,25 +117,25 @@
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "CheapHotel" })" rel="budget.cheap" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "CheapHotel" })" rel="budget.cheap" class="flink ">
                                     <i class="icon-selected"></i>
                                     Cheap
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "MidRangeHotel" })" rel="budget.mid-range" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "MidRangeHotel" })" rel="budget.mid-range" class="flink ">
                                     <i class="icon-selected"></i>
                                     Mid Range
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "PremiumHotel" })" rel="budget.premium" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "PremiumHotel" })" rel="budget.premium" class="flink ">
                                     <i class="icon-selected"></i>
                                     Premium
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "LuxuryHotel" })" rel="budget.luxury" class="flink ready">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "LuxuryHotel" })" rel="budget.luxury" class="flink ready">
                                     <i class="icon-selected"></i>
                                     Luxury
                                 </a>
@@ -146,19 +151,19 @@
                     <div class="dropdown_columns dropdown_columns_small">
                         <div>
                             <div class="li">
-                                <a href="@Url.Action("BeachesPune", "Pune")" rel="staytheme.resorts" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "Beaches" })" rel="staytheme.resorts" class="flink ">
                                     <i class="icon-selected"></i>
                                     Resorts
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FarmsPune", "Pune")" rel="staytheme.farms" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "Farms" })" rel="staytheme.farms" class="flink ">
                                     <i class="icon-selected"></i>
                                     Farms
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("HolyPlacesPune", "Pune")" rel="staytheme.tents" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "HolyPlaces" })" rel="staytheme.tents" class="flink ">
                                     <i class="icon-selected"></i>
                                     Holy Places
                                 </a>
@@ -175,36 +180,63 @@
                         <div>
 
                             <div class="li">
-                                <a href="@Url.Action("BeachFacingPune", "Pune")" rel="theme.beach-facing" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "BeachFacing" })" rel="theme.beach-facing" class="flink ">
                                     <i class="icon-selected"></i>
                                     Beach facing
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("RomanticPune", "Pune")" rel="theme.romantic" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "Romantic" })" rel="theme.romantic" class="flink ">
                                     <i class="icon-selected"></i>
                                     Romantic
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("ValleyViewPune", "Pune")" rel="theme.valley-view" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "ValleyView" })" rel="theme.valley-view" class="flink ">
                                     <i class="icon-selected"></i>
                                     Valley view
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("RiverSidePune", "Pune")" rel="theme.riverside" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "RiverSide" })" rel="theme.riverside" class="flink ">
                                     <i class="icon-selected"></i>
                                     Riverside
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("AdventurePune", "Pune")" rel="theme.adventure" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "Adventure" })" rel="theme.adventure" class="flink ">
                                     <i class="icon-selected"></i>
                                     Adventure
                                 </a>
                             </div>
+                            <div class="li">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "Luxury" })" rel="theme.adventure" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Luxury
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu_flexible">
+                <li>
+                    <a href="#" class="drop main"><span><i class="icon-filter"></i>Policy<i class="icon-filter-dd"></i></span></a>
+                    <div class="dropdown_columns dropdown_columns_small">
+                        <div>
 
+                            <div class="li">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "PureVeg" })" rel="theme.beach-facing" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Pure Veg
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "PetFriendly" })" rel="theme.romantic" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Pet Friendly
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -216,43 +248,43 @@
                         <div>
 
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "SwimmingPool" })" rel="facilities.swimming-pool" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "SwimmingPool" })" rel="facilities.swimming-pool" class="flink ">
                                     <i class="icon-selected"></i>
                                     Swimming Pool
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "IndoorGames" })" rel="facilities.indoor-games" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "IndoorGames" })" rel="facilities.indoor-games" class="flink ">
                                     <i class="icon-selected"></i>
                                     Indoor Games
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "OutdoorGames" })" rel="facilities.outdoor-games" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "OutdoorGames" })" rel="facilities.outdoor-games" class="flink ">
                                     <i class="icon-selected"></i>
                                     Outdoor Games
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Spa" })" rel="facilities.spa-facility" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "Spa" })" rel="facilities.spa-facility" class="flink ">
                                     <i class="icon-selected"></i>
                                     Spa Facility
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Garden" })" rel="facilities.ac-rooms" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "Garden" })" rel="facilities.ac-rooms" class="flink ">
                                     <i class="icon-selected"></i>
                                     Garden
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "PartyHall" })" rel="facilities.jacuzzi" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "PartyHall" })" rel="facilities.jacuzzi" class="flink ">
                                     <i class="icon-selected"></i>
                                     PartyHall
                                 </a>
                             </div>
                             <div class="li">
-                                <a href="@Url.Action("FirstPune", "Pune", new { clickinfo = "Bar" })" rel="facilities.bathtub" class="flink ">
+                                <a href="@Url.Action("Demo", "Main", new { clickinfo = "Bar" })" rel="facilities.bathtub" class="flink ">
                                     <i class="icon-selected"></i>
                                     Bar
                                 </a>
@@ -346,6 +378,8 @@
 
 
 </div>
+
+
 
 
 
