@@ -136,15 +136,14 @@
     <Compile Include="Models\AddressModel.cs" />
     <Compile Include="Models\AddressRepository.cs" />
     <Compile Include="Models\Booking.cs" />
-    <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\Address.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Address.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\CityData.cs" />
-    <Compile Include="Models\InfoViewModel.cs" />
+    <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\CountryContext.cs" />
+    <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />

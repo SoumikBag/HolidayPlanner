@@ -13,6 +13,12 @@ namespace HolidayPlanner.Controllers
         public ActionResult Index1(string Id, string clickinfo)
         {
             var db = new HolidayPlanner.Models.InfoData();
+            var db1 = new HolidayPlanner.Models.DataClasses1DataContext();
+            var cname = (from c in db1.Cities
+                         where c.CityId == Id
+                         select c.CityName).SingleOrDefault();
+
+            ViewData["Name"] = cname;
 
             TempData["Data"] = Id;
             switch (clickinfo)
