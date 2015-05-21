@@ -5,6 +5,9 @@ td{
     font-size : 80%;
     text-align: left;
     padding:initial;
+        /*border: 1px solid black;
+    overflow: hidden;*/
+    width: 100px;
 
 }
 

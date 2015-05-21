@@ -18,8 +18,8 @@ namespace HolidayPlanner.Controllers
         {
             Country c = new Country();
             c.CountryList = new SelectList(Ccon.GetCountryList(), "CountryId", "CountryName");
-            InfoViewModel ivm = new InfoViewModel();
-            return View(ivm);
+            
+            return View(c);
         }
         //ended by sandy
 
@@ -297,16 +297,16 @@ namespace HolidayPlanner.Controllers
 
 
        //added by sandy
-        public ActionResult Search(string CId)
+        public ActionResult Search()
         {
-             var db = new HolidayPlanner.Models.InfoData();
+             //var db = new HolidayPlanner.Models.InfoData();
 
-             var Hdetail = (from p in db.Hotels
-                                         where p.CityId == CId
-                                        select p ).SingleOrDefault();
+             //var Hdetail = (from p in db.Hotels
+             //                            where p.CityId == CId
+             //                           select p ).SingleOrDefault();
 
 
-            return View("First", Hdetail);
+            return View("First");
         }
         //ended by sandy
 
