@@ -350,7 +350,7 @@ namespace HolidayPlanner.Controllers
                        
         public ActionResult Romantic()
         {
-            var db = new HolidayPlanner.Models.InfoData();
+            var db = new HolidayPlanner.Models.InfoData(); 
             List<Hotel> rom = (from hot in db.Hotels
                                where hot.HTypeId == "RM" && hot.CityId == "MU"
                                 select hot).ToList();

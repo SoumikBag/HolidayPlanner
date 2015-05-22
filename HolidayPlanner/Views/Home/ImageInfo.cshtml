@@ -1,72 +1,16 @@
 ﻿@model HolidayPlanner.Models.Hotel
 
 <div>
-    @*<h4>Hotel</h4>
-    <hr />
-    <dl class="dl-horizontal">*@
-        @*<dt>
-            @Html.DisplayNameFor(model => model.HotelType.HotelType1)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.HotelType.HotelType1)
-        </dd>
+    <p>
+        @foreach (var i in ViewBag.ImageData)
+        {
+            <img src="@i" />
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HotelName)
-        </dt>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.HotelId }) |
+            @Html.ActionLink("Back to List", "Index")*@
+    </p>
 
-        <dd>
-            @Html.DisplayFor(model => model.HotelName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HotelDetails)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HotelDetails)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CityId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CityId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HotelPolices)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HotelPolices)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FoodDetails)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FoodDetails)
-        </dd>*@
-
-    @*</dl>*@
-</div>
-<p>
-    @foreach (var i in ViewBag.ImageData) { 
-    <img src="@i"/>
-    }
-
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.HotelId }) |
-    @Html.ActionLink("Back to List", "Index")*@
-</p>
+    
+   </div>
