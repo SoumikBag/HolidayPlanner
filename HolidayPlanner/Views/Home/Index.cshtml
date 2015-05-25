@@ -17,7 +17,9 @@
 
     });
 </script>
-
+<div>
+    @using(Html.BeginForm("Index", "Home", FormMethod.Post))
+{
 <div class="wrapper theme-default">
 
     <div class="container-wrap theme-default">
@@ -69,7 +71,7 @@
         });
 
 
-    function ChangeMe(abbr){
+                                    function ChangeMe(abbr) {
 
             //var selectedItem = $("#StateId").val();
             var ddlCitys = $("#CityId");
@@ -118,9 +120,13 @@
 <div>
     @Html.LabelFor(model => model.CityId)
     @Html.DropDownListFor(model => model.CityId, Model.AvailableCities)
+
     <span id="Citys-loading-progress" style="display: none;">Please wait..</span>
 </div>
-
+                            <br />
+                            <div class="contact_btn">
+                                <h1><label class="btn1 btn-2 btn-2g"><input type="submit" id="submit" value="Search" onclick="location.href='@Url.Action("Index", "Home")'" formmethod="post" /></label></h1>
+                            </div>
 
 
 
@@ -141,7 +147,7 @@
                    
                     @*@Html.DropDownList("CityDropDown",Model.CityList,"Select City")*@
 
-                    @*@Html.DropDownList("CountryDropDown", Model.CountryList, "Select Country")*@
+                   
                     
                    
                     
@@ -163,13 +169,13 @@
         </center>
         <form>
             @*<input type="text" value="Keyword, name, date, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">*@
-            <br/>
-            <div class="contact_btn">
-                <h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home")'" /></label></h1>
-                @*<h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home" , new {CId = "GOA"})'" /></label></h1>*@
+                    <br />
+                    @*<div class="contact_btn">
+                            <h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search"  /></label></h1>
+                            <h1><label class="btn1 btn-2 btn-2g"><input type="button" id="submit" value="Search" onclick="location.href='@Url.Action("Search", "Home" , new {CId = "GOA"})'" /></label></h1>
 
 
-            </div>
+                        </div>*@
         </form>
         <div class="clearfix"></div>
         <br />
@@ -202,7 +208,7 @@
                     <div class="col-md-3">
                         <div class="grid1">
                             <div class="view view-first">
-                                <div class="index_img"><a href="@Url.Action("First", "Home")"/><img src="@Url.Content("~/Images/luxury.jpg")" class="img-responsive" alt="" /></div>
+                                    <div class="index_img"><a href="@Url.Action("First", "Home")" /><img src="@Url.Content("~/Images/luxury.jpg")" class="img-responsive" alt="" /></div>
                                 <div class="mask">
                                     <div class="info"><i class="search"> </i> Show More</div>
                                     <ul class="mask_img">
@@ -473,6 +479,7 @@
                 </div>
             </div>
         </div>
+        </div>
+    }
     </div>
     
-    	

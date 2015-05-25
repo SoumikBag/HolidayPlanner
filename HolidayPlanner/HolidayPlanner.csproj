@@ -128,6 +128,7 @@
     <Compile Include="Controllers\BangaloreController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PuneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -135,14 +136,14 @@
     <Compile Include="Models\AddressModel.cs" />
     <Compile Include="Models\AddressRepository.cs" />
     <Compile Include="Models\Booking.cs" />
-    <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\Address.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Address.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\InfoViewModel.cs" />
+    <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\CountryContext.cs" />
+    <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
     <Compile Include="Models\DataContext.cs" />
@@ -312,7 +313,6 @@
     <Content Include="Views\Bangalore\FarmsBangalore.cshtml" />
     <Content Include="Views\Bangalore\HolyPlacesBangalore.cshtml" />
     <Content Include="Views\Home\ImageInfo.cshtml" />
-    <None Include="Views\Home\Living.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -382,6 +382,8 @@
     <Content Include="Views\Home\Bar.cshtml" />
     <Content Include="Views\Pune\FirstPune.cshtml" />
     <Content Include="Views\Bangalore\FirstBangalore.cshtml" />
+    <Content Include="Views\Main\Index1.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

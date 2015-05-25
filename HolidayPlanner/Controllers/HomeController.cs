@@ -26,7 +26,7 @@ namespace HolidayPlanner.Controllers
             this.addressRepository = addressRepository;
         }
 
-       
+        [HttpGet]
         public ActionResult Index()
         {
             AddressModel model = new AddressModel();
@@ -48,6 +48,15 @@ namespace HolidayPlanner.Controllers
 
 
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(AddressModel model)
+        {
+            var selectedId = model.CityId;
+
+            return RedirectToAction("Index1", "Main", new { Id = selectedId, clickinfo="hotels" });
+
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
@@ -278,7 +287,7 @@ namespace HolidayPlanner.Controllers
                     {
                         var review = from r in db.Reviews
                                         where r.HotelId == HId
-                                     select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
+                                        select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
 
                         return View("ReviewInfo", review);
                     }
@@ -341,7 +350,7 @@ namespace HolidayPlanner.Controllers
                        
         public ActionResult Romantic()
         {
-            var db = new HolidayPlanner.Models.InfoData();
+            var db = new HolidayPlanner.Models.InfoData(); 
             List<Hotel> rom = (from hot in db.Hotels
                                where hot.HTypeId == "RM" && hot.CityId == "MU"
                                 select hot).ToList();
@@ -439,17 +448,17 @@ namespace HolidayPlanner.Controllers
 
 
        //added by sandy
-        public ActionResult Search()
-        {
-             //var db = new HolidayPlanner.Models.InfoData();
+        //public ActionResult Search(string CId)
+        //{
+        //    var db = new HolidayPlanner.Models.InfoData();
 
-             //var Hdetail = (from p in db.Hotels
-             //                            where p.CityId == CId
-             //                           select p ).SingleOrDefault();
+        //    var Hdetail = (from p in db.Hotels
+        //                   where p.CityId == CId
+        //                   select p).SingleOrDefault();
 
 
-            return View("Search");
-        }
+        //    return View("First", Hdetail);
+        //}
         //ended by sandy
 
         public ActionResult HolyPlaces()
@@ -564,7 +573,7 @@ namespace HolidayPlanner.Controllers
                                 select hot).ToList();
             return View(holy);
         }
-
+        
         public ActionResult Distance200()
         {
             var db = new HolidayPlanner.Models.InfoData();
@@ -748,7 +757,7 @@ namespace HolidayPlanner.Controllers
 
            return View(facilityinfo);
        }
-        
+
         public ActionResult PartyHall()
        {
            var db = new HolidayPlanner.Models.InfoData();
