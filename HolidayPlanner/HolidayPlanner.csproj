@@ -143,6 +143,8 @@
     </Compile>
     <Compile Include="Models\CityContxt.cs" />
     <Compile Include="Models\CountryContext.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\FeedbackContext.cs" />
     <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
@@ -384,6 +386,7 @@
     <Content Include="Views\Bangalore\FirstBangalore.cshtml" />
     <Content Include="Views\Main\Index1.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Home\Feedback1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -170,7 +170,37 @@ namespace HolidayPlanner.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Feedback1()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult Feedback1(Models.Feedback feed)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var db = new HolidayPlanner.Models.FeedbackContext())
+                {
+                    var newUser = db.Feedbacks.Create();
+                    newUser.Name = feed.Name;
+                    newUser.EmailId = feed.EmailId;
+                    newUser.Subject = feed.Subject;
+                    newUser.Message = feed.Message;
+
+                    db.Feedbacks.Add(newUser);
+                    db.SaveChanges();
+                    ViewBag.Message = "Feedback send successfully ";
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Data is not correct");
+            }
+            return View();
+        }
 
         //started by sandy
         [HttpGet]

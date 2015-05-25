@@ -104,7 +104,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 
     @RenderBody()
-
+    <hr />
+    <footer>
         <div class="footer">
             <div class="container">
                 <div class="footer_top">
@@ -123,76 +124,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <h4>&copy; @DateTime.Now.Year - Holiday Planner Private Limited</h4>
                     </div>
                 </div>
-                    <div class="clearfix"> </div>
-                </div>
+                <div class="clearfix"> </div>
             </div>
-        
+        </div>
+    </footer>
 </body>
 </html>
 
 
-    @*<!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>@ViewBag.Title - My ASP.NET Application</title>
-            @Styles.Render("~/Content/css")
-            @Scripts.Render("~/bundles/modernizr")
-        </head>
-        <body>
-            <div class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        @Html.ActionLink("Holiday Planner", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-
-                        @if (Request.IsAuthenticated)
-                        {
-                            using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                            {
-                                @Html.AntiForgeryToken()
-
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li>
-                                        @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                                    </li>
-                                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                                </ul>
-                                <ul></ul>
-                            }
-                        }
-                        else
-                        {
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>@Html.ActionLink("Register", "Register", "User", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-                            </ul>
-                        }
-                    </div>
-                </div>
-            </div>
-                        <div class="container body-content">
-                            @RenderBody()
-                            <hr />
-                            <footer>
-                                <p>&copy; @DateTime.Now.Year - Holiday Planner Private Limited</p>
-                            </footer>
-                        </div>
-
-                        @Scripts.Render("~/bundles/jquery")
-                        @Scripts.Render("~/bundles/bootstrap")
-                        @RenderSection("scripts", required: false)
-        </body>
-        </html>*@
+   
