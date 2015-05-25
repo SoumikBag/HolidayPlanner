@@ -314,7 +314,6 @@
     <Content Include="Views\Bangalore\HillStationsBangalore.cshtml" />
     <Content Include="Views\Bangalore\FarmsBangalore.cshtml" />
     <Content Include="Views\Bangalore\HolyPlacesBangalore.cshtml" />
-    <Content Include="Views\Home\ImageInfo.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -387,6 +386,7 @@
     <Content Include="Views\Main\Index1.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Feedback1.cshtml" />
+    <Content Include="Views\Home\ImageInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

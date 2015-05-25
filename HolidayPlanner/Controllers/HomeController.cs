@@ -380,7 +380,7 @@ namespace HolidayPlanner.Controllers
                        
         public ActionResult Romantic()
         {
-            var db = new HolidayPlanner.Models.InfoData();
+            var db = new HolidayPlanner.Models.InfoData(); 
             List<Hotel> rom = (from hot in db.Hotels
                                where hot.HTypeId == "RM" && hot.CityId == "MU"
                                 select hot).ToList();
@@ -529,17 +529,21 @@ namespace HolidayPlanner.Controllers
         public ActionResult bookingform(FormCollection Collection)
         {
             Random ran= new Random();
+            DateTime dt1, dt2;
 
             var db= new HolidayPlanner.Models.InfoData();
             Booking buk= new Booking();
+
+            DateTime.TryParse(Collection[5], out dt1);
+            DateTime.TryParse(Collection[6], out dt2);
 
             buk.BookingId="B"+ran.Next();
             buk.UserId = Convert.ToInt32(Collection[1]);
             buk.ClientMobileNumber = Collection[2];
             buk.ClientEmailId = Collection[3];
             buk.HotelId = Convert.ToInt32(Collection[4]);
-            buk.CheckInDate = Convert.ToDateTime(Collection[5]);
-            buk.CheckOutDate = Convert.ToDateTime(Collection[6]);
+            buk.CheckInDate = dt1;
+            buk.CheckOutDate = dt2;
             buk.NoOfAdults = Convert.ToInt32(Collection[7]);
             buk.NoOfChildren = Convert.ToInt32(Collection[8]);
             buk.Message = Collection[9];
@@ -547,7 +551,16 @@ namespace HolidayPlanner.Controllers
 
             db.Bookings.Add(buk);
 
-
+            
+            if (ModelState.IsValid)
+            {
+                db.SaveChanges();
+                return RedirectToAction("Success");
+            }
+            else
+            {
+                return RedirectToAction("Failed");
+            }
             //var newrec = from c in db.Bookings
             //             select c;
 
@@ -556,8 +569,22 @@ namespace HolidayPlanner.Controllers
 
             //buk.UserId= Collection[0];
 
-            return View();
+            
         }
+
+        public ActionResult Success()
+        {
+            TempData["success"] = "Succesfully submited details";
+            return View("RequestsPage");
+        }
+
+        public ActionResult Failed()
+        {
+            TempData["success"] = "PLease Enter Correct details .... Requesting Order Failed";
+            return View("RequestsPage");
+        }
+
+
 
         public ActionResult Distance100()
         {

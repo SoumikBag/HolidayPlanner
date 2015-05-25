@@ -34,7 +34,7 @@ namespace HolidayPlanner.Models
         [StringLength(500)]
         public string Message { get; set; }
 
-        [Column(TypeName = "numeric")]
+        [Column(TypeName = "money")]
         public decimal? TotalAmount { get; set; }
 
         public virtual Hotel Hotel { get; set; }
