@@ -11,10 +11,112 @@ namespace HolidayPlanner.Controllers
     {
         // GET: Bangalore
 
+         private AddressRepository addressRepository;
+
+       
+         public BangaloreController() : this(new AddressRepository())
+        {
+        }
+
+
+         public BangaloreController(AddressRepository addressRepository)
+        {
+            
+            this.addressRepository = addressRepository;
+        }
+
+
+        [HttpGet]
         public ActionResult Bangalore()
         {
-            return View();
+            AddressModel model = new AddressModel();
+            model.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+            model.AvailableCountries.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+            model.AvailableCities.Add(new SelectListItem { Text = "-Please Select-", Value = "Selects items" });
+            var countries = addressRepository.GetAllCountries();
+            foreach (var country in countries)
+            {
+
+                model.AvailableCountries.Add(new SelectListItem()
+                {
+                    Text = country.CountryName,
+                    Value = country.CountryId.ToString()
+                });
+
+            }
+
+
+
+            return View(model);
         }
+
+        [HttpPost]
+        public ActionResult Bangalore(AddressModel model)
+        {
+            var selectedId = model.CityId;
+
+            return RedirectToAction("Index1", "Main", new { Id = selectedId, clickinfo = "hotels" });
+
+        }
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetStatesByCountryId(string countryId)
+        {
+            if (String.IsNullOrEmpty(countryId))
+            {
+                throw new ArgumentNullException("countryId");
+            }
+            //int id = 0;
+            //bool isValid = Int32.TryParse(countryId, out id);
+
+            AddressModel p = new AddressModel();
+            var states = addressRepository.GetAllStatesByCountryId(countryId);
+
+            foreach (var state in states)
+            {
+                p.AvailableStates.Add(new SelectListItem()
+                {
+                    Text = state.StateName,
+                    Value = state.StateId.ToString()
+                });
+            }
+            var result = (from s in p.AvailableStates
+                          select new
+                          {
+                              countryId = s.Value,
+                              name = s.Text,
+
+                          }).ToList();
+
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult GetCitysByStateId(string stateId)
+        {
+            if (String.IsNullOrEmpty(stateId))
+            {
+                throw new ArgumentNullException("stateId");
+            }
+            //int id = 0;
+            //bool isValid = Int32.TryParse(countryId, out id);
+            AddressModel c = new AddressModel();
+            var citys = addressRepository.GetAllCitysByStateId(stateId);
+
+
+            var result = (from c1 in citys
+                          select new
+                          {
+                              stateId = c1.CityId,
+                              name = c1.CityName
+                          }).ToList();
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+
+        }
+
 
         public ActionResult LuxuryBangalore()
         {
