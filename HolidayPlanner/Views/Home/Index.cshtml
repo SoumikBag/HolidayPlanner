@@ -41,85 +41,85 @@
                 <div class="dropdown-button">
 
                     <script type="text/javascript">
-    $(function () {
-        
-        $("#CountryId").change(function () {
-            var selectedItem = $(this).val();
-            ddlStates = $("#StateId");
-            var statesProgress = $("#states-loading-progress");
-            statesProgress.show();
-            $.ajax({
-                cache: false,
-                type: "GET",
-                url: "@(Url.RouteUrl("GetStatesByCountryId"))",
-                data: { "countryId": selectedItem },
-                success: function (data) {
-                    ddlStates.html('');
-                    $.each(data, function (id, option) {
-                        ddlStates.append($('<option></option>').val(option.countryId).html(option.name));
-                        ChangeMe(option.countryId);
+                        
+                          $(function () {
+                                $("#CountryId").change(function () {
+                                    var selectedItem = $(this).val();
+                                    ddlStates = $("#StateId");
+                                    var statesProgress = $("#states-loading-progress");
+                                    statesProgress.show();
+                                    $.ajax({
+                                        cache: false,
+                                        type: "GET",
+                                        url: "@(Url.RouteUrl("GetStatesByCountryId"))",
+                                        data: { "countryId": selectedItem },
+                                        success: function (data) {
+                                            ddlStates.html('');
+                                            $.each(data, function (id, option) {
+                                                ddlStates.append($('<option></option>').val(option.countryId).html(option.name));
+                                                ChangeMe(option.countryId);
 
 
-                    });
-                    statesProgress.hide();
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert('Failed to retrieve states.');
-                    statesProgress.hide();
-                }
-            });
-        });
+                                            });
+                                            statesProgress.hide();
+                                        },
+                                        error: function (xhr, ajaxOptions, thrownError) {
+                                            alert('Failed to retrieve states.');
+                                            statesProgress.hide();
+                                        }
+                                    });
+                                });
 
 
-                                    function ChangeMe(abbr) {
+                                function ChangeMe(abbr) {
 
-            //var selectedItem = $("#StateId").val();
-            var ddlCitys = $("#CityId");
-            var statesProgress = $("#citys-loading-progress");
-            statesProgress.show();
-            $.ajax({
-                cache: false,
-                type: "GET",
-                url: "@(Url.RouteUrl("GetCitysByStateId"))",
-                data: { "stateId": abbr },
-                success: function (data) {
-                    ddlCitys.html('');
-                    $.each(data, function (id, option) {
-                        ddlCitys.append($('<option></option>').val(option.stateId).html(option.name));
-                    });
-                    statesProgress.hide();
-                },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert('Failed to retrieve cities.');
-                    statesProgress.hide();
-                }
-            });
+                                    //var selectedItem = $("#StateId").val();
+                                    var ddlCitys = $("#CityId");
+                                    var statesProgress = $("#citys-loading-progress");
+                                    statesProgress.show();
+                                    $.ajax({
+                                        cache: false,
+                                        type: "GET",
+                                        url: "@(Url.RouteUrl("GetCitysByStateId"))",
+                                        data: { "stateId": abbr },
+                                        success: function (data) {
+                                            ddlCitys.html('');
+                                            $.each(data, function (id, option) {
+                                                ddlCitys.append($('<option></option>').val(option.stateId).html(option.name));
+                                            });
+                                            statesProgress.hide();
+                                        },
+                                        error: function (xhr, ajaxOptions, thrownError) {
+                                            alert('Failed to retrieve cities.');
+                                            statesProgress.hide();
+                                        }
+                                    });
 
-    }
+                                }
 
-        $("#StateId").change(function () {
-            var abbr = $("#StateId").val();
-            ChangeMe(abbr);
-        });
-    });
-
+                                $("#StateId").change(function () {
+                                    var abbr = $("#StateId").val();
+                                    ChangeMe(abbr);
+                                });
+                            });
+                       
 </script>
 
 <div>
     @Html.LabelFor(model => model.CountryId)
-    @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries)
+    @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries, new { AutoPostBack=true})
 </div>
 <br />
 <div>
     @Html.LabelFor(model => model.StateId)
-    @Html.DropDownListFor(model => model.StateId, Model.AvailableStates)
+    @Html.DropDownListFor(model => model.StateId, Model.AvailableStates, new { AutoPostBack= true})
     
     <span id="states-loading-progress" style="display: none;">Please wait..</span>
 </div>
 <br />
 <div>
     @Html.LabelFor(model => model.CityId)
-    @Html.DropDownListFor(model => model.CityId, Model.AvailableCities)
+    @Html.DropDownListFor(model => model.CityId, Model.AvailableCities, new { AutoPostBack = true })
 
     <span id="Citys-loading-progress" style="display: none;">Please wait..</span>
 </div>
