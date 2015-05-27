@@ -29,6 +29,7 @@ namespace HolidayPlanner.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            
             AddressModel model = new AddressModel();
             model.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
             model.AvailableCountries.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
@@ -62,34 +63,39 @@ namespace HolidayPlanner.Controllers
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult GetStatesByCountryId(string countryId)
         {
+
             if (String.IsNullOrEmpty(countryId))
             {
                 throw new ArgumentNullException("countryId");
             }
             //int id = 0;
             //bool isValid = Int32.TryParse(countryId, out id);
-
-            AddressModel p = new AddressModel();
-            var states = addressRepository.GetAllStatesByCountryId(countryId);
-
-            foreach (var state in states)
+            else
             {
-                p.AvailableStates.Add(new SelectListItem()
+                AddressModel p = new AddressModel();
+                //p.AvailableStates.Add(new SelectListItem { Text = "-Please select-", Value = "Selects items" });
+                
+                var states = addressRepository.GetAllStatesByCountryId(countryId);
+
+                foreach (var state in states)
                 {
-                    Text = state.StateName,
-                    Value = state.StateId.ToString()
-                });
+                    p.AvailableStates.Add(new SelectListItem()
+                    {
+                        Text = state.StateName,
+                        Value = state.StateId.ToString()
+                    });
+                }
+                var result = (from s in p.AvailableStates
+                              select new
+                              {
+                                  countryId = s.Value,
+                                  name = s.Text,
+
+                              }).ToList();
+
+
+                return Json(result, JsonRequestBehavior.AllowGet);
             }
-            var result = (from s in p.AvailableStates
-                          select new
-                          {
-                              countryId = s.Value,
-                              name = s.Text,
-
-                          }).ToList();
-
-
-            return Json(result, JsonRequestBehavior.AllowGet);
 
         }
 
@@ -102,20 +108,22 @@ namespace HolidayPlanner.Controllers
             }
             //int id = 0;
             //bool isValid = Int32.TryParse(countryId, out id);
-            AddressModel c = new AddressModel();
-            var citys = addressRepository.GetAllCitysByStateId(stateId);
+            else
+            {
+                AddressModel c = new AddressModel();
+                c.AvailableCities.Add(new SelectListItem { Text = "-Please Select-", Value = "Selects items" });
+                var citys = addressRepository.GetAllCitysByStateId(stateId);
+                var result = (from c1 in citys
+                                  select new
+                                  {
+                                      stateId = c1.CityId,
+                                      name = c1.CityName
+                                  }).ToList();
 
-           
-            var result = (from c1 in citys
-                          select new
-                          {
-                              stateId = c1.CityId,
-                              name = c1.CityName
-                          }).ToList();
-
-            return Json(result, JsonRequestBehavior.AllowGet);
-
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
         }
+    
         
         //started by sandy
         //public ActionResult Index()
