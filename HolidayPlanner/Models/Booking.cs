@@ -14,17 +14,15 @@ namespace HolidayPlanner.Models
 
         public int UserId { get; set; }
 
-        public string ClientMobileNumber { get; set; }
+        public int? ClientMobileNumber { get; set; }
 
         [StringLength(100)]
         public string ClientEmailId { get; set; }
 
         public int HotelId { get; set; }
 
-        [DataType(DataType.Date)]
         public DateTime? CheckInDate { get; set; }
 
-        [DataType(DataType.Date)]
         public DateTime? CheckOutDate { get; set; }
 
         public int? NoOfAdults { get; set; }
@@ -34,7 +32,7 @@ namespace HolidayPlanner.Models
         [StringLength(500)]
         public string Message { get; set; }
 
-        [Column(TypeName = "money")]
+        [Column(TypeName = "numeric")]
         public decimal? TotalAmount { get; set; }
 
         public virtual Hotel Hotel { get; set; }

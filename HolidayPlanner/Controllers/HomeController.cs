@@ -323,6 +323,12 @@ namespace HolidayPlanner.Controllers
                     }
 
 
+                case "Map":
+                    {
+                        MapLocation ml = new MapLocation();
+                        var query = ml.Locations.First(c => c.HotelId == HId);
+                        return View("MapInfo", query);
+                    }
                 case "Image":
                     {
                         var hname = (from p in db.Hotels
@@ -539,7 +545,7 @@ namespace HolidayPlanner.Controllers
 
             buk.BookingId="B"+ran.Next();
             buk.UserId = Convert.ToInt32(Collection[1]);
-            buk.ClientMobileNumber = Collection[2];
+            buk.ClientMobileNumber = Convert.ToInt32(Collection[2]);
             buk.ClientEmailId = Collection[3];
             buk.HotelId = Convert.ToInt32(Collection[4]);
             buk.CheckInDate = dt1;

@@ -8,7 +8,7 @@ namespace HolidayPlanner.Models
     public partial class InfoData : DbContext
     {
         public InfoData()
-            : base("name=InfoData3")
+            : base("name=InfoData4")
         {
         }
 
@@ -16,6 +16,7 @@ namespace HolidayPlanner.Models
         public virtual DbSet<Facility> Facilities { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<HotelType> HotelTypes { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
 
@@ -36,6 +37,11 @@ namespace HolidayPlanner.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Hotel>()
+                .HasMany(e => e.Locations)
+                .WithRequired(e => e.Hotel)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Hotel>()
                 .HasMany(e => e.Reviews)
                 .WithRequired(e => e.Hotel)
                 .WillCascadeOnDelete(false);
@@ -49,6 +55,10 @@ namespace HolidayPlanner.Models
                 .HasMany(e => e.Hotels)
                 .WithRequired(e => e.HotelType)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Location>()
+                .Property(e => e.LocationName)
+                .IsUnicode(false);
         }
     }
 }

@@ -145,6 +145,7 @@
     <Compile Include="Models\CountryContext.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\FeedbackContext.cs" />
+    <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\CustomPrincipal.cs" />
@@ -152,8 +153,9 @@
     <Compile Include="Models\Facility.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
-    <Compile Include="Models\InfoData.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\MapLocation.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Role.cs" />
@@ -387,6 +389,7 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Feedback1.cshtml" />
     <Content Include="Views\Home\ImageInfo.cshtml" />
+    <Content Include="Views\Home\MapInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
