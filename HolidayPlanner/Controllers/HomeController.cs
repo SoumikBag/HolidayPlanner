@@ -372,11 +372,7 @@ namespace HolidayPlanner.Controllers
 
         }
 
-        public ActionResult abc()
-        {
-            
-            return View();
-        }
+        
 
         public ActionResult First()
         {
