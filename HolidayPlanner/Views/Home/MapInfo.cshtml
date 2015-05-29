@@ -2,23 +2,44 @@
 @{
     Layout = null;
 }
+<style>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
+    #frame {
+        border: 1px solid black;
+        overflow: hidden;
+        -ms-zoom: 0.75;
+        -moz-transform: scale(0.75);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.75);
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+    }
+</style>
+@*<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
- function InitializeMap() {
+    function InitializeMap() {
         var latlng = new google.maps.LatLng(-34.397, 150.644);
         var myOptions = {
             zoom: 8,
             center: latlng,
-            mapTypeId: google.maps.MapTypeId.SATELLITE
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById("map"), myOptions);
-    }
- window.onload = InitializeMap;
-    </script>
+    }*@
 
 
+    @*//function loadScript() {
+    //    var script = document.createElement('script');
+    //    script.type = 'text/javascript';
+    //    script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false' +
+    //        '&callback=InitializeMap';
+    //    document.body.appendChild(script);
+    //}
+
+    window.onload = InitializeMap;
+
+</script>
+<body >
 <h2>Creating Your First Google Map Demo:</h2>
 <br />
 <br />
@@ -27,5 +48,8 @@
 <div id="map" style="width: 300px; position:center; height: 238px">
    
 
-    </div>
-     
+</div>
+</body>*@
+
+
+<center><iframe id="frame" width="900" height="600" frameborder="1"  scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=+@Model.Latitude+,+@Model.Longitude+&hl=es;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q='+@Model.Latitude+','+@Model.Longitude+'&hl=es;z=14&amp;output=embed" style="color:#0000FF;text-align:left" target="_blank">See map bigger</a></small></center>
