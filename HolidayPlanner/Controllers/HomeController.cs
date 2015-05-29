@@ -374,6 +374,13 @@ namespace HolidayPlanner.Controllers
          
 
 
+        public ActionResult Sandy()
+        {
+            return View();
+
+        }
+
+
         public ActionResult First()
         {
             var db = new HolidayPlanner.Models.InfoData();
