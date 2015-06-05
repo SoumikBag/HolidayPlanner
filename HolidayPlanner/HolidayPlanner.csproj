@@ -167,10 +167,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
+    <Content Include="Content\blank.gif" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\default.css" />
+    <Content Include="Content\fancybox_loading.gif" />
+    <Content Include="Content\fancybox_overlay.png" />
+    <Content Include="Content\fancybox_sprite.png" />
+    <Content Include="Content\fullscreenButton.png" />
     <Content Include="Content\infotable.css" />
     <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery.fancybox.css" />
     <Content Include="Content\jquery.simplyscroll.css" />
     <Content Include="Content\main1.css" />
     <Content Include="Content\nivo-slider.css" />
@@ -258,6 +264,7 @@
     <Content Include="Images\The Zuri White Sands in Varca\19019.jpeg" />
     <Content Include="Images\valley-view.jpg" />
     <Content Include="Images\zoom.png" />
+    <Content Include="Scripts\blank.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
@@ -269,13 +276,19 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
+    <Content Include="Scripts\fancybox_loading.gif" />
+    <Content Include="Scripts\fancybox_overlay.png" />
+    <Content Include="Scripts\fancybox_sprite.png" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.easydropdown.js" />
+    <Content Include="Scripts\jquery.fancybox.css" />
+    <Content Include="Scripts\jquery.fancybox.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.mousewheel-3.0.6.pack.js" />
     <Content Include="Scripts\jquery.nivo.slider.pack.js" />
     <Content Include="Scripts\jquery.simplyscroll.js" />
     <Content Include="Scripts\jquery.swipebox.min.js" />
