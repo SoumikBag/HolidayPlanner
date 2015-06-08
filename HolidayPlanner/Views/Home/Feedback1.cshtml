@@ -5,48 +5,48 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <form method="post" action="contact-post.html">
-        <div class="to">
-            <div>
-                @Html.LabelFor(model => model.Name)
-            </div>
-            <div>
-                @Html.TextBoxFor(model => model.Name)
-                @Html.ValidationMessageFor(model => model.Name)
-            </div>
-            <br />
-            <div>
-                @Html.LabelFor(model => model.EmailId, new { style = "margin-left:20px" })
-            </div>
-            <div>
-                @Html.TextBoxFor(model => model.EmailId, new { style = "margin-left:20px" })
-                @Html.ValidationMessageFor(model => model.EmailId)
-            </div>
-            <br />
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Subject)
-            </div>
-            <div class="editor-field">
-                @Html.TextBoxFor(model => model.Subject)
-                @Html.ValidationMessageFor(model => model.Subject)
-            </div>
-
+    <center>
+        @*<div class="to">*@
+        <div>
+            @Html.LabelFor(model => model.Name)
         </div>
-        <div class="text">
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Message)
-            </div>
-            <div class="editor-field">
-                @Html.TextAreaFor(model => model.Message)
-                @Html.ValidationMessageFor(model => model.Message)
-            </div>
-            @*<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message:</textarea>*@
+        <div>
+            @Html.TextBoxFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
         </div>
+        <br />
+        <div>
+            @Html.LabelFor(model => model.EmailId)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.EmailId)
+            @Html.ValidationMessageFor(model => model.EmailId)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Subject)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Subject)
+            @Html.ValidationMessageFor(model => model.Subject)
+        </div>
+        <br />
+        @*</div>*@
+        @*<div class="text">*@
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Message)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Message)
+            @Html.ValidationMessageFor(model => model.Message)
+        </div>
+        @*<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message:</textarea>*@
+        @*</div>*@
         <div class="form-submit1">
             <input type="submit" id="submit" value="Send Message" onclick="location.href='@Url.Action("Feedback1", "Home")'" formmethod="post" />
 
         </div>
         <div class="clearfix"></div>
-    </form>
+    </center>
 }
 

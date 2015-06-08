@@ -58,3 +58,22 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.imageGallery').fancybox({
+            fitToView: false,
+            width: '600px',
+            height: '400px',
+            autoSize: false,
+            closeClick: false,
+            openEffect: 'none',
+            closeEffect: 'none',
+            padding: 0,
+            closeBtn: false,
+            'afterClose': function () {
+                window.location.reload();
+            },
+        });
+    });
+</script>
