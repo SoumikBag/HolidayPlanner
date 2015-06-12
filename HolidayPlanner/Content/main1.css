@@ -596,10 +596,10 @@ form.searchforms .controls {
 
 #citybar {
   font-family: "Tenor Sans", Helvetica Neue, Helvetica, Arial, sans-serif !important;
-  width: 78em;
+  /*width: 78em;*/
   margin: 1em auto 0 auto; }
   #citybar #citybarinner {
-    margin-left: -36em;
+    /*margin-left: -36em;*/
     background: #faf9f0;
     display: inline-block;
     -moz-border-radius-topleft: 5px;

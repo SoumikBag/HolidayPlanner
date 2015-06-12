@@ -403,7 +403,6 @@
     <Content Include="Views\Home\Feedback1.cshtml" />
     <Content Include="Views\Home\ImageInfo.cshtml" />
     <Content Include="Views\Home\MapInfo.cshtml" />
-    <Content Include="Views\Home\Sandy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

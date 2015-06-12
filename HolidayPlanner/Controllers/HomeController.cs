@@ -372,14 +372,6 @@ namespace HolidayPlanner.Controllers
 
         }
 
-        
-
-        public ActionResult Sandy()
-        {
-            return View();
-
-        }
-
 
         public ActionResult First()
         {
