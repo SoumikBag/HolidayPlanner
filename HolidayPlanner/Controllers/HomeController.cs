@@ -324,9 +324,9 @@ namespace HolidayPlanner.Controllers
                 case "review":
                     {
                         var review = from r in db.Reviews
-                                        where r.HotelId == HId
-                                        select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
-
+                                      where r.HotelId == HId
+                                      select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
+                                      
                         return View("ReviewInfo", review);
                     }
 
@@ -585,6 +585,48 @@ namespace HolidayPlanner.Controllers
             
         }
 
+
+
+        [HttpGet]
+        public ActionResult Review1(int? id)
+        {
+            ViewData["Id"] = id;
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult Review1(Review rev)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var db = new HolidayPlanner.Models.InfoData())
+                {
+                    var newReview = db.Reviews.Create();
+                    int lastReviewId = db.Reviews.Max(item => item.ReviewId); //added by Sandy for ID Auto-Increment 
+                    rev.ReviewId = lastReviewId + 1;
+                    newReview.ReviewId = rev.ReviewId;
+                    newReview.ReviewDetails = rev.ReviewDetails;
+                    newReview.Rating = rev.Rating;
+                    newReview.HotelId = rev.HotelId;
+                    newReview.UserId = rev.UserId;
+
+                    db.Reviews.Add(newReview);
+                    db.SaveChanges();
+
+                    ViewBag.Message = "Review Successfully Send ";
+                    return RedirectToAction("First", "Home");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Data is not correct");
+            }
+            
+            return View();
+
+        }
+
         public ActionResult Success()
         {
             TempData["success"] = "Succesfully submited details";
@@ -825,6 +867,6 @@ namespace HolidayPlanner.Controllers
                return View(facilityinfo);
            }
 
-       
+        
 }
 }
