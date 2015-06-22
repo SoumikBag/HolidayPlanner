@@ -1,0 +1,121 @@
+﻿@model HolidayPlanner.Models.HotelModel
+
+@{
+    ViewBag.Title = "AddHotel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="resultdetail">
+    <div class="tempplan plandetail">
+
+        <div class="h2">
+
+            Add New Hotel Form
+        </div>
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <br />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.HotelId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.HotelId, new { htmlAttributes = new { @class = "form-control", @Value = ViewData["Id"], @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.HotelId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HotelName, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.HotelName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HotelName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HotelDetails, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.HotelDetails, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HotelDetails, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CityId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.DropDownListFor(model => model.CityId, Model.Cities, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CityId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HTypeId, "HTypeId", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.DropDownListFor(model => model.HTypeId, Model.HotelTypes, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.HTypeId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.HotelPolices, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.HotelPolices, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HotelPolices, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FoodDetails, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.FoodDetails, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FoodDetails, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Distance, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Distance, new { htmlAttributes = new { @class = "form-control"} })
+                    @Html.ValidationMessageFor(model => model.Distance, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Budget, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Budget, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Budget, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                @*<div class="col-md-offset-10 col-md-3">*@
+                <p align="center" style="float:initial">
+                    <input type="submit" value="Create" class="btn btn-primary btn-large" />
+                    @Html.ActionLink("Add Facility", "AddFacility", "Admin", null, new { @class = "btn btn-primary btn-large" })
+                    @Html.ActionLink("Add Room", "AddRoom", "Admin", null, new { @class = "btn btn-primary btn-large" })
+                    @Html.ActionLink("Back to List", "Index", "Admin", null, new { @class = "btn btn-primary btn-large" })
+                </p>
+                @*</div>*@
+            </div>
+        </div>
+    }
+
+
+</div>

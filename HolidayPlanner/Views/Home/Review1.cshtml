@@ -5,12 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
+    <script language='javascript' type='text/javascript'>
+        var dataexists = @ViewBag.DataExists;
+        if (dataexists)
+            alert('Review Successfully Send');
+    </script>
+
+
 <div id="resultdetail">
     <div class="tempplan plandetail">
 
         <div class="h2">
 
-            Hotel Booking Form
+            Review Form
         </div>
 
     </div>

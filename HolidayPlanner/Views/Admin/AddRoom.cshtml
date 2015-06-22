@@ -1,0 +1,89 @@
+﻿@model HolidayPlanner.Models.RoomModel
+
+@{
+    ViewBag.Title = "AddRoom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="resultdetail">
+    <div class="tempplan plandetail">
+
+        <div class="h2">
+
+            Add New Room
+        </div>
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.HotelId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.DropDownListFor(model => model.HotelId, Model.Hotels, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.HotelId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoomId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.RoomId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RoomId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoomType, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.RoomType, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RoomType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoomCapacity, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.RoomCapacity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RoomCapacity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoomDetails, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.RoomDetails, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RoomDetails, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Rate, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Rate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Rate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <br />
+            <br />
+            <div class="form-group">
+                <p align="center" style="float:initial">
+                    <input type="submit" value="Create" class="btn btn-primary btn-large" />
+                    @Html.ActionLink("Back to List", "AddHotel", "Admin", null, new { @class = "btn btn-primary btn-large" })
+                </p>
+            </div>
+        </div>
+    }
+
+
+</div>

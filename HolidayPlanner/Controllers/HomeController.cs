@@ -614,7 +614,8 @@ namespace HolidayPlanner.Controllers
                     db.Reviews.Add(newReview);
                     db.SaveChanges();
 
-                    ViewBag.Message = "Review Successfully Send ";
+                    ViewBag.DataExists = true;
+                    //TempData["AlertMessage"] = "Review Successfully Send ";
                     return RedirectToAction("First", "Home");
                 }
             }

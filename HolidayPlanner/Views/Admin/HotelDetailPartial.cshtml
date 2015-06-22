@@ -1,0 +1,74 @@
+﻿@model IEnumerable<HolidayPlanner.Models.Hotel>
+
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelType.HotelType1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.HotelDetails)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.CityId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelPolices)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Budget)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelType.HotelType1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.HotelDetails)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.CityId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelPolices)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Budget)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HotelId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HotelId })|
+            @Html.ActionLink("Delete", "Delete", new { id=item.HotelId })
+        </td>
+    </tr>
+}
+
+</table>

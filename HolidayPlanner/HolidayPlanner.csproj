@@ -126,10 +126,16 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BangaloreController.cs" />
+    <Compile Include="Controllers\Country.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PuneController.cs" />
+    <Compile Include="DAL\DDLOperation.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DDLOperation.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,9 +148,13 @@
       <DependentUpon>Address.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\CityContxt.cs" />
+    <Compile Include="Models\CityModel.cs" />
     <Compile Include="Models\CountryContext.cs" />
+    <Compile Include="Models\CountryModel.cs" />
+    <Compile Include="Models\FacilityModel.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\FeedbackContext.cs" />
+    <Compile Include="Models\HotelModel.cs" />
     <Compile Include="Models\InfoData.cs" />
     <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\CustomAuthorizeAttribute.cs" />
@@ -154,12 +164,15 @@
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelType.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MapLocation.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\RoomModel.cs" />
+    <Compile Include="Models\StateModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserInRole.cs" />
     <Compile Include="Models\UserInRoleContext.cs" />
@@ -274,6 +287,11 @@
       <LastGenOutput>Address.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="DAL\DDLOperation.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DDLOperation.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\fancybox_loading.gif" />
@@ -345,7 +363,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Error\AccessDenied.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\LogOut.cshtml" />
@@ -404,6 +421,14 @@
     <Content Include="Views\Home\ImageInfo.cshtml" />
     <Content Include="Views\Home\MapInfo.cshtml" />
     <Content Include="Views\Home\Review1.cshtml" />
+    <Content Include="Views\Admin\HotelDetailPartial.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AddHotel.cshtml" />
+    <Content Include="Views\Admin\AddFacility.cshtml" />
+    <Content Include="Views\Admin\AddLocation.cshtml" />
+    <Content Include="Views\Admin\AddState.cshtml" />
+    <Content Include="Views\Admin\AddCity.cshtml" />
+    <Content Include="Views\Admin\AddRoom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -423,6 +448,11 @@
   <ItemGroup>
     <None Include="Models\Address.dbml.layout">
       <DependentUpon>Address.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DAL\DDLOperation.dbml.layout">
+      <DependentUpon>DDLOperation.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
