@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HolidayPlanner.DAL;
+
 
 namespace HolidayPlanner.Controllers
 {
@@ -25,6 +25,7 @@ namespace HolidayPlanner.Controllers
                                 select hot).ToList();
             return PartialView("HotelDetailPartial", Hdetail);
         }
+
 
         private DDLOperationDataContext context = new DDLOperationDataContext();
 
@@ -270,9 +271,36 @@ namespace HolidayPlanner.Controllers
         {
             LocationModel model = new LocationModel();
             PrepareHotel2(model);
+
+            int Lno = context.Locations.Max(x => x.LocationId);
+            int Lno1 = Lno + 1;
+            ViewData["LId"] = Lno1;
+
             return View(model);
         }
 
+        [HttpPost]
+        public ActionResult AddMapLoc(LocationModel lmodel)
+        {
+            try
+            {
+                HolidayPlanner.DAL.Location lc = new HolidayPlanner.DAL.Location()
+                {
+                    LocationId = lmodel.LocationId,
+                    LocationName=lmodel.LocationName,
+                    Latitude=lmodel.Latitude,
+                    Longitude=lmodel.Longitude,
+                    HotelId=lmodel.HotelId
+                };
+                context.Locations.InsertOnSubmit(lc);
+                context.SubmitChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(lmodel);
+            }
+        }
 
     }
 }

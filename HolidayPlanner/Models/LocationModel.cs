@@ -19,6 +19,14 @@ namespace HolidayPlanner.Models
 
         public string HotelName { get; set; }
 
+        public int LocationId { get; set; }
+
+        public string LocationName { get; set; }
+
+        public float Latitude { get; set; }
+
+        public float Longitude { get; set; }
+
         public IEnumerable<SelectListItem> Hotels { get; set; }
     }
 }
