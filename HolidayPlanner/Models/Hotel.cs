@@ -44,6 +44,10 @@ namespace HolidayPlanner.Models
         [StringLength(1000)]
         public string FoodDetails { get; set; }
 
+        [StringLength(100)]
+        public string Photo { get; set; }
+
+
         public int? Distance { get; set; }
 
         [StringLength(50)]
