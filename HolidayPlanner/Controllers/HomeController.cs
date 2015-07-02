@@ -346,7 +346,7 @@ namespace HolidayPlanner.Controllers
                         string[] src = new string[5]; 
                         src[0] = "~/Images/" + hname + "/19011.jpeg";
                         src[1] = "~/Images/" + hname + "/19013.jpeg";
-                        src[2] = "~/Images/" + hname + "/19015.jpeg";
+                        src[2] = "~/Images/" + hname + "/19295_t.jpeg";
                         src[3] = "~/Images/" + hname + "/19016.jpeg";
                         src[4] = "~/Images/" + hname + "/19019.jpeg";
 
