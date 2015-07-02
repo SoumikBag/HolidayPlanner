@@ -15,6 +15,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
   background: transparent; }
 
+table.dashboard table th, table td {
+    padding: 6px 6px 6px 6px !important;
+     border: 1px solid black;
+}
+
 .strike {
   text-decoration: line-through; }
 
@@ -66,7 +71,9 @@ del {
 /* tables still need 'cellspacing="0"' in the markup */
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0; 
+   border: 1px solid black;
+}
 
 input, select, textarea, option {
   padding: 0.125em 0.313em;
@@ -596,10 +603,10 @@ form.searchforms .controls {
 
 #citybar {
   font-family: "Tenor Sans", Helvetica Neue, Helvetica, Arial, sans-serif !important;
-  width: 78em;
+  /*width: 78em;*/
   margin: 1em auto 0 auto; }
   #citybar #citybarinner {
-    margin-left: -36em;
+    /*margin-left: -36em;*/
     background: #faf9f0;
     display: inline-block;
     -moz-border-radius-topleft: 5px;
