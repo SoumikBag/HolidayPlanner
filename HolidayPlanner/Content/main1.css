@@ -2177,7 +2177,7 @@ body > #superoutercontainer {
   display: none;
   z-index: 15; }
   #backtotop a {
-    width: 10em;
+    width: 7.1em;
     display: block;
     text-align: center;
     text-transform: uppercase;
@@ -2188,7 +2188,7 @@ body > #superoutercontainer {
       height: 108px;
       display: block;
       margin-bottom: 7px;
-      background: #dddddd url(images/up-arrow.png) no-repeat center center;
+      background:  url(images/images.png) no-repeat center center;
       -webkit-border-radius: 15px;
       -moz-border-radius: 15px;
       border-radius: 15px; }

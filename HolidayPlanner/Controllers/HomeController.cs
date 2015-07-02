@@ -868,6 +868,10 @@ namespace HolidayPlanner.Controllers
                return View(facilityinfo);
            }
 
+        public ActionResult Search()
+           {
+               return View();
+           }
         
 }
 }

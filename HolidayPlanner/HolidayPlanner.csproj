@@ -187,6 +187,7 @@
     <Content Include="Content\fancybox_overlay.png" />
     <Content Include="Content\fancybox_sprite.png" />
     <Content Include="Content\fullscreenButton.png" />
+    <Content Include="Content\images\images.png" />
     <Content Include="Content\infotable.css" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery.fancybox.css" />
@@ -433,7 +434,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Address\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
