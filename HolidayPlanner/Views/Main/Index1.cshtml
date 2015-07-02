@@ -382,7 +382,7 @@
 <div id="superoutercontainer">
     <div id="superoutercontent">
 
-        <div id="modifysearchtrigger">
+        @*<div id="modifysearchtrigger">
             <div class="innermodifycontainer">
                 <div style="float:left;width:5em;">
                     <span style="font-size:20px;line-height:25px;">Modify Search</span>
@@ -469,8 +469,8 @@
                 <div class="clear"></div>
 
             </div>
-        </div>
-        <div id="displaybar" style="width:100%;">
+        </div>*@
+        @*<div id="displaybar" style="width:100%;">
             <div style="width:80em;margin:0 auto;">
                 <div class="text" style="">
                     <h1 style="font-size:3em;line-height:1.2em;" id="pageresulttitle">
@@ -479,378 +479,383 @@
                 </div>
 
             </div>
-        </div>
+        </div>*@
 
         <div id="filterpanelmask">
             <div id="infscr-loading">
             </div>
         </div>
-        <div id="searchlistcontainer">
-            <div id="searchlistcontainerarea">
-                <div id="searchlistfiltercontainer">
-                    <div class="filterheader">
-                        Filter By
-                    </div>
-                    <div class="filtercontent">
-                        <div class="filtertitle">
-                            Search Property In Results
-                        </div>
-                        <div style="padding:10px;">
-                            <form id="hotelnamesearch" method="get" action="">
-                                <input type="text" style="padding:0.5em 1em;" name="hotelname" /> <input type="submit" name="HotelNameButton" value="GO" class="linkbutton" />
-                            </form>
-                        </div>
-                    </div>
 
-                    <div class="filtercontent">
-                        <div class="filtertitle">
-                            <i class="icon-filter"></i>Districts
+      
+            <div id="searchlistcontainer">
+                <div id="searchlistcontainerarea">
+                    @*<div id="searchlistfiltercontainer">
+                        <div class="filterheader">
+                            Filter By
                         </div>
-                        <div class="li">
-                            <a rel="district.alappuzha" href="#" class="flink ">
-                                <i class="icon-radio-selected"></i>
-                                Alappuzha
-                            </a>
-                        </div>
-                        <div class="li">
-                            <a rel="district.thiruvananthapuram" href="#" class="flink ">
-                                <i class="icon-radio-selected"></i>
-                                Thiruvananthapuram
-                            </a>
-                        </div>
-                        <div class="li">
-                            <a rel="district.idukki" href="#" class="flink ">
-                                <i class="icon-radio-selected"></i>
-                                Idukki
-                            </a>
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                Search Property In Results
+                            </div>
+                            <div style="padding:10px;">
+                                <form id="hotelnamesearch" method="get" action="">
+                                    <input type="text" style="padding:0.5em 1em;" name="hotelname" /> <input type="submit" name="HotelNameButton" value="GO" class="linkbutton" />
+                                </form>
+                            </div>
                         </div>
 
-
-                    </div>
-                    <div class="filtercontent">
-                        <div class="filtertitle">
-                            <i class="icon-filter"></i>Destinations
-                        </div>
-                        <div id="placeslist">
-
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                <i class="icon-filter"></i>Districts
+                            </div>
                             <div class="li">
-                                <a rel="places.varkala-kerala" href="#" class="flink ">
-                                    <i class="icon-selected"></i>
-                                    Varkala
-                                    <i class="icon-beach-selected"></i>
-
-                                    <span style="display:inline-block;float:right;">(8)</span>
-                                    <span class="onlythis">only</span>
+                                <a rel="district.alappuzha" href="#" class="flink ">
+                                    <i class="icon-radio-selected"></i>
+                                    Alappuzha
                                 </a>
                             </div>
                             <div class="li">
-                                <a rel="places.alleppey-kerala" href="#" class="flink ">
-                                    <i class="icon-selected"></i>
-                                    Alleppey
-                                    <i class="icon-beach-selected"></i>
-
-                                    <span style="display:inline-block;float:right;">(5)</span>
-                                    <span class="onlythis">only</span>
+                                <a rel="district.thiruvananthapuram" href="#" class="flink ">
+                                    <i class="icon-radio-selected"></i>
+                                    Thiruvananthapuram
                                 </a>
                             </div>
                             <div class="li">
-                                <a rel="places.kovalam-kerala" href="#" class="flink ">
-                                    <i class="icon-selected"></i>
-                                    Kovalam
-
-                                    <span style="display:inline-block;float:right;">(4)</span>
-                                    <span class="onlythis">only</span>
+                                <a rel="district.idukki" href="#" class="flink ">
+                                    <i class="icon-radio-selected"></i>
+                                    Idukki
                                 </a>
                             </div>
-                            <div class="li">
-                                <a rel="places.thekkady-kerala" href="#" class="flink ">
-                                    <i class="icon-selected"></i>
-                                    Thekkady
-                                    <i class="icon-hillstation-selected"></i>
 
-                                    <span style="display:inline-block;float:right;">(4)</span>
-                                    <span class="onlythis">only</span>
-                                </a>
+
+                        </div>
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                <i class="icon-filter"></i>Destinations
                             </div>
-                            <a id="showmoreplaces" href="#"
-                               style="padding: 0.5em 1em; display: block; color: #2daebf;">Show More</a>
-                            <div class="hiddenplaces" style="display: none;top:0;left:0;position:fixed;width:100%;height:100%;z-index:200;">
-                                <div id="showmoreplacesmask" style="background:#000;opacity:0.8;position:absolute;width:100%;height:100%;z-index:200;"></div>
-                                <a id="showmoreplacesclose" href="#" style="position:absolute;top:100px;left:50%;margin-left:155px;margin-top:-1.5em;z-index:301;height:3em;width:3em;background:url(http://in.static.abreakplease.com/1.4//Content/images/close.png) no-repeat;cursor:pointer;"></a>
-                                <div style="background: white;padding:1em;position: absolute;top:100px;left:50%;margin-left:-150px;width:300px;overflow: hidden;border: 1px solid #333;z-index:300;">
+                            <div id="placeslist">
 
-                                    <div style="padding:1em 0.5em;">
-                                        <span style="font-size:1.5em;">Select one or more places</span>
-                                    </div>
-                                    <div style="max-height:350px;overflow:auto;">
-                                        <div class="li">
-                                            <a rel="tplaces.varkala-kerala" href="#" class="fpllink ">
-                                                <i class="icon-selected"></i>
-                                                Varkala
-                                                <i class="icon-beach-selected"></i>
-                                                <span style="display:inline-block;float:right;">(8)</span>
-                                                <span class="onlythis">only</span>
-                                            </a>
-                                        </div>
-                                        <div class="li">
-                                            <a rel="tplaces.alleppey-kerala" href="#" class="fpllink ">
-                                                <i class="icon-selected"></i>
-                                                Alleppey
-                                                <i class="icon-beach-selected"></i>
-                                                <span style="display:inline-block;float:right;">(5)</span>
-                                                <span class="onlythis">only</span>
-                                            </a>
-                                        </div>
-                                        <div class="li">
-                                            <a rel="tplaces.kovalam-kerala" href="#" class="fpllink ">
-                                                <i class="icon-selected"></i>
-                                                Kovalam
-                                                <span style="display:inline-block;float:right;">(4)</span>
-                                                <span class="onlythis">only</span>
-                                            </a>
-                                        </div>
-                                        <div class="li">
-                                            <a rel="tplaces.thekkady-kerala" href="#" class="fpllink ">
-                                                <i class="icon-selected"></i>
-                                                Thekkady
-                                                <i class="icon-hillstation-selected"></i>
-                                                <span style="display:inline-block;float:right;">(4)</span>
-                                                <span class="onlythis">only</span>
-                                            </a>
-                                        </div>
-                                        <div class="li">
-                                            <a rel="tplaces.munnar-kerala" href="#" class="fpllink ">
-                                                <i class="icon-selected"></i>
-                                                Munnar
-                                                <i class="icon-hillstation-selected"></i>
-                                                <span style="display:inline-block;float:right;">(3)</span>
-                                                <span class="onlythis">only</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div style="padding:0.5em;">
-                                        <a href="#" class="newlinkbutton applyselection">Apply Changes</a>
-                                        <a href="#" onclick="$('.hiddenplaces a.fpllink').removeClass('ready');return false;" style="display: inline-block;margin-left:1em;">clear all</a>
-                                    </div>
+                                <div class="li">
+                                    <a rel="places.varkala-kerala" href="#" class="flink ">
+                                        <i class="icon-selected"></i>
+                                        Varkala
+                                        <i class="icon-beach-selected"></i>
+
+                                        <span style="display:inline-block;float:right;">(8)</span>
+                                        <span class="onlythis">only</span>
+                                    </a>
                                 </div>
-                            </div>
+                                <div class="li">
+                                    <a rel="places.alleppey-kerala" href="#" class="flink ">
+                                        <i class="icon-selected"></i>
+                                        Alleppey
+                                        <i class="icon-beach-selected"></i>
 
-                        </div>
+                                        <span style="display:inline-block;float:right;">(5)</span>
+                                        <span class="onlythis">only</span>
+                                    </a>
+                                </div>
+                                <div class="li">
+                                    <a rel="places.kovalam-kerala" href="#" class="flink ">
+                                        <i class="icon-selected"></i>
+                                        Kovalam
 
-                    </div>
-                    <div class="filtercontent">
-                        <div class="filtertitle">
-                            <i class="icon-filter"></i>Bedrooms
-                        </div>
-                        <div class="li" style="float: left; width: 11em;">
-                            <a rel="bedrooms.1" href="#" class="flink ">
-                                <i class="icon-selected"></i>
-                                1
+                                        <span style="display:inline-block;float:right;">(4)</span>
+                                        <span class="onlythis">only</span>
+                                    </a>
+                                </div>
+                                <div class="li">
+                                    <a rel="places.thekkady-kerala" href="#" class="flink ">
+                                        <i class="icon-selected"></i>
+                                        Thekkady
+                                        <i class="icon-hillstation-selected"></i>
 
-                            </a>
-                        </div>
-                        <div class="li" style="float: left; width: 11em;">
-                            <a rel="bedrooms.2" href="#" class="flink ">
-                                <i class="icon-selected"></i>
-                                2
+                                        <span style="display:inline-block;float:right;">(4)</span>
+                                        <span class="onlythis">only</span>
+                                    </a>
+                                </div>
+                                <a id="showmoreplaces" href="#"
+                                   style="padding: 0.5em 1em; display: block; color: #2daebf;">Show More</a>
+                                <div class="hiddenplaces" style="display: none;top:0;left:0;position:fixed;width:100%;height:100%;z-index:200;">
+                                    <div id="showmoreplacesmask" style="background:#000;opacity:0.8;position:absolute;width:100%;height:100%;z-index:200;"></div>
+                                    <a id="showmoreplacesclose" href="#" style="position:absolute;top:100px;left:50%;margin-left:155px;margin-top:-1.5em;z-index:301;height:3em;width:3em;background:url(http://in.static.abreakplease.com/1.4//Content/images/close.png) no-repeat;cursor:pointer;"></a>
+                                    <div style="background: white;padding:1em;position: absolute;top:100px;left:50%;margin-left:-150px;width:300px;overflow: hidden;border: 1px solid #333;z-index:300;">
 
-                            </a>
-                        </div>
-                        <div class="li" style="float: left; width: 11em;">
-                            <a rel="bedrooms.3" href="#" class="flink ">
-                                <i class="icon-selected"></i>
-                                3
-
-                            </a>
-                        </div>
-                        <div class="li" style="float: left; width: 11em;">
-                            <a rel="bedrooms.4" href="#" class="flink ">
-                                <i class="icon-selected"></i>
-                                4
-
-                            </a>
-                        </div>
-                        <div class="li" style="float: left; width: 11em;">
-                            <a rel="bedrooms.6" href="#" class="flink ">
-                                <i class="icon-selected"></i>
-                                6
-
-                            </a>
-                        </div>
-                        <div class="li" style="float: left; width: 11em;">
-                            <a rel="bedrooms.7" href="#" class="flink ">
-                                <i class="icon-selected"></i>
-                                7
-
-                            </a>
-                        </div>
-                        <div class="li" style="float: left; width: 11em;">
-                            <a rel="bedrooms.8" href="#" class="flink ">
-                                <i class="icon-selected"></i>
-                                8
-
-                            </a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-
-                    <div class="filtercontent">
-                        <div class="filtertitle">
-                            <i class="icon-filter"></i>Facilities & Policies
-                        </div>
-                        <div class="li">
-                            <a href="#" rel="facilities.swimming-pool" class="flink ">
-                                <i class="icon-selected"></i>
-                                Swimming Pool
-                            </a>
-                        </div>
-                        <div class="li">
-                            <a href="#" rel="facilities.ac-rooms" class="flink ">
-                                <i class="icon-selected"></i>
-                                AC Rooms
-                            </a>
-                        </div>
-                        <div class="li">
-                            <a href="#" rel="facilities.caretaker" class="flink ">
-                                <i class="icon-selected"></i>
-                                Caretaker
-                            </a>
-                        </div>
-                        <div class="li">
-                            <a href="#" rel="facilities.kitchen-available" class="flink ">
-                                <i class="icon-selected"></i>
-                                Kitchen Available
-                            </a>
-                        </div>
-                        <div class="li" style="float:left;width:11em;">
-                            <a href="#" rel="policy.pet-friendly" class="flink ">
-                                <i class="icon-selected"></i>
-                                Pets Allowed
-                            </a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
-
-
-                </div>
-                <div id="searchlistresults">
-                    <div class="resultsummary">
-                        <div class="noofoptions">
-                            <span id="resultoptioncount">
-                                24
-                                options
-                            </span> found
-                        </div>
-                        <div style="float:right;width:23em;">
-                            <div style="float:left;margin-top:0.25em;">
-                                <span style="font-size: 2em;line-height: 1em;">Order By </span>
-                            </div>
-
-                            <div class="orderbyoptions" style="width:13em;">
-                                <div class="wrapselect">
-                                    <select name="ordersearch" class="applywrap">
-                                        <option value="recommended" selected>
-                                            Recommended
-                                        </option>
-                                        <option value="pricelowestfirst">
-                                            Price Lowest First
-                                        </option>
-                                        <option value="pricehighestfirst">
-                                            Price Highest First
-                                        </option>
-                                    </select>
-                                    <div class="wrapselecttext">
-
-                                        <i class="dropdownarrow"></i>
+                                        <div style="padding:1em 0.5em;">
+                                            <span style="font-size:1.5em;">Select one or more places</span>
+                                        </div>
+                                        <div style="max-height:350px;overflow:auto;">
+                                            <div class="li">
+                                                <a rel="tplaces.varkala-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Varkala
+                                                    <i class="icon-beach-selected"></i>
+                                                    <span style="display:inline-block;float:right;">(8)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                            <div class="li">
+                                                <a rel="tplaces.alleppey-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Alleppey
+                                                    <i class="icon-beach-selected"></i>
+                                                    <span style="display:inline-block;float:right;">(5)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                            <div class="li">
+                                                <a rel="tplaces.kovalam-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Kovalam
+                                                    <span style="display:inline-block;float:right;">(4)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                            <div class="li">
+                                                <a rel="tplaces.thekkady-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Thekkady
+                                                    <i class="icon-hillstation-selected"></i>
+                                                    <span style="display:inline-block;float:right;">(4)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                            <div class="li">
+                                                <a rel="tplaces.munnar-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Munnar
+                                                    <i class="icon-hillstation-selected"></i>
+                                                    <span style="display:inline-block;float:right;">(3)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="padding:0.5em;">
+                                            <a href="#" class="newlinkbutton applyselection">Apply Changes</a>
+                                            <a href="#" onclick="$('.hiddenplaces a.fpllink').removeClass('ready');return false;" style="display: inline-block;margin-left:1em;">clear all</a>
+                                        </div>
                                     </div>
                                 </div>
 
+                            </div>
 
+                        </div>
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                <i class="icon-filter"></i>Bedrooms
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.1" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    1
 
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.2" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    2
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.3" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    3
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.4" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    4
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.6" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    6
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.7" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    7
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.8" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    8
+
+                                </a>
                             </div>
                             <div class="clear"></div>
                         </div>
 
 
-                        <div class="clear">
-                        </div>
-
-                    </div>
-
-
-                    <div id="resultoptionlist">
-
-@for (var i = 0; i < Model.Count(); i++)
-{
-                        <div class="resultoption" style="position:relative;">
-
-                            <div class="imagesection">
-                                <a href="#" onclick="openoverlayandswitchtotab($(this).parents('.resultoption'),'hotelphotos');return false;">
-                                    <img src="@Url.Content(@Model[i].Photo )"/>
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                <i class="icon-filter"></i>Facilities & Policies
+                            </div>
+                            <div class="li">
+                                <a href="#" rel="facilities.swimming-pool" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Swimming Pool
                                 </a>
                             </div>
+                            <div class="li">
+                                <a href="#" rel="facilities.ac-rooms" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    AC Rooms
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="#" rel="facilities.caretaker" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Caretaker
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="#" rel="facilities.kitchen-available" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Kitchen Available
+                                </a>
+                            </div>
+                            <div class="li" style="float:left;width:11em;">
+                                <a href="#" rel="policy.pet-friendly" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Pets Allowed
+                                </a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
 
-                            
 
 
-                            <div class="detailsection">
-                                <div class="details">
-                                    <div class="h3">
-                                        @Html.DisplayFor(model => model[i].HotelName)
+                    </div>*@
 
-                                    </div>
-                                   
+                    <div id="searchlistresults">
+                        @*<div class="resultsummary">
+                            <div class="noofoptions">
+                                <span id="resultoptioncount">
+                                    24
+                                    options
+                                </span> found
+                            </div>
+                            <div style="float:right;width:23em;">
+                                <div style="float:left;margin-top:0.25em;">
+                                    <span style="font-size: 2em;line-height: 1em;">Order By </span>
+                                </div>
 
-                                    <div class="wrapper">
+                                <div class="orderbyoptions" style="width:13em;">
+                                    <div class="wrapselect">
+                                        <select name="ordersearch" class="applywrap">
+                                            <option value="recommended" selected>
+                                                Recommended
+                                            </option>
+                                            <option value="pricelowestfirst">
+                                                Price Lowest First
+                                            </option>
+                                            <option value="pricehighestfirst">
+                                                Price Highest First
+                                            </option>
+                                        </select>
+                                        <div class="wrapselecttext">
 
-                                        <div class="wrapperin" style="max-height:3.5em;overflow:hidden;">
-                                            <p>
-                                                @Html.DisplayFor(model => model[i].HotelDetails)
-                                            </p>
-
+                                            <i class="dropdownarrow"></i>
                                         </div>
                                     </div>
-                                    
-                                    <div>
-                                        
-                                        <div style="float:right;" class="selectroombtncontainer">
-                                            <div style="padding-bottom:0.5em;">
 
-                                                <h1>
-                                                    <label class="btn1 btn-2 btn-2g">
-                                                        <a href="@Url.Action("Info", "Home", new { clickinfo = "hoteldetails", HId = Model[i].HotelId })">
-                                                            Show Details
-                                                        </a>
-                                                    </label>
-                                                    </h1>
+
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+
+                            <div class="clear">
+                            </div>
+
+                        </div>*@
+
+
+                        <div id="resultoptionlist">
+
+                            @for (var i = 0; i < Model.Count(); i++)
+{
+                                <div class="resultoption" style="position:relative;">
+
+                                    <div class="imagesection">
+                                        <a href="#" onclick="openoverlayandswitchtotab($(this).parents('.resultoption'),'hotelphotos');return false;">
+                                            <img src="@Url.Content(@Model[i].Photo )" />
+                                        </a>
+                                    </div>
+
+
+
+
+                                    <div class="detailsection">
+                                        <div class="details">
+                                            <div class="h3">
+                                                @Html.DisplayFor(model => model[i].HotelName)
+
                                             </div>
 
+
+                                            <div class="wrapper">
+
+                                                <div class="wrapperin" style="max-height:3.5em;overflow:hidden;">
+                                                    <p>
+                                                        @Html.DisplayFor(model => model[i].HotelDetails)
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                            <div>
+
+                                                <div style="float:right;" class="selectroombtncontainer">
+                                                    <div style="padding-bottom:0.5em;">
+
+                                                        <h1>
+                                                            <label class="btn1 btn-2 btn-2g">
+                                                                <a href="@Url.Action("Info", "Home", new { clickinfo = "hoteldetails", HId = Model[i].HotelId })">
+                                                                    Show Details
+                                                                </a>
+                                                            </label>
+                                                        </h1>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="clear"></div>
+
+                                            </div>
                                         </div>
 
-                                        <div class="clear"></div>
 
                                     </div>
+
+                                    <div class="clear"></div>
+
                                 </div>
 
-
-                            </div>
-
-                            <div class="clear"></div>
-
+}
                         </div>
-                        
-}                   
+
+                        <br />
+                        <br />
+
                     </div>
 
-                    <br />
-                    <br />
-                    
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
             </div>
-        </div>
+       
         <style type="text/css">
             table.billingtable th, table.billingtable td {
                 padding: 0.25em 0.5em;
@@ -873,21 +878,7 @@
 </div>
 
 
-<div id="footer" style="clear: both;position: relative;z-index: 2;height: 12em;margin-top: -7em;">
 
-    <div id="footercontent">
-
-        <a href="http://www.abreakplease.com/need">why abreakplease</a>
-        <a href="http://www.abreakplease.com/aboutus">about us</a>
-        <a href="http://www.abreakplease.com/we-are-hiring">careers</a>
-        <a href="http://www.abreakplease.com/privacy-policy">privacy policy</a>
-        <a href="http://www.abreakplease.com/termsandconditions">terms & conditions</a>
-        <a href="http://www.abreakplease.com/sitemap-places?param=">sitemap</a>
-        <a href="/m" rel="nofollow">Mobile?</a>
-        <br /><br />
-        (c) 2013 abreakplease holidays & leisures private limited
-    </div>
-</div>
 <div id="backtotop">
     <a href="#topbar">
         <span></span>
@@ -905,18 +896,12 @@
 </script>
 
 
-<script src="http://in.static.abreakplease.com/1.4//Scripts/allexternal.js?v=3678" type="text/javascript"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $("#loggedinusername").live("click", function () {
-            var links = $("#loggedinuserlinks");
-            if (links.is(":hidden"))
-                $("#loggedinuserlinks").css("display", "block");
-            else
-                $("#loggedinuserlinks").css("display", "none");
-        });
+       
 
         $("#backtotop").click(function () {
 
@@ -951,761 +936,9 @@
 </script>
 
 
-<script type="text/javascript" src="http://in.static.abreakplease.com/1.4//Scripts/scrollpagination.js">
 
-</script>
-<script type="text/javascript" src="http://in.static.abreakplease.com/1.4//Scripts/jquery.dotdotdot.min.js"></script>
-<script type="text/javascript" src="http://in.static.abreakplease.com/1.4//Scripts/jquery.nouislider.min.js"></script>
-<script type="text/javascript">
 
-    var inputparams = {
-        checkin: '15-May-2015',
-        noofnights: '2',
-        places: [],
-        bedrooms: [],
-        minroaddistance: 0,
-        maxroaddistance: 0,
-        themes: [],
-        staythemes: ['bungalows'],
-        facilities: [],
-        policies: [],
-        ordersearch: 'recommended',
-        originlocation: '',
-        noofadults: 2,
-        hotelname: '',
-        locationtype: '',
-        district: '',
-        location: 'kerala',
-        mainplace: ''
-    };
-    var oldfilterparams = jQuery.extend(true, {}, inputparams);
-    var emptyinputparams = function () {
-        var filter = inputparams;
-        for (var i in filter) {
-            if (filter[i] instanceof Array) {
-                filter[i] = [];
-            } else if (typeof filter[i] == "number") {
-                filter[i] = 0;
-            }
-            else {
-                filter[i] = '';
-            }
 
-        }
-    };
-    function stripQueryStringAndHashFromPath(url) {
-        return url.split("?")[0].split("#")[0];
-    }
-    //var originalurl = stripQueryStringAndHashFromPath(location.href);
-    var originalurl = "/searchvilla";
-    var converttoquerystring = function (filter) {
-        var params = [];
-        for (var i in filter) {
-            if (filter[i] instanceof Array && filter[i].length > 0) {
-
-                params.push(i + "=" + filter[i].join(","));
-            }
-            else if (!(filter[i] instanceof Array) && filter[i] != undefined && filter[i] != 0) {
-
-                params.push(i + "=" + filter[i]);
-            }
-
-        }
-        return encodeURI(params.join("&"));
-    };
-    var updatelist = function (url, nopush) {
-
-        $.ajax({
-            url: url,
-            beforeSend: function () {
-
-            },
-            cache: false,
-
-            success: function (data) {
-                if (data.Count == 0) {
-                    inputparams = jQuery.extend(true, {}, oldfilterparams);
-                    updatefilterui(inputparams);
-                    $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;'>Oops!!<br /> We dont have hotels for your query. </span><br /> <br /><a href='#' class='close'>Go Back To Previous Search Results</a>");
-                    $("#filterpanelmask #infscr-loading a.close").live('click', function () { $("#filterpanelmask").css("display", "none"); return false; });
-                    return;
-                }
-                window.scrollTo(0, 0);
-                $("#filterpanelmask").css("display", "none");
-                $("#resultoptionlist").html(data.Data);
-                $("#resultoptionlist").find(".wrapperin").dotdotdot();
-                $("#pageresulttitle").html(data.Title);
-                $("#resultoptioncount").html(data.Count + " options");
-                if (data.FilterBudget) {
-                    $("#filterbudgetcontainer").html(data.FilterBudget);
-                    if ($("#filterbudgetcontainer").find("#pricerange").size() > 0) {
-                        //$(":range").rangeinput({progress:true});
-                        applyrangefunctions();
-                        //$(":range").change();
-                    }
-                }
-
-                if (data.Places)
-                    $("#placeslist").html(data.Places);
-                var visibleplacesarray = [];
-                $("#placeslist a.flink").each(function () {
-                    var link = $(this);
-                    var cslug = link.attr("rel").replace("places.", "");
-                    if (jQuery.inArray(cslug, inputparams.places) == -1) {
-                        link.removeClass("ready");
-                        if ($(".hiddenplaces a[rel='tplaces." + cslug + "']").size() > 0)
-                            $(".hiddenplaces a[rel='tplaces." + cslug + "']").removeClass("ready");
-                    }
-                    else {
-                        link.addClass("ready");
-                        if ($(".hiddenplaces a[rel='tplaces." + cslug + "']").size() > 0)
-                            $(".hiddenplaces a[rel='tplaces." + cslug + "']").addClass("ready");
-                        visibleplacesarray.push(cslug);
-                    }
-                });
-
-                if ($(".hiddenplaces a.ready").size() > 0) {
-
-                    $(".hiddenplaces a.ready").each(function () {
-                        var rel = $(this).attr("rel").replace("tplaces.", "");
-
-                        var lidiv = $(this).parents(".li").clone();
-                        if (jQuery.inArray(rel, visibleplacesarray) == -1) {
-                            var clone = lidiv.clone();
-                            var tclink = $(clone).find(".fpllink");
-                            tclink.removeClass("fpllink");
-                            tclink.addClass("flink");
-                            tclink.attr("rel", "places." + rel);
-                            $(clone).insertBefore($("#showmoreplaces"));
-                        }
-                    });
-                }
-                adjustimages();
-                oldfilterparams = jQuery.extend(true, {}, inputparams);
-                var stateobject = jQuery.extend(true, {}, inputparams);
-                try {
-                    if (!nopush)
-                        history.pushState({ inputparams: stateobject, url: url }, "", url);
-
-                }
-                catch (e) {
-                    var hash = converttoquerystring(inputparams);
-                    hash = hash.replace(/=/g, '\\=').replace(/&/g, '\\&').replace(/,/g, '\\,');
-                    window.location.hash = hash;
-                }
-                initpagination(url);
-
-            }
-        });
-
-    };
-    var updatefilterui = function (params) {
-
-        $("input[name=hotelname]").val(params.hotelname);
-        $("a[rel*=facilities]").removeClass("ready");
-        if (params.facilities.length > 0) {
-            for (var i = 0; i < params.facilities.length; i++) {
-                $("a[rel='facilities." + params.facilities[i] + "']").addClass("ready");
-            }
-        }
-
-        $("a[rel*=policy]").removeClass("ready");
-        if (params.policies.length > 0) {
-            for (var i = 0; i < params.policies.length; i++) {
-                $("a[rel='policy." + params.policies[i] + "']").addClass("ready");
-            }
-        }
-        $("a[rel*=bedrooms]").removeClass("ready");
-        if (params.bedrooms.length > 0) {
-            for (var i = 0; i < params.bedrooms.length; i++) {
-                $("a[rel='bedrooms." + params.bedrooms[i] + "']").addClass("ready");
-            }
-        }
-        $("a[rel*=theme]").removeClass("ready");
-        if (params.themes.length > 0) {
-
-            for (var i = 0; i < params.themes.length; i++) {
-                $("a[rel='theme." + params.themes[i] + "']").addClass("ready");
-            }
-        }
-        $("a[rel*=staytheme]").removeClass("ready");
-        if (params.staythemes.length > 0) {
-
-            for (var i = 0; i < params.staythemes.length; i++) {
-                $("a[rel='staytheme." + params.staythemes[i] + "']").addClass("ready");
-            }
-        }
-        else {
-
-            $("a[rel='staytheme.all']").addClass("ready");
-        }
-
-        $("a[rel*=places]").removeClass("ready");
-        if (params.places.length > 0) {
-            for (var i = 0; i < params.places.length; i++) {
-                $("a[rel='places." + params.places[i] + "']").addClass("ready");
-            }
-        }
-        $("a[rel*=traveldistance]").removeClass("ready");
-
-        if (params.minroaddistance > 0 || params.maxroaddistance > 0) {
-            var rel = "traveldistance." + params.minroaddistance + "." + params.maxroaddistance;
-            $("a[rel='" + rel + "']").addClass("ready");
-
-        }
-        $("a[rel*=locationtype]").removeClass("ready");
-        if (params.locationtype != "") {
-            $("a[rel='locationtype." + params.locationtype + "']").addClass("ready");
-        }
-        else {
-            $("a[rel*=locationtype]").removeClass("ready");
-        }
-        $("a[rel*=district]").removeClass("ready");
-        if (params.district != "") {
-            $("a[rel='district." + params.district + "']").addClass("ready");
-        }
-        else {
-            $("a[rel*=district]").removeClass("ready");
-        }
-    };
-    $(window).load(function () {
-
-        if (window.location.hash) {
-            try {
-
-                var hash = window.location.hash.replace("#", "").replace(/\\/g, '');
-                emptyinputparams();
-
-                parsehash(hash);
-
-                var originalurl = stripQueryStringAndHashFromPath(location.href);
-                var url = originalurl + "?" + converttoquerystring(inputparams);
-                $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-                $("#filterpanelmask").css("display", "block");
-                updatefilterui(inputparams);
-                updatelist(url);
-
-            } catch (e) {
-                adjustimages();
-                $("#resultoptionlist").find(".wrapperin").dotdotdot();
-            }
-        }
-        else {
-            adjustimages();
-            $("#resultoptionlist").find(".wrapperin").dotdotdot();
-        }
-        //$("#preselectcontainer").show();
-
-    });
-    var updatemin = function (a) {
-        $(".minrange").val(a);
-        $("#minbudgetholder").text(a);
-    };
-    var updatemax = function (a) {
-        $(".maxrange").val(a);
-        $("#maxbudgetholder").text(a);
-    };
-    var applyrangefunctions = function () {
-        if ($("#pricerange").size() == 0)
-            return;
-        var slider = $("#pricerange");
-
-        var minelem = $(".minrange").first();
-        var minrange = minelem.attr("min");
-        var maxrange = minelem.attr("max");
-        var mincurrentrange = minelem.val();
-        var maxcurrentrange = $(".maxrange").first().val();
-
-        slider.noUiSlider({
-            range: [minrange, maxrange]
-            , start: [mincurrentrange, maxcurrentrange],
-            connect: true
-            , serialization: {
-                resolution: 1,
-                to: [updatemin, updatemax]
-            },
-            set: function () {
-                var minval = $(".minrange").first().val();
-                var maxval = $(".maxrange").first().val();
-                inputparams.minbudget = minval;
-                inputparams.maxbudget = maxval;
-                var url = originalurl + "?" + converttoquerystring(inputparams);
-                $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-                $("#filterpanelmask").css("display", "block");
-                updatelist(url);
-            }
-        });
-
-        //        if($(".minrange").data("rangeinput")) {
-        //                $(".minrange").data("rangeinput").onSlide(function(event, value) {
-        //                    if (value >= Number($("#maxbudgetholder").text())) {
-        //                        return false;
-        //                    }
-        //                    $("#minbudgetholder").text(value);
-        //                });
-        //                $(".minrange").data("rangeinput").change(function(event, value) {
-
-        //                    inputparams.minbudget = value;
-        //                    $("#minbudgetholder").text(value);
-        //                    var url = originalurl +"?"+converttoquerystring(inputparams);
-        //                    $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-        //                    $("#filterpanelmask").css("display", "block");
-        //                    updatelist(url);
-        //
-
-        //                });
-        //                $("#minbudgetholder").text($(".minrange").data("rangeinput").getValue());
-        //            }
-        //            if($(".maxrange").data("rangeinput")) {
-        //
-        //                $(".maxrange").data("rangeinput").onSlide(function(event, value) {
-        //                    if (Number($("#minbudgetholder").text()) > value)
-        //                        return false;
-        //                    $("#maxbudgetholder").text(value);
-        //                });
-        //                $(".maxrange").data("rangeinput").change(function(event, value) {
-
-        //                    inputparams.maxbudget = value;
-        //                    $("#maxbudgetholder").text(value);
-        //                    var url = originalurl +"?"+converttoquerystring(inputparams);
-        //                     $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-        //                    $("#filterpanelmask").css("display", "block");
-        //                    updatelist(url);
-        //                    //location.href = url;
-
-        //                });
-        //                $("#maxbudgetholder").text($(".maxrange").data("rangeinput").getValue());
-        //            }
-    };
-    $(window).load(function () {
-        adjustimages();
-    });
-    $(function () {
-
-        try {
-            var stateobject = jQuery.extend(true, {}, inputparams);
-            history.replaceState({ inputparams: stateobject }, "", location.href);
-
-        }
-        catch (e) {
-
-        }
-        window.onpopstate = function (event) {
-
-            if (event.state) {
-
-                inputparams = jQuery.extend(true, {}, event.state.inputparams);
-
-                updatefilterui(inputparams);
-                var url = originalurl + "?" + converttoquerystring(inputparams);
-
-                $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-                $("#filterpanelmask").css("display", "block");
-                updatelist(url, true);
-
-            }
-        };
-        $(document).click(function (e) {
-            if (!$(e.target).hasClass("selectedoption")) {
-                $("span.options").hide();
-            }
-
-        });
-        //setupmainform(document);
-        //setupvillaform(document);
-        attachvillaformbinders(document);
-        updateselectwraptextincontainer(document);
-        $("#showmoreplaces").live("click", function () {
-            var scrollPosition = [
-                self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
-                self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-            ];
-            var html = jQuery('html'); // it would make more sense to apply this to body, but IE7 won't have that
-            html.data('scroll-position', scrollPosition);
-            html.data('previous-overflow', html.css('overflow'));
-            html.css('overflow', 'hidden');
-            window.scrollTo(scrollPosition[0], scrollPosition[1]);
-            $(this).next('.hiddenplaces').show();
-            return false;
-        });
-
-        $("#showmoreplacesclose,#showmoreplacesmask").live("click", function () {
-            // un-lock scroll position
-            var html = jQuery('html');
-            var scrollPosition = html.data('scroll-position');
-            html.css('overflow', html.data('previous-overflow'));
-            window.scrollTo(scrollPosition[0], scrollPosition[1]);
-            $(this).parents('.hiddenplaces').hide();
-            if ($(".hiddenplaces a.ready").size() > 0) {
-                $(".hiddenplaces a.ready").each(function () {
-                    var sl = $(this).attr("rel").replace("tplaces.", "");
-                    if (jQuery.inArray(sl, inputparams.places) == -1) {
-                        $(this).removeClass("ready");
-                    }
-                });
-            }
-            return false;
-        });
-        $(".removeattr a.close").live("click", function () {
-            var attr = $(this).attr("attribute").replace("remove.", "");
-
-            $("a[rel='" + attr + "']").click();
-            return false;
-        });
-        $("a.flink").live("click", function () {
-            var link = $(this);
-            var filteron = link.attr("rel");
-            var parts = filteron.split(".");
-            var k = parts[0];
-            var v = parts[1];
-            var add = true;
-            if (link.hasClass("ready"))
-                add = false;
-            link.toggleClass("ready");
-
-            switch (k) {
-                case "locationtype":
-                    if (add)
-                        inputparams.locationtype = v;
-                    else {
-                        inputparams.locationtype = "";
-                    }
-                    inputparams.minbudget = 0;
-                    inputparams.maxbudget = 0;
-                    break;
-                case "district":
-                    if (add)
-                        inputparams.district = v;
-                    else {
-                        inputparams.district = "";
-                    }
-                    inputparams.places = [];
-                    inputparams.minbudget = 0;
-                    inputparams.maxbudget = 0;
-                    break;
-                case "traveldistance":
-                    var mindistance = Number(v);
-                    var maxdistance = Number(parts[2]);
-                    if (add) {
-                        inputparams.minroaddistance = mindistance;
-                        inputparams.maxroaddistance = maxdistance;
-                        inputparams.places = [];
-                        $("a[rel*=places]").removeClass("ready");
-                    }
-
-                    inputparams.minbudget = 0;
-                    inputparams.maxbudget = 0;
-                    break;
-                case "staytheme":
-                    if (add) {
-                        if (v != "all") {
-                            inputparams.staythemes.push(v);
-                        } else {
-                            inputparams.staythemes = [];
-
-                        }
-                    }
-                    else {
-                        var fx = jQuery.grep(inputparams.staythemes, function (val) {
-                            return (val !== v);
-                        });
-                        inputparams.staythemes = fx;
-                    }
-                    break;
-                case "bedrooms":
-                    if (add) {
-                        if (v != "all") {
-                            inputparams.bedrooms.push(v);
-                        } else {
-                            inputparams.bedrooms = [];
-                        }
-                    }
-                    else {
-                        var fx = jQuery.grep(inputparams.bedrooms, function (val) {
-                            return (val !== v);
-                        });
-                        inputparams.bedrooms = fx;
-                    }
-                    break;
-                case "facilities":
-                    if (add) {
-                        if (v != "all") {
-
-                            inputparams.facilities.push(v);
-                        } else {
-                            inputparams.facilities = [];
-
-                        }
-                    } else {
-                        var fx = jQuery.grep(inputparams.facilities, function (val) {
-                            return (val !== v);
-                        });
-                        inputparams.facilities = fx;
-
-                    }
-                    break;
-                case "policy":
-                    if (add)
-                        inputparams.policies.push(v);
-                    else {
-                        var fx = jQuery.grep(inputparams.policies, function (val) {
-                            return (val !== v);
-                        });
-                        inputparams.policies = fx;
-                    }
-                    break;
-                case "theme":
-                    if (add)
-                        inputparams.themes.push(v);
-                    else {
-                        var fx = jQuery.grep(inputparams.themes, function (val) {
-                            return (val !== v);
-                        });
-                        inputparams.themes = fx;
-                    }
-
-                    break;
-                case "places":
-                    if (add)
-                        inputparams.places.push(v);
-                    else {
-                        var fx = jQuery.grep(inputparams.places, function (val) {
-                            return (val !== v);
-                        });
-                        inputparams.places = fx;
-                    }
-                    inputparams.minbudget = 0;
-                    inputparams.maxbudget = 0;
-                    break;
-
-            }
-
-            updatefilterui(inputparams);
-
-            var url = originalurl + "?" + converttoquerystring(inputparams);
-
-            $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-            $("#filterpanelmask").css("display", "block");
-            updatelist(url);
-            return false;
-        });
-
-        //$(":range").rangeinput();
-        applyrangefunctions();
-        $("select[name=ordersearch]").change(function () {
-            if (inputparams.ordersearch == $(this).val())
-                return;
-            inputparams.ordersearch = $(this).val();
-            var url = originalurl + "?" + converttoquerystring(inputparams);
-            $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-            $("#filterpanelmask").css("display", "block");
-            updatelist(url);
-
-        });
-        $("#hotelnamesearch").submit(function () {
-            var hval = $("input[name=hotelname]").val();
-            if (inputparams.hotelname == hval)
-                return false;
-            inputparams.hotelname = hval;
-            var url = originalurl + "?" + converttoquerystring(inputparams);
-            $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-            $("#filterpanelmask").css("display", "block");
-            updatelist(url);
-            return false;
-
-        });
-        $(".onlythis").live('click', function () {
-            var link = $(this).parents("a");
-            if (link.parents(".hiddenplaces").size() > 0) {
-                link.parents(".hiddenplaces").find("a.fpllink").removeClass("ready");
-                link.addClass("ready");
-            }
-            else {
-                var sl = link.attr("rel").replace("places.", "");
-                inputparams.places = [];
-                inputparams.places.push(sl);
-                var url = originalurl + "?" + converttoquerystring(inputparams);
-                $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-                $("#filterpanelmask").css("display", "block");
-                updatelist(url);
-            }
-            return false;
-        });
-
-
-
-
-        $("a.fpllink").live("click", function () {
-
-            var link = $(this);
-            link.toggleClass("ready");
-            return false;
-        });
-
-        $("a.applyselection").live("click", function () {
-
-            var rels = [];
-            $("a.fpllink.ready").each(function () {
-                var trel = $(this).attr("rel");
-                var tpslug = trel.replace("tplaces.", "");
-                rels.push(tpslug);
-            });
-            inputparams.places = rels;
-
-            inputparams.minbudget = 0;
-            inputparams.maxbudget = 0;
-            $("#showmoreplacesclose").click();
-            var url = originalurl + "?" + converttoquerystring(inputparams);
-            $("#filterpanelmask #infscr-loading").html("<span style='font-size:1.5em;font-weight:bold;'>Updating Results</span><br /><br /><img src='" + $("#loaderimage").attr("src") + "' />");
-            $("#filterpanelmask").css("display", "block");
-
-            updatelist(url);
-
-            return false;
-        });
-        var purl = originalurl + "?" + converttoquerystring(inputparams);
-        initpagination(purl);
-        applymodifysearchbinders(document);
-    });
-    var initpagination = function (url) {
-        $('#resultoptionlist').data("currentpage", 2);
-        var footerheight = $("#footer").outerHeight();
-        $('#resultoptionlist').scrollPagination({
-            'contentPage': url,
-            'contentData': { 'page': 2 },
-            'scrollTarget': $(window),
-            'heightOffset': footerheight + 10,
-            'beforeLoad': function () {
-                $("#resultlistloading").fadeIn();
-            },
-            'afterLoad': function (elementsLoaded) {
-                $("#resultlistloading").fadeOut();
-                var elements = elementsLoaded.filter(".resultoption");
-
-                if (elements.size() == 0) {
-                    $('#resultoptionlist').find(".nooptionsfound").remove();
-                    $('#resultoptionlist').append("<p style='text-align:center;padding:0.5em 0;font-size:2em;color:black;background:white;border:1px solid #bbb;'>End of Results</p>");
-                    $('#resultoptionlist').stopScrollPagination();
-                    return false;
-                }
-                var currentpage = $('#resultoptionlist').data("currentpage");
-                currentpage++;
-                $('#resultoptionlist').data("currentpage", currentpage);
-                $('#resultoptionlist').scrollPagination.defaults.contentData = { 'page': currentpage };
-                $("#resultoptionlist").find(".wrapperin").dotdotdot();
-                $(elements).fadeInWithDelay();
-                adjustimages();
-            }
-        });
-
-        $.fn.fadeInWithDelay = function () {
-            var delay = 0;
-            return this.each(function () {
-                $(this).delay(delay).animate({ opacity: 1 }, 200);
-                delay += 100;
-            });
-        };
-    };
-
-    var adjustimages = function () {
-        $("#resultoptionlist .resultoption .detailsection").each(function () {
-            var height = $(this).height();
-            var imagesectionheight = $(this).prev(".imagesection").height();
-            if (imagesectionheight < height) {
-                $(this).prev(".imagesection").css("height", height);
-            }
-        });
-    };
-    var parsehash = function (hash) {
-        var elems = hash.split("&");
-
-        for (var i in elems) {
-
-            var t = inputparams[elems[i].split("=")[0]];
-            if (t !== undefined) {
-                if (t instanceof Array) {
-                    var array = elems[i].split("=")[1].split(",");
-                    inputparams[elems[i].split("=")[0]] = array;
-                }
-                else {
-                    inputparams[elems[i].split("=")[0]] = elems[i].split("=")[1];
-                }
-            }
-        }
-
-    };
-
-</script>
-<script type="text/javascript" src="http://in.static.abreakplease.com/1.4//Scripts/inputnew.js?v=51"></script>
-
-
-
-<script type="text/javascript" src="http://in.static.abreakplease.com/1.4//Scripts/test.js?v=1839"></script>
-
-
-<script type="text/javascript">
-    $(function () {
-        $(document).click(function (e) {
-            if (!$(e.target).hasClass("selectedoption")) {
-                $("span.options").css("display", "none");
-            }
-        });
-
-    });
-
-
-</script>
-
-<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f55c8b04bba6629&async=1&&domready=1"></script>
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-24752640-1']);
-    _gaq.push(['_setDomainName', 'abreakplease.com']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-
-</script>
-
-<webengage license="11b564401">
-    <script id="_webengage_script_tag" type="text/javascript">
-        (function () { var _we = document.createElement('script'); _we.type = 'text/javascript'; _we.async = true; var _weWidgetJs = "/js/widget/webengage-min-v-2.0.js"; if (document.location.protocol == 'https:') { _we.src = "//ssl.widgets.webengage.com" + _weWidgetJs; } else { _we.src = "//cdn.widgets.webengage.com" + _weWidgetJs; } var _sNode = document.getElementById('_webengage_script_tag'); _sNode.parentNode.insertBefore(_we, _sNode); })();</script>
-</webengage>
-<script>
-
-    function initAddThis() {
-
-        addthis.init();
-
-    }
-
-    initAddThis();
-
-</script>
-<!-- Google Code for Remarketing Tag -->
-<!--------------------------------------------------
-Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
---------------------------------------------------->
-<script type="text/javascript">
-    /* <![CDATA[ */
-    var google_conversion_id = 1007720522;
-    var google_custom_params = window.google_tag_params;
-    var google_remarketing_only = true;
-    /* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-    <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1007720522/?value=0&amp;guid=ON&amp;script=0" />
-    </div>
-</noscript>
 
 
 

@@ -935,7 +935,8 @@ ul.hoteltabs {
   padding: 1em 1.5em; }
 
 #searchlistcontainer {
-  width: 80em;
+
+  width: 50em;
   margin: auto;
   font-family: verdana;
   color: #333;

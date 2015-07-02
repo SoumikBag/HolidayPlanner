@@ -416,7 +416,6 @@
     <Content Include="Views\Pune\FirstPune.cshtml" />
     <Content Include="Views\Bangalore\FirstBangalore.cshtml" />
     <Content Include="Views\Main\Index1.cshtml" />
-    <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Feedback1.cshtml" />
     <Content Include="Views\Home\ImageInfo.cshtml" />
     <Content Include="Views\Home\MapInfo.cshtml" />
