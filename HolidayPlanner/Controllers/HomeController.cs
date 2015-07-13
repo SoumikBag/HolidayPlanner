@@ -546,7 +546,7 @@ namespace HolidayPlanner.Controllers
 
             buk.BookingId="B"+ran.Next();
             buk.UserId = Convert.ToInt32(Collection[1]);
-            buk.ClientMobileNumber = Convert.ToInt32(Collection[2]);
+            buk.ClientMobileNumber = Collection[2];
             buk.ClientEmailId = Collection[3];
             buk.HotelId = Convert.ToInt32(Collection[4]);
             buk.CheckInDate = dt1;
@@ -554,7 +554,7 @@ namespace HolidayPlanner.Controllers
             buk.NoOfAdults = Convert.ToInt32(Collection[7]);
             buk.NoOfChildren = Convert.ToInt32(Collection[8]);
             buk.Message = Collection[9];
-            buk.TotalAmount = Convert.ToDecimal(Collection[10]);
+            //buk.TotalAmount = Convert.ToDecimal(Collection[10]);
 
             db.Bookings.Add(buk);
 
@@ -625,13 +625,13 @@ namespace HolidayPlanner.Controllers
         public ActionResult Success()
         {
             TempData["success"] = "Succesfully submited details";
-            return View("RequestsPage");
+            return View("First");
         }
 
         public ActionResult Failed()
         {
             TempData["success"] = "PLease Enter Correct details .... Requesting Order Failed";
-            return View("RequestsPage");
+            return View("First");
         }
 
 
