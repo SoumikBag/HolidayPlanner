@@ -352,9 +352,9 @@ namespace HolidayPlanner.Controllers
                 case "review":
                     {
                         var review = from r in db.Reviews
-                                        where r.HotelId == HId
-                                        select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
-
+                                      where r.HotelId == HId
+                                      select new InfoViewModel { ReviewDetails = r.ReviewDetails, Rating = r.Rating };
+                                      
                         return View("ReviewInfo", review);
                     }
 
@@ -374,7 +374,7 @@ namespace HolidayPlanner.Controllers
                         string[] src = new string[5]; 
                         src[0] = "~/Images/" + hname + "/19011.jpeg";
                         src[1] = "~/Images/" + hname + "/19013.jpeg";
-                        src[2] = "~/Images/" + hname + "/19015.jpeg";
+                        src[2] = "~/Images/" + hname + "/19295_t.jpeg";
                         src[3] = "~/Images/" + hname + "/19016.jpeg";
                         src[4] = "~/Images/" + hname + "/19019.jpeg";
 
@@ -399,7 +399,6 @@ namespace HolidayPlanner.Controllers
             return View();
 
         }
-         
 
 
         public ActionResult First()
@@ -520,17 +519,11 @@ namespace HolidayPlanner.Controllers
 
 
        //added by sandy
-        //public ActionResult Search(string CId)
-        //{
-        //    var db = new HolidayPlanner.Models.InfoData();
-
-        //    var Hdetail = (from p in db.Hotels
-        //                   where p.CityId == CId
-        //                   select p).SingleOrDefault();
-
-
-        //    return View("First", Hdetail);
-        //}
+        public ActionResult Search()
+        {
+            
+            return View();
+        }
         //ended by sandy
 
         public ActionResult HolyPlaces()
@@ -581,7 +574,7 @@ namespace HolidayPlanner.Controllers
 
             buk.BookingId="B"+ran.Next();
             buk.UserId = Convert.ToInt32(Collection[1]);
-            buk.ClientMobileNumber = Convert.ToInt32(Collection[2]);
+            buk.ClientMobileNumber = Collection[2];
             buk.ClientEmailId = Collection[3];
             buk.HotelId = Convert.ToInt32(Collection[4]);
             buk.CheckInDate = dt1;
@@ -589,7 +582,7 @@ namespace HolidayPlanner.Controllers
             buk.NoOfAdults = Convert.ToInt32(Collection[7]);
             buk.NoOfChildren = Convert.ToInt32(Collection[8]);
             buk.Message = Collection[9];
-            buk.TotalAmount = Convert.ToDecimal(Collection[10]);
+            //buk.TotalAmount = Convert.ToDecimal(Collection[10]);
 
             db.Bookings.Add(buk);
 
@@ -611,16 +604,59 @@ namespace HolidayPlanner.Controllers
             
         }
 
+
+
+        [HttpGet]
+        public ActionResult Review1(int? id)
+        {
+            ViewData["Id"] = id;
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult Review1(Review rev)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var db = new HolidayPlanner.Models.InfoData())
+                {
+                    var newReview = db.Reviews.Create();
+                    int lastReviewId = db.Reviews.Max(item => item.ReviewId); //added by Sandy for ID Auto-Increment 
+                    rev.ReviewId = lastReviewId + 1;
+                    newReview.ReviewId = rev.ReviewId;
+                    newReview.ReviewDetails = rev.ReviewDetails;
+                    newReview.Rating = rev.Rating;
+                    newReview.HotelId = rev.HotelId;
+                    newReview.UserId = rev.UserId;
+
+                    db.Reviews.Add(newReview);
+                    db.SaveChanges();
+
+                    ViewBag.DataExists = true;
+                    //TempData["AlertMessage"] = "Review Successfully Send ";
+                    return RedirectToAction("First", "Home");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Data is not correct");
+            }
+            
+            return View();
+
+        }
+
         public ActionResult Success()
         {
             TempData["success"] = "Succesfully submited details";
-            return View("RequestsPage");
+            return View("First");
         }
 
         public ActionResult Failed()
         {
             TempData["success"] = "PLease Enter Correct details .... Requesting Order Failed";
-            return View("RequestsPage");
+            return View("First");
         }
 
 
@@ -850,6 +886,6 @@ namespace HolidayPlanner.Controllers
 
                return View(facilityinfo);
            }
-
+        
 }
 }

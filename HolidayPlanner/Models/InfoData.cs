@@ -22,9 +22,9 @@ namespace HolidayPlanner.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Booking>()
-                .Property(e => e.TotalAmount)
-                .HasPrecision(2, 2);
+            //modelBuilder.Entity<Booking>()
+            //    .Property(e => e.TotalAmount)
+            //    .HasPrecision(2, 2);
 
             modelBuilder.Entity<Hotel>()
                 .HasMany(e => e.Bookings)

@@ -14,7 +14,7 @@ namespace HolidayPlanner.Models
 
         public int UserId { get; set; }
 
-        public int? ClientMobileNumber { get; set; }
+        public string ClientMobileNumber { get; set; }
 
         [StringLength(100)]
         public string ClientEmailId { get; set; }
@@ -32,8 +32,8 @@ namespace HolidayPlanner.Models
         [StringLength(500)]
         public string Message { get; set; }
 
-        [Column(TypeName = "numeric")]
-        public decimal? TotalAmount { get; set; }
+        //[Column(TypeName = "numeric")]
+        //public decimal? TotalAmount { get; set; }
 
         public virtual Hotel Hotel { get; set; }
     }

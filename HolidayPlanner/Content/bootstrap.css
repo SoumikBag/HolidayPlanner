@@ -337,7 +337,7 @@ img {
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 0;
+  border: 1px solid rgba(0, 0, 0, 0.36);
   border-top: 1px solid none;
 }
 .sr-only {
@@ -2082,7 +2082,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #1B242F;
+  background-color: #e94e38;
   border-color: #357ebd;
 }
 .btn-primary:hover,

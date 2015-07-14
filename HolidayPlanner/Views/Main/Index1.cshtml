@@ -302,7 +302,7 @@
 </div>
 
 
-<script type="text/javascript">
+@*<script type="text/javascript">
 
     $(window).load(function () {
         $("#scroller").simplyScroll({
@@ -378,7 +378,568 @@
 <div id="resultdetail">
 
 
+</div>*@
+<div id="superoutercontainer">
+    <div id="superoutercontent">
+
+        @*<div id="modifysearchtrigger">
+            <div class="innermodifycontainer">
+                <div style="float:left;width:5em;">
+                    <span style="font-size:20px;line-height:25px;">Modify Search</span>
+                </div>
+                <div style="float:right;">
+                    <form method="POST" class="inputformcontainer" action="/villas">
+                        <table class="inputform">
+                            <tr class="hidetitlebar">
+                                <td>Location For Villas</td>
+                                <td>Check In</td>
+                                <td>Duration</td>
+                                <td>Guests</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:3px;">
+                                    <input type="text" class="inputtext villawhere" onclick="this.select();" placeholder="Where do you want to go?" name="Location" value="kerala" style="width:350px;" />
+                                </td>
+                                <td>
+                                    <input type="date" class="inputtext inputdate date" placeholder="Check In" name="CheckIn" data-value="2015-05-15" />
+                                </td>
+                                <td style="width:9.25em;">
+
+
+                                    <div class="wrapselect">
+                                        <select name="NoOfNights" class="applywrap">
+                                            <option value="1">1 Night</option>
+                                            <option value="2" selected>2 Nights</option>
+                                            <option value="3">3 Nights</option>
+                                            <option value="4">4 Nights</option>
+                                            <option value="5">5 Nights</option>
+                                            <option value="6">6 Nights</option>
+                                            <option value="7">7 Nights</option>
+                                            <option value="8">8 Nights</option>
+                                            <option value="9">9 Nights</option>
+                                            <option value="10">10 Nights</option>
+                                        </select>
+                                        <div class="wrapselecttext">
+                                            2 Nights
+                                            <i class="dropdownarrow"></i>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td style="width:9.25em;">
+                                    <div class="wrapselect">
+                                        <select name="NoOfAdults" class="applywrap">
+                                            <option value="2" selected>2 Guests</option>
+                                            <option value="3">3 Guests</option>
+                                            <option value="4">4 Guests</option>
+                                            <option value="5">5 Guests</option>
+                                            <option value="6">6 Guests</option>
+                                            <option value="7">7 Guests</option>
+                                            <option value="8">8 Guests</option>
+                                            <option value="9">9 Guests</option>
+                                            <option value="10">10 Guests</option>
+                                            <option value="11">11 Guests</option>
+                                            <option value="12">12 Guests</option>
+                                            <option value="13">13 Guests</option>
+                                            <option value="14">14 Guests</option>
+                                            <option value="15">15 Guests</option>
+                                            <option value="16">16 Guests</option>
+                                            <option value="17">17 Guests</option>
+                                            <option value="18">18 Guests</option>
+                                            <option value="19">19 Guests</option>
+                                            <option value="20">20+ Guests</option>
+                                        </select>
+                                        <div class="wrapselecttext">
+                                            2 Guests
+                                            <i class="dropdownarrow"></i>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <input type="submit" class="inputbtn" style="font-size: 13px;" value="Search" />
+                                </td>
+                            </tr>
+
+                        </table>
+                    </form>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+        </div>*@
+        @*<div id="displaybar" style="width:100%;">
+            <div style="width:80em;margin:0 auto;">
+                <div class="text" style="">
+                    <h1 style="font-size:3em;line-height:1.2em;" id="pageresulttitle">
+                        Villas, Bungalows on rent in kerala
+                    </h1>
+                </div>
+
+            </div>
+        </div>*@
+
+        <div id="filterpanelmask">
+            <div id="infscr-loading">
+            </div>
+        </div>
+
+      
+            <div id="searchlistcontainer">
+                <div id="searchlistcontainerarea">
+                    @*<div id="searchlistfiltercontainer">
+                        <div class="filterheader">
+                            Filter By
+                        </div>
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                Search Property In Results
+                            </div>
+                            <div style="padding:10px;">
+                                <form id="hotelnamesearch" method="get" action="">
+                                    <input type="text" style="padding:0.5em 1em;" name="hotelname" /> <input type="submit" name="HotelNameButton" value="GO" class="linkbutton" />
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                <i class="icon-filter"></i>Districts
+                            </div>
+                            <div class="li">
+                                <a rel="district.alappuzha" href="#" class="flink ">
+                                    <i class="icon-radio-selected"></i>
+                                    Alappuzha
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a rel="district.thiruvananthapuram" href="#" class="flink ">
+                                    <i class="icon-radio-selected"></i>
+                                    Thiruvananthapuram
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a rel="district.idukki" href="#" class="flink ">
+                                    <i class="icon-radio-selected"></i>
+                                    Idukki
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                <i class="icon-filter"></i>Destinations
+                            </div>
+                            <div id="placeslist">
+
+                                <div class="li">
+                                    <a rel="places.varkala-kerala" href="#" class="flink ">
+                                        <i class="icon-selected"></i>
+                                        Varkala
+                                        <i class="icon-beach-selected"></i>
+
+                                        <span style="display:inline-block;float:right;">(8)</span>
+                                        <span class="onlythis">only</span>
+                                    </a>
+                                </div>
+                                <div class="li">
+                                    <a rel="places.alleppey-kerala" href="#" class="flink ">
+                                        <i class="icon-selected"></i>
+                                        Alleppey
+                                        <i class="icon-beach-selected"></i>
+
+                                        <span style="display:inline-block;float:right;">(5)</span>
+                                        <span class="onlythis">only</span>
+                                    </a>
+                                </div>
+                                <div class="li">
+                                    <a rel="places.kovalam-kerala" href="#" class="flink ">
+                                        <i class="icon-selected"></i>
+                                        Kovalam
+
+                                        <span style="display:inline-block;float:right;">(4)</span>
+                                        <span class="onlythis">only</span>
+                                    </a>
+                                </div>
+                                <div class="li">
+                                    <a rel="places.thekkady-kerala" href="#" class="flink ">
+                                        <i class="icon-selected"></i>
+                                        Thekkady
+                                        <i class="icon-hillstation-selected"></i>
+
+                                        <span style="display:inline-block;float:right;">(4)</span>
+                                        <span class="onlythis">only</span>
+                                    </a>
+                                </div>
+                                <a id="showmoreplaces" href="#"
+                                   style="padding: 0.5em 1em; display: block; color: #2daebf;">Show More</a>
+                                <div class="hiddenplaces" style="display: none;top:0;left:0;position:fixed;width:100%;height:100%;z-index:200;">
+                                    <div id="showmoreplacesmask" style="background:#000;opacity:0.8;position:absolute;width:100%;height:100%;z-index:200;"></div>
+                                    <a id="showmoreplacesclose" href="#" style="position:absolute;top:100px;left:50%;margin-left:155px;margin-top:-1.5em;z-index:301;height:3em;width:3em;background:url(http://in.static.abreakplease.com/1.4//Content/images/close.png) no-repeat;cursor:pointer;"></a>
+                                    <div style="background: white;padding:1em;position: absolute;top:100px;left:50%;margin-left:-150px;width:300px;overflow: hidden;border: 1px solid #333;z-index:300;">
+
+                                        <div style="padding:1em 0.5em;">
+                                            <span style="font-size:1.5em;">Select one or more places</span>
+                                        </div>
+                                        <div style="max-height:350px;overflow:auto;">
+                                            <div class="li">
+                                                <a rel="tplaces.varkala-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Varkala
+                                                    <i class="icon-beach-selected"></i>
+                                                    <span style="display:inline-block;float:right;">(8)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                            <div class="li">
+                                                <a rel="tplaces.alleppey-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Alleppey
+                                                    <i class="icon-beach-selected"></i>
+                                                    <span style="display:inline-block;float:right;">(5)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                            <div class="li">
+                                                <a rel="tplaces.kovalam-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Kovalam
+                                                    <span style="display:inline-block;float:right;">(4)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                            <div class="li">
+                                                <a rel="tplaces.thekkady-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Thekkady
+                                                    <i class="icon-hillstation-selected"></i>
+                                                    <span style="display:inline-block;float:right;">(4)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                            <div class="li">
+                                                <a rel="tplaces.munnar-kerala" href="#" class="fpllink ">
+                                                    <i class="icon-selected"></i>
+                                                    Munnar
+                                                    <i class="icon-hillstation-selected"></i>
+                                                    <span style="display:inline-block;float:right;">(3)</span>
+                                                    <span class="onlythis">only</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="padding:0.5em;">
+                                            <a href="#" class="newlinkbutton applyselection">Apply Changes</a>
+                                            <a href="#" onclick="$('.hiddenplaces a.fpllink').removeClass('ready');return false;" style="display: inline-block;margin-left:1em;">clear all</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                <i class="icon-filter"></i>Bedrooms
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.1" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    1
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.2" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    2
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.3" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    3
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.4" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    4
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.6" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    6
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.7" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    7
+
+                                </a>
+                            </div>
+                            <div class="li" style="float: left; width: 11em;">
+                                <a rel="bedrooms.8" href="#" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    8
+
+                                </a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+
+                        <div class="filtercontent">
+                            <div class="filtertitle">
+                                <i class="icon-filter"></i>Facilities & Policies
+                            </div>
+                            <div class="li">
+                                <a href="#" rel="facilities.swimming-pool" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Swimming Pool
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="#" rel="facilities.ac-rooms" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    AC Rooms
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="#" rel="facilities.caretaker" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Caretaker
+                                </a>
+                            </div>
+                            <div class="li">
+                                <a href="#" rel="facilities.kitchen-available" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Kitchen Available
+                                </a>
+                            </div>
+                            <div class="li" style="float:left;width:11em;">
+                                <a href="#" rel="policy.pet-friendly" class="flink ">
+                                    <i class="icon-selected"></i>
+                                    Pets Allowed
+                                </a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+
+
+                    </div>*@
+
+                    <div id="searchlistresults">
+                        @*<div class="resultsummary">
+                            <div class="noofoptions">
+                                <span id="resultoptioncount">
+                                    24
+                                    options
+                                </span> found
+                            </div>
+                            <div style="float:right;width:23em;">
+                                <div style="float:left;margin-top:0.25em;">
+                                    <span style="font-size: 2em;line-height: 1em;">Order By </span>
+                                </div>
+
+                                <div class="orderbyoptions" style="width:13em;">
+                                    <div class="wrapselect">
+                                        <select name="ordersearch" class="applywrap">
+                                            <option value="recommended" selected>
+                                                Recommended
+                                            </option>
+                                            <option value="pricelowestfirst">
+                                                Price Lowest First
+                                            </option>
+                                            <option value="pricehighestfirst">
+                                                Price Highest First
+                                            </option>
+                                        </select>
+                                        <div class="wrapselecttext">
+
+                                            <i class="dropdownarrow"></i>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+
+
+                            <div class="clear">
+                            </div>
+
+                        </div>*@
+
+
+                        <div id="resultoptionlist">
+
+                            @for (var i = 0; i < Model.Count(); i++)
+{
+                                <div class="resultoption" style="position:relative;">
+
+                                    <div class="imagesection">
+                                        <a href="#" onclick="openoverlayandswitchtotab($(this).parents('.resultoption'),'hotelphotos');return false;">
+                                            <img src="@Url.Content(@Model[i].Photo )" />
+                                        </a>
+                                    </div>
+
+
+
+
+                                    <div class="detailsection">
+                                        <div class="details">
+                                            <div class="h3">
+                                                @Html.DisplayFor(model => model[i].HotelName)
+
+                                            </div>
+
+
+                                            <div class="wrapper">
+
+                                                <div class="wrapperin" style="max-height:3.5em;overflow:hidden;">
+                                                    <p>
+                                                        @Html.DisplayFor(model => model[i].HotelDetails)
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                            <div>
+
+                                                <div style="float:right;" class="selectroombtncontainer">
+                                                    <div style="padding-bottom:0.5em;">
+
+                                                        <h1>
+                                                            <label class="btn1 btn-2 btn-2g">
+                                                                <a href="@Url.Action("Info", "Home", new { clickinfo = "hoteldetails", HId = Model[i].HotelId })">
+                                                                    Show Details
+                                                                </a>
+                                                            </label>
+                                                        </h1>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="clear"></div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="clear"></div>
+
+                                </div>
+
+}
+                        </div>
+
+                        <br />
+                        <br />
+
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+       
+        <style type="text/css">
+            table.billingtable th, table.billingtable td {
+                padding: 0.25em 0.5em;
+                text-align: left;
+                line-height: 1.5em;
+                font-size: 13px;
+                font-weight: normal;
+            }
+
+                table.billingtable th span {
+                    font-weight: normal;
+                }
+
+            table.billingtable th {
+                background: #eeeeee;
+            }
+        </style>
+        <link href="http://in.static.abreakplease.com/1.4//Content/jquery.nouislider.min.css" rel="stylesheet">
+    </div>
 </div>
+
+
+
+<div id="backtotop">
+    <a href="#topbar">
+        <span></span>
+        Back To Top
+    </a>
+</div>
+<script type="text/javascript">
+    if (window.location.hash) {
+        if (window.location.hash.indexOf(".") != -1)
+            window.location.hash = "";
+    }
+
+    var debug = false;
+    var analytics = true;
+</script>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+       
+
+        $("#backtotop").click(function () {
+
+            $('html,body').animate({
+                scrollTop: $("body").offset().top
+            }, 500);
+            return false;
+
+        });
+        $(window).scroll(function () {
+
+            var currentplan = $("#resultdetail").find(".tempplan:visible");
+
+            var top = $(window).scrollTop();
+            if (top <= 0) {
+                $("#backtotop").hide();
+                if (currentplan.size() > 0)
+                    currentplan.find(".sendinquirybottom").hide();
+            }
+            else {
+                $("#backtotop").show();
+                if (currentplan.size() > 0)
+                    currentplan.find(".sendinquirybottom").show();
+            }
+
+
+
+
+        });
+
+    });
+</script>
+
+
+
+
+
+
 
 
 

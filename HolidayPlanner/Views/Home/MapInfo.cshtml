@@ -2,27 +2,19 @@
 @{
     Layout = null;
 }
+<style>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-    function InitializeMap() {
-        var latlng = new google.maps.LatLng(-34.397, 150.644);
-        var myOptions = {
-            zoom: 8,
-            center: latlng,
-            mapTypeId: google.maps.MapTypeId.SATELLITE
-        };
-        var map = new google.maps.Map(document.getElementById("map"), myOptions);
+    #frame {
+        border: 1px solid black;
+        overflow: hidden;
+        -ms-zoom: 0.75;
+        -moz-transform: scale(0.75);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.75);
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
     }
-    window.onload = InitializeMap;
+</style>
 
-</script>
 
-<h2>Creating Your First Google Map Demo:</h2>
-<br />
-<br />
-<br />
-
-<div id="map" style="width: 200px;left: 150px; height: 238px">
-
-</div>
+<center><iframe id="frame" width="900" height="600" frameborder="1"  scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=+@Model.Latitude+,+@Model.Longitude+&hl=es;z=14&amp;output=embed"></iframe></center>

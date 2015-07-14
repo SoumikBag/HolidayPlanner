@@ -54,7 +54,6 @@ namespace HolidayPlanner.Controllers
         public ActionResult Pune1(AddressModel model)
         {
             var selectedId = model.CityId;
-
             return RedirectToAction("Index1", "Main", new { Id = selectedId, clickinfo = "hotels" });
 
         }

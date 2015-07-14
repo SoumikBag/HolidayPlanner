@@ -15,6 +15,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
   background: transparent; }
 
+table.dashboard table th, table td {
+    padding: 6px 6px 6px 6px !important;
+     border: 1px solid black;
+}
+
 .strike {
   text-decoration: line-through; }
 
@@ -66,7 +71,9 @@ del {
 /* tables still need 'cellspacing="0"' in the markup */
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0; 
+   border: 1px solid black;
+}
 
 input, select, textarea, option {
   padding: 0.125em 0.313em;
@@ -596,10 +603,10 @@ form.searchforms .controls {
 
 #citybar {
   font-family: "Tenor Sans", Helvetica Neue, Helvetica, Arial, sans-serif !important;
-  width: 78em;
+  /*width: 78em;*/
   margin: 1em auto 0 auto; }
   #citybar #citybarinner {
-    margin-left: -36em;
+    /*margin-left: -36em;*/
     background: #faf9f0;
     display: inline-block;
     -moz-border-radius-topleft: 5px;
@@ -928,7 +935,8 @@ ul.hoteltabs {
   padding: 1em 1.5em; }
 
 #searchlistcontainer {
-  width: 80em;
+
+  width: 50em;
   margin: auto;
   font-family: verdana;
   color: #333;
@@ -2170,7 +2178,7 @@ body > #superoutercontainer {
   display: none;
   z-index: 15; }
   #backtotop a {
-    width: 10em;
+    width: 7.1em;
     display: block;
     text-align: center;
     text-transform: uppercase;
@@ -2181,12 +2189,12 @@ body > #superoutercontainer {
       height: 108px;
       display: block;
       margin-bottom: 7px;
-      background: #dddddd url(images/up-arrow.png) no-repeat center center;
+      background:  url(images/images.png) no-repeat center center;
       -webkit-border-radius: 15px;
       -moz-border-radius: 15px;
       border-radius: 15px; }
     #backtotop a:hover span {
-      background: #888888 url(images/up-arrow.png) no-repeat center center !important; }
+      background: #888888 url(images/images.png) no-repeat center center !important; }
 
 #maininfo {
   width: 80em;

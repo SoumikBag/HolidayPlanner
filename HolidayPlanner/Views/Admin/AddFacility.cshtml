@@ -1,0 +1,62 @@
+﻿@model HolidayPlanner.Models.FacilityModel
+
+@{
+    ViewBag.Title = "AddFacility";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="resultdetail">
+    <div class="tempplan plandetail">
+
+        <div class="h2">
+
+            Add New Facility Form
+        </div>
+
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.HotelId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.DropDownListFor(model => model.HotelId, Model.Hotels, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.HotelId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FacilityId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.FacilityId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FacilityId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FacilitiesType, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.FacilitiesType, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FacilitiesType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <div class="form-group">
+                <p align="center" style="float:initial">
+                    <input type="submit" value="Create" class="btn btn-primary btn-large" />
+                    @Html.ActionLink("Back to List", "AddHotel", "Admin", null, new { @class = "btn btn-primary btn-large" })
+                </p>
+            </div>
+        </div>
+    }
+
+
+</div>

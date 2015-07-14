@@ -3,6 +3,28 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="contact">
+    <div class="container">
+        <br />
+        <p align="right" style="float:right">
+            @Html.ActionLink("[+] Add New Hotel", "AddHotel", "Admin", null, new { @class = "btn btn-primary btn-large" })
+            @Html.ActionLink("[+] Add New Location", "AddLocation", "Admin", null, new { @class = "btn btn-primary btn-large" })
+        </p>
+        <h1>Dashboard</h1>
+        <table width="100%" class="dashboard">
+            <tr>
+                <td width="50%">
+                    <center><h2><b>List of Hotel</b></h2></center>
+                    @{Html.RenderAction("HotelDetail", "Admin");}
+                    <hr />
+                </td>
+                @*<td>
+                    <center><h2><b>List of Hotel</b></h2></center>
+                    @{Html.RenderAction("UserDetail", "Admin");}
+                    <hr />
+                </td*@>
+            </tr>
+        </table>
 
-<h2>Admin Index</h2>
-
+    </div>
+</div>
