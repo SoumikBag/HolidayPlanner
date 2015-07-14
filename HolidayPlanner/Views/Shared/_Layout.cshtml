@@ -80,7 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="col-sm-4 header_right">
                 <div id="loginContainer">
-                    @if (Request.IsAuthenticated)
+                    @if (HttpContext.Current.Session["UserId"]!="")
                     {
                         using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logoutForm"}))
                         {

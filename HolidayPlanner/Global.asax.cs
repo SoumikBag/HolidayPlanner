@@ -38,5 +38,10 @@ namespace HolidayPlanner
             }
 
         }
+
+        protected void Session_End()
+        {
+            Application_Start();
+        }
     }
 }
