@@ -122,6 +122,7 @@
 <div>
     @Html.LabelFor(model => model.CityId)
     @Html.DropDownListFor(model => model.CityId, Model.AvailableCities, new { AutoPostBack = true })
+    
 
     <span id="Citys-loading-progress" style="display: none;">Please wait..</span>
 </div>

@@ -10,7 +10,7 @@ namespace HolidayPlanner.Controllers
     public class MainController : Controller
     {
 
-        public ActionResult Index1(string Id, string clickinfo)
+        public ActionResult Index1(string Id, string clickinfo, string sessionvalue)
         {
             var db = new HolidayPlanner.Models.InfoData();
             var db1 = new HolidayPlanner.Models.DataClasses1DataContext();

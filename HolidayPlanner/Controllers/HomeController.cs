@@ -27,6 +27,7 @@ namespace HolidayPlanner.Controllers
         }
 
         [HttpGet]
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult Index()
         {
             
@@ -54,9 +55,36 @@ namespace HolidayPlanner.Controllers
         [HttpPost]
         public ActionResult Index(AddressModel model)
         {
+            var vSessionValue = new User();
+
+            var stateId = model.StateId;
             var selectedId = model.CityId;
 
-            return RedirectToAction("Index1", "Main", new { Id = selectedId, clickinfo="hotels" });
+
+            try
+            {
+                // check existing value into session
+                if ((Object)Session["UserId"] != null)
+                {
+                    // assign value into properties
+                    vSessionValue.SessionValue = "Welcome  " +
+ Session["UserID"].ToString();
+
+                    
+                }
+                else
+                    // if session expired than set custom message
+                    vSessionValue.SessionValue = "Session Expired";
+                    
+            }
+            catch
+            {
+
+            }
+            // return value to view
+            //return View(vSessionValue);
+
+            return RedirectToAction("Index1", "Main", new { Id = selectedId, clickinfo="hotels",sessionvalue= vSessionValue });
 
         }
 
@@ -570,9 +598,6 @@ namespace HolidayPlanner.Controllers
             }
             //var newrec = from c in db.Bookings
             //             select c;
-
-            
-
 
             //buk.UserId= Collection[0];
 
