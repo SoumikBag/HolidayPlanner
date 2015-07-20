@@ -2,6 +2,7 @@
 using HolidayPlanner.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -74,6 +75,17 @@ namespace HolidayPlanner.Controllers
         }
 
         private void PrepareHotel2(LocationModel model)
+        {
+            model.Hotels = context.Hotels.AsQueryable<HolidayPlanner.DAL.Hotel>().Select(x =>
+                                                            new SelectListItem()
+                                                            {
+                                                                Text = x.HotelName,
+                                                                Value = x.HotelId.ToString()
+                                                            });
+
+        }
+
+        private void PrepareHotel3(HotelModel model)
         {
             model.Hotels = context.Hotels.AsQueryable<HolidayPlanner.DAL.Hotel>().Select(x =>
                                                             new SelectListItem()
@@ -302,5 +314,48 @@ namespace HolidayPlanner.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult AddImage()
+        {
+            HotelModel model = new HotelModel();
+            PrepareHotel3(model);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddImage1(HotelModel model)
+        {
+            foreach (string file in Request.Files)
+            {
+                var postedFile = Request.Files[file];
+                
+
+                var hname = new List<HolidayPlanner.Models.Hotel>();
+                InfoData dt = new InfoData();
+                 hname = dt.Hotels.Where(x => x.HotelId == model.HotelId).ToList();
+                 
+                 foreach (var st in hname)
+                 {
+                     string vat = st.HotelName;
+                     bool exists = System.IO.Directory.Exists(Server.MapPath("~/Images" + vat + "/"));
+
+                     var extension = Path.GetExtension(postedFile.FileName);
+                     var newName = "19001";
+
+                     if (!exists)
+                         System.IO.Directory.CreateDirectory(Server.MapPath("~/Images" + vat + "/"));
+                     //Directory.CreateDirectory(path);
+
+                     postedFile.SaveAs(Server.MapPath("~/Images" + vat + "/") + newName + extension);
+                     
+                 }
+                
+                 
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        
     }
 }

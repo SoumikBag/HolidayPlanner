@@ -1,0 +1,58 @@
+﻿@model HolidayPlanner.Models.HotelModel
+@{
+    ViewBag.Title = "AddImage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="resultdetail">
+    <div class="tempplan plandetail">
+
+        <div class="h2">
+
+            Add New Image Form
+        </div>
+
+    </div>
+    @using (Html.BeginForm("AddImage1", "Admin",
+        FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.HotelId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.DropDownListFor(model => model.HotelId, Model.Hotels, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.HotelId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.Label("Upload File", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    <input type="file" name="fileUpload" />
+                   
+                </div>
+            </div>
+
+
+            <br />
+            <br />
+            <div class="form-group">
+                <p align="center" style="float:initial">
+                    <input type="submit" value="Upload" class="btn btn-primary btn-large" />
+                    @Html.ActionLink("Back to List", "AddHotel", "Admin", null, new { @class = "btn btn-primary btn-large" })
+                </p>
+            </div>
+        </div>
+    }
+
+
+</div>
+
