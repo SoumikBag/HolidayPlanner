@@ -10,8 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Holiday Planner</title>
-
-   
+    
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -21,6 +20,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script>
 	new WOW().init();
     </script>
+    
+    
 </head>
 <body>
 
@@ -38,10 +39,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li @*class="active"*@>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <div class="clearfix"></div>
+                        <li>@Html.ActionLink("Alerts","Alert","Home") </li>
+                        
                     </ul>
+                    
                     @*<script src="~/Scripts/responsive-nav.js"></script>*@
                 </div>
+               
 
                 <!-- start search-->
                 <div class="search-box">
@@ -64,12 +68,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="col-sm-4 header_right">
                 <div id="loginContainer">
-                    @if (HttpContext.Current.Session["UserId"]!="")
+                    @if (Session["UserId"]!=null)
                     {
                         using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logoutForm"}))
                         {
                             @Html.AntiForgeryToken()
-                            <a href="#" id="loginButton"><img src="~/Images/login.png"><span> @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span></a>
+                            <a href="#" id="loginButton"><img src="~/Images/login.png"><span> @Html.ActionLink("Hello " + User.Identity.Name + "!", "ChangePassword", "Manage", new { name = User.Identity.Name }, htmlAttributes: new { title = "Manage" })</span></a>
                             <span>&nbsp;&nbsp;<a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></span>
 
                         }
@@ -86,7 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
     </div>
-
+    
     @RenderBody()
     <hr />
     <footer>
@@ -99,7 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <i><img src="@Url.Content("~/Images/mail.png")" alt=""></i>
                             <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
                             <label class="btn1 btn2 btn-2 btn-2g"> <input name="submit" type="submit" id="submit" value="Subscribe"> </label>
-                            <div class="clearfix"> </div>
+                            
                         </span>
                     </form>
                 </div>
@@ -114,6 +118,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </footer>
 </body>
 </html>
+
 <div id="backtotop">
     <a href="#topbar">
         <span></span>
@@ -161,10 +166,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 if (currentplan.size() > 0)
                     currentplan.find(".sendinquirybottom").show();
             }
-
-
-
-
         });
 
     });

@@ -337,16 +337,20 @@ namespace HolidayPlanner.Controllers
                  foreach (var st in hname)
                  {
                      string vat = st.HotelName;
-                     bool exists = System.IO.Directory.Exists(Server.MapPath("~/Images" + vat + "/"));
+                     bool exists = System.IO.Directory.Exists(Server.MapPath("~/Images/" + vat + "/"));
 
-                     var extension = Path.GetExtension(postedFile.FileName);
-                     var newName = "19001";
+                     
+                     var path = postedFile.FileName;
+                     var extension1 = Path.ChangeExtension(path, "jpeg");
+
+                     var extension = Path.GetExtension(extension1);
+                     var newName = "19011";
 
                      if (!exists)
-                         System.IO.Directory.CreateDirectory(Server.MapPath("~/Images" + vat + "/"));
+                         System.IO.Directory.CreateDirectory(Server.MapPath("~/Images/" + vat + "/"));
                      //Directory.CreateDirectory(path);
 
-                     postedFile.SaveAs(Server.MapPath("~/Images" + vat + "/") + newName + extension);
+                     postedFile.SaveAs(Server.MapPath("~/Images/" + vat + "/") + newName + extension);
                      
                  }
                 

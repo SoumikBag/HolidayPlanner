@@ -10,8 +10,9 @@ ul, ol {margin: 0;}
 p {margin: 0;}
 html, body{
    font-family: 'Montserrat', sans-serif;
-   font-size: 100%;
+   font-size:  100%;
    background-color: #faf9f0;
+   margin:0 auto 20px;
 }
 body a{
 	transition:0.5s all;
@@ -1534,6 +1535,7 @@ ul.service_grid li.desc1 p{
 	min-height: 410px;
 	text-align: center;
 	padding-top:4em;
+    bottom:0;
 }
 .footer h3{
 	color: #fff;

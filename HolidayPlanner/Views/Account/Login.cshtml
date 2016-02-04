@@ -1,4 +1,5 @@
-﻿@model HolidayPlanner.Models.LoginViewModel
+﻿@using HolidayPlanner.Models
+@model LoginViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -53,6 +54,12 @@
                         </div>
                     </div>
                 }
+            </div>
+
+            <div class="span8">
+                <section id="socialLoginForm">
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                </section>
             </div>
         </div>
     </div>

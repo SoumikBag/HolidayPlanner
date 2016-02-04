@@ -67,14 +67,13 @@ namespace HolidayPlanner.Controllers
                 if ((Object)Session["UserId"] != null)
                 {
                     // assign value into properties
-                    vSessionValue.SessionValue = "Welcome  " +
- Session["UserID"].ToString();
+                    //vSessionValue.SessionValue = "Welcome  " +Session["UserID"].ToString();
 
                     
                 }
-                else
+                
                     // if session expired than set custom message
-                    vSessionValue.SessionValue = "Session Expired";
+                    //vSessionValue.SessionValue = "Session Expired";
                     
             }
             catch
@@ -183,7 +182,10 @@ namespace HolidayPlanner.Controllers
         //    //return View(ivm);
         //}
         //ended by sandy
-
+         public ActionResult Alert()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {

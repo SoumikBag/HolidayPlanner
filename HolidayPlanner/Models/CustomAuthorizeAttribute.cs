@@ -18,6 +18,7 @@ namespace HolidayPlanner.Models
             get { return HttpContext.Current.User as CustomPrincipal; }
         }
 
+        
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
             if (filterContext.HttpContext.Request.IsAuthenticated)
