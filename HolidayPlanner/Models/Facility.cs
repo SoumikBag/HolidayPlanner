@@ -11,7 +11,7 @@ namespace HolidayPlanner.Models
         [Key]
         [Column(Order = 0)]
         [StringLength(10)]
-        public string FacilityId { get; set; }
+        public string FacilityId { get; set;}
 
         [Key]
         [Column(Order = 1)]
